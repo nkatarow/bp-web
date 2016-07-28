@@ -1,0 +1,254 @@
+/* ==========================================================================
+   MAIN.SCSS
+   ========================================================================== */
+/**
+ *
+ * MAIN.CSS & MAIN.MIN.CSS are compiled using the imports from this file.
+ *
+ * To add new styles and components, import them in the appropriate sections below.
+ *
+ */
+/* ==========================================================================
+   HELPERS/_VARIABLES.SCSS
+   ========================================================================== */
+/* ==========================================================================
+   HELPERS/_MIXINS.SCSS
+   ========================================================================== */
+/* ==========================================================================
+   HELPERS/_RESET.SCSS
+   ========================================================================== */
+/* Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/ */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body, div, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, ol, ul, li, form, legend, label, table, header, footer, nav, section, figure {
+  margin: 0;
+  padding: 0;
+}
+
+header, footer, nav, section, article, hgroup, figure {
+  display: block;
+}
+
+/* ==========================================================================
+   BASE/_LISTS.SCSS
+   ========================================================================== */
+ol {
+  margin-left: 1.5em;
+}
+
+ul {
+  list-style: none;
+}
+
+dl {
+  overflow: hidden;
+  margin: 0 0 1em;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-left: 0;
+}
+
+/* ==========================================================================
+   BASE/_LINKS.SCSS
+   ========================================================================== */
+a {
+  color: #333;
+  text-decoration: none;
+  outline: 0;
+}
+a:hover, a:focus {
+  color: #808080;
+}
+
+/* ==========================================================================
+   BASE/_MEDIA.SCSS
+   ========================================================================== */
+img, video, object {
+  max-width: 100%;
+  height: auto;
+}
+
+iframe {
+  margin-bottom: 1em;
+}
+
+figure {
+  margin-bottom: 1em;
+}
+figure img {
+  margin-bottom: 0.25em;
+}
+
+figcaption {
+  font-style: italic;
+}
+
+/**
+ * Profound Grid
+ *
+ * Built in Sass (SCSS) this responsive/adaptive grid supports both fixed and fluid layouts,
+ * relative and fixed gutters, as well as your choice of semantic markup or generic '.grid-x' classes.
+ *
+ * The biggest difference to other grid systems is the use of negative margins for column
+ * placements, avoiding the subpixel rounding issues that usually break/uglify fluid layouts
+ * in some browsers.
+ *
+ * Nested columns are supported too, without having to reset the grid on each level.
+ *
+ * Credits/Inspiration:
+ * -------------------
+ * Semantic Grid: http://www.semantic.gs
+ * Susy: http://susy.oddbird.net
+ * Negative Grid: http://chrisplaneta.com/freebies/negativegrid-fluid-css-grid-by-chris-planeta/
+ *
+ * @author Profound Creative Studio
+ * @url http://www.profoundgrid.com
+ * @url http://www.weareprofound.com
+ */
+/**
+ * Clearfix
+ */
+/**
+ * Legacy Clearfix
+ */
+/**
+ * Establish the grid-containing element.
+ */
+/**
+ * Align an element to the grid.
+ */
+/**
+ * Apply to any column to make it the last one of the current row.
+ */
+/* ==========================================================================
+   BASE/_FONTS.SCSS
+   ========================================================================== */
+/* ==========================================================================
+   BASE/_BUTTONS.SCSS
+   ========================================================================== */
+button {
+  font-size: 1em;
+}
+
+.btn {
+  background-color: #000;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+  padding: 1em;
+  text-align: center;
+}
+.btn:hover, .btn:focus {
+  background-color: pink;
+}
+.btn.alt {
+  background-color: #333;
+}
+.btn.alt:hover, .btn.alt:focus {
+  background-color: yellow;
+}
+.btn.disabled {
+  background-color: #808080;
+}
+.btn.disabled:hover, .btn.disabled:focus {
+  color: #fff;
+}
+
+/* ==========================================================================
+   BASE/_UTILITY.SCSS
+   ========================================================================== */
+.block {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.offscreen {
+  display: block;
+  left: -999999px;
+  position: absolute;
+  top: -999999px;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+.clearfix:before, .clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.hr {
+  border-top: 1px solid #808080;
+  display: block;
+}
+.hr hr {
+  display: none;
+}
+
+/* ==========================================================================
+   BASE/_TYPOGRAPHY.SCSS
+   ========================================================================== */
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 62.5%;
+}
+
+h1, .h1 {
+  line-height: 1.2;
+}
+
+h2, .h2 {
+  line-height: 1.2;
+}
+
+h3, .h3 {
+  line-height: 1.2;
+}
+
+.subheading {
+  font-weight: normal;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+blockquote {
+  font-style: italic;
+  border-left: 1px solid #808080;
+  color: #808080;
+  padding-left: 1em;
+  margin-bottom: 1em;
+}
+
+abbr {
+  border-bottom: 1px dotted #808080;
+  cursor: help;
+}
+
+/* ==========================================================================
+   COMPONENTS/_STYLE-GUIDE.SCSS
+   ========================================================================== */
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiIiwic291cmNlcyI6WyJtYWluLmNzcyJdLCJzb3VyY2VzQ29udGVudCI6WyIvKiA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PVxuICAgTUFJTi5TQ1NTXG4gICA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PSAqL1xuLyoqXG4gKlxuICogTUFJTi5DU1MgJiBNQUlOLk1JTi5DU1MgYXJlIGNvbXBpbGVkIHVzaW5nIHRoZSBpbXBvcnRzIGZyb20gdGhpcyBmaWxlLlxuICpcbiAqIFRvIGFkZCBuZXcgc3R5bGVzIGFuZCBjb21wb25lbnRzLCBpbXBvcnQgdGhlbSBpbiB0aGUgYXBwcm9wcmlhdGUgc2VjdGlvbnMgYmVsb3cuXG4gKlxuICovXG4vKiA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PVxuICAgSEVMUEVSUy9fVkFSSUFCTEVTLlNDU1NcbiAgID09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09ICovXG4vKiA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PVxuICAgSEVMUEVSUy9fTUlYSU5TLlNDU1NcbiAgID09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09ICovXG4vKiA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PVxuICAgSEVMUEVSUy9fUkVTRVQuU0NTU1xuICAgPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0gKi9cbi8qIEJvcmRlci1Cb3ggaHR0cDovcGF1bGlyaXNoLmNvbS8yMDEyL2JveC1zaXppbmctYm9yZGVyLWJveC1mdHcvICovXG5AaW1wb3J0IHVybChodHRwOi8vZm9udHMuZ29vZ2xlYXBpcy5jb20vY3NzP2ZhbWlseT1PcGVuK1NhbnMpO1xuKiB7XG4gIC1tb3otYm94LXNpemluZzogYm9yZGVyLWJveDtcbiAgLXdlYmtpdC1ib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xufVxuXG5odG1sLCBib2R5LCBkaXYsIG9iamVjdCwgaWZyYW1lLCBoMSwgaDIsIGgzLCBoNCwgaDUsIGg2LCBwLCBibG9ja3F1b3RlLCBvbCwgdWwsIGxpLCBmb3JtLCBsZWdlbmQsIGxhYmVsLCB0YWJsZSwgaGVhZGVyLCBmb290ZXIsIG5hdiwgc2VjdGlvbiwgZmlndXJlIHtcbiAgbWFyZ2luOiAwO1xuICBwYWRkaW5nOiAwO1xufVxuXG5oZWFkZXIsIGZvb3RlciwgbmF2LCBzZWN0aW9uLCBhcnRpY2xlLCBoZ3JvdXAsIGZpZ3VyZSB7XG4gIGRpc3BsYXk6IGJsb2NrO1xufVxuXG4vKiA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PVxuICAgQkFTRS9fTElTVFMuU0NTU1xuICAgPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0gKi9cbm9sIHtcbiAgbWFyZ2luLWxlZnQ6IDEuNWVtO1xufVxuXG51bCB7XG4gIGxpc3Qtc3R5bGU6IG5vbmU7XG59XG5cbmRsIHtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgbWFyZ2luOiAwIDAgMWVtO1xufVxuXG5kdCB7XG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xufVxuXG5kZCB7XG4gIG1hcmdpbi1sZWZ0OiAwO1xufVxuXG4vKiA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PVxuICAgQkFTRS9fTElOS1MuU0NTU1xuICAgPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0gKi9cbmEge1xuICBjb2xvcjogIzMzMztcbiAgdGV4dC1kZWNvcmF0aW9uOiBub25lO1xuICBvdXRsaW5lOiAwO1xufVxuYTpob3ZlciwgYTpmb2N1cyB7XG4gIGNvbG9yOiAjODA4MDgwO1xufVxuXG4vKiA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PVxuICAgQkFTRS9fTUVESUEuU0NTU1xuICAgPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0gKi9cbmltZywgdmlkZW8sIG9iamVjdCB7XG4gIG1heC13aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiBhdXRvO1xufVxuXG5pZnJhbWUge1xuICBtYXJnaW4tYm90dG9tOiAxZW07XG59XG5cbmZpZ3VyZSB7XG4gIG1hcmdpbi1ib3R0b206IDFlbTtcbn1cbmZpZ3VyZSBpbWcge1xuICBtYXJnaW4tYm90dG9tOiAwLjI1ZW07XG59XG5cbmZpZ2NhcHRpb24ge1xuICBmb250LXN0eWxlOiBpdGFsaWM7XG59XG5cbi8qKlxuICogUHJvZm91bmQgR3JpZFxuICpcbiAqIEJ1aWx0IGluIFNhc3MgKFNDU1MpIHRoaXMgcmVzcG9uc2l2ZS9hZGFwdGl2ZSBncmlkIHN1cHBvcnRzIGJvdGggZml4ZWQgYW5kIGZsdWlkIGxheW91dHMsXG4gKiByZWxhdGl2ZSBhbmQgZml4ZWQgZ3V0dGVycywgYXMgd2VsbCBhcyB5b3VyIGNob2ljZSBvZiBzZW1hbnRpYyBtYXJrdXAgb3IgZ2VuZXJpYyAnLmdyaWQteCcgY2xhc3Nlcy5cbiAqXG4gKiBUaGUgYmlnZ2VzdCBkaWZmZXJlbmNlIHRvIG90aGVyIGdyaWQgc3lzdGVtcyBpcyB0aGUgdXNlIG9mIG5lZ2F0aXZlIG1hcmdpbnMgZm9yIGNvbHVtblxuICogcGxhY2VtZW50cywgYXZvaWRpbmcgdGhlIHN1YnBpeGVsIHJvdW5kaW5nIGlzc3VlcyB0aGF0IHVzdWFsbHkgYnJlYWsvdWdsaWZ5IGZsdWlkIGxheW91dHNcbiAqIGluIHNvbWUgYnJvd3NlcnMuXG4gKlxuICogTmVzdGVkIGNvbHVtbnMgYXJlIHN1cHBvcnRlZCB0b28sIHdpdGhvdXQgaGF2aW5nIHRvIHJlc2V0IHRoZSBncmlkIG9uIGVhY2ggbGV2ZWwuXG4gKlxuICogQ3JlZGl0cy9JbnNwaXJhdGlvbjpcbiAqIC0tLS0tLS0tLS0tLS0tLS0tLS1cbiAqIFNlbWFudGljIEdyaWQ6IGh0dHA6Ly93d3cuc2VtYW50aWMuZ3NcbiAqIFN1c3k6IGh0dHA6Ly9zdXN5Lm9kZGJpcmQubmV0XG4gKiBOZWdhdGl2ZSBHcmlkOiBodHRwOi8vY2hyaXNwbGFuZXRhLmNvbS9mcmVlYmllcy9uZWdhdGl2ZWdyaWQtZmx1aWQtY3NzLWdyaWQtYnktY2hyaXMtcGxhbmV0YS9cbiAqXG4gKiBAYXV0aG9yIFByb2ZvdW5kIENyZWF0aXZlIFN0dWRpb1xuICogQHVybCBodHRwOi8vd3d3LnByb2ZvdW5kZ3JpZC5jb21cbiAqIEB1cmwgaHR0cDovL3d3dy53ZWFyZXByb2ZvdW5kLmNvbVxuICovXG4vKipcbiAqIENsZWFyZml4XG4gKi9cbi8qKlxuICogTGVnYWN5IENsZWFyZml4XG4gKi9cbi8qKlxuICogRXN0YWJsaXNoIHRoZSBncmlkLWNvbnRhaW5pbmcgZWxlbWVudC5cbiAqL1xuLyoqXG4gKiBBbGlnbiBhbiBlbGVtZW50IHRvIHRoZSBncmlkLlxuICovXG4vKipcbiAqIEFwcGx5IHRvIGFueSBjb2x1bW4gdG8gbWFrZSBpdCB0aGUgbGFzdCBvbmUgb2YgdGhlIGN1cnJlbnQgcm93LlxuICovXG4vKiA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PVxuICAgQkFTRS9fRk9OVFMuU0NTU1xuICAgPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0gKi9cbi8qID09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09XG4gICBCQVNFL19CVVRUT05TLlNDU1NcbiAgID09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09ICovXG5idXR0b24ge1xuICBmb250LXNpemU6IDFlbTtcbn1cblxuLmJ0biB7XG4gIGJhY2tncm91bmQtY29sb3I6ICMwMDA7XG4gIGJvcmRlcjogMDtcbiAgY29sb3I6ICNmZmY7XG4gIGN1cnNvcjogcG9pbnRlcjtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBsaW5lLWhlaWdodDogMTtcbiAgcGFkZGluZzogMWVtO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG4uYnRuOmhvdmVyLCAuYnRuOmZvY3VzIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogcGluaztcbn1cbi5idG4uYWx0IHtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzMzMztcbn1cbi5idG4uYWx0OmhvdmVyLCAuYnRuLmFsdDpmb2N1cyB7XG4gIGJhY2tncm91bmQtY29sb3I6IHllbGxvdztcbn1cbi5idG4uZGlzYWJsZWQge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjODA4MDgwO1xufVxuLmJ0bi5kaXNhYmxlZDpob3ZlciwgLmJ0bi5kaXNhYmxlZDpmb2N1cyB7XG4gIGNvbG9yOiAjZmZmO1xufVxuXG4vKiA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PVxuICAgQkFTRS9fVVRJTElUWS5TQ1NTXG4gICA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PSAqL1xuLmJsb2NrIHtcbiAgZGlzcGxheTogYmxvY2s7XG59XG5cbi5oaWRlIHtcbiAgZGlzcGxheTogbm9uZTtcbn1cblxuLm9mZnNjcmVlbiB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBsZWZ0OiAtOTk5OTk5cHg7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgdG9wOiAtOTk5OTk5cHg7XG59XG5cbi5jbGVhcmZpeCB7XG4gICp6b29tOiAxO1xufVxuXG4uY2xlYXJmaXg6YmVmb3JlLCAuY2xlYXJmaXg6YWZ0ZXIge1xuICBjb250ZW50OiBcIiBcIjtcbiAgLyogMSAqL1xuICBkaXNwbGF5OiB0YWJsZTtcbiAgLyogMiAqL1xufVxuXG4uY2xlYXJmaXg6YWZ0ZXIge1xuICBjbGVhcjogYm90aDtcbn1cblxuLmhyIHtcbiAgYm9yZGVyLXRvcDogMXB4IHNvbGlkICM4MDgwODA7XG4gIGRpc3BsYXk6IGJsb2NrO1xufVxuLmhyIGhyIHtcbiAgZGlzcGxheTogbm9uZTtcbn1cblxuLyogPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT1cbiAgIEJBU0UvX1RZUE9HUkFQSFkuU0NTU1xuICAgPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0gKi9cbmJvZHkge1xuICBmb250LWZhbWlseTogJ09wZW4gU2FucycsIHNhbnMtc2VyaWY7XG4gIGZvbnQtc2l6ZTogNjIuNSU7XG59XG5cbmgxLCAuaDEge1xuICBsaW5lLWhlaWdodDogMS4yO1xufVxuXG5oMiwgLmgyIHtcbiAgbGluZS1oZWlnaHQ6IDEuMjtcbn1cblxuaDMsIC5oMyB7XG4gIGxpbmUtaGVpZ2h0OiAxLjI7XG59XG5cbi5zdWJoZWFkaW5nIHtcbiAgZm9udC13ZWlnaHQ6IG5vcm1hbDtcbn1cblxucCB7XG4gIG1hcmdpbi1ib3R0b206IDFlbTtcbn1cblxuYmxvY2txdW90ZSB7XG4gIGZvbnQtc3R5bGU6IGl0YWxpYztcbiAgYm9yZGVyLWxlZnQ6IDFweCBzb2xpZCAjODA4MDgwO1xuICBjb2xvcjogIzgwODA4MDtcbiAgcGFkZGluZy1sZWZ0OiAxZW07XG4gIG1hcmdpbi1ib3R0b206IDFlbTtcbn1cblxuYWJiciB7XG4gIGJvcmRlci1ib3R0b206IDFweCBkb3R0ZWQgIzgwODA4MDtcbiAgY3Vyc29yOiBoZWxwO1xufVxuXG4vKiA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PVxuICAgQ09NUE9ORU5UUy9fU1RZTEUtR1VJREUuU0NTU1xuICAgPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0gKi9cbiJdLCJmaWxlIjoibWFpbi5jc3MiLCJzb3VyY2VSb290IjoiL3NvdXJjZS8ifQ== */

@@ -1,61 +1,68 @@
-{#
- # Layout template
- # ---------------
- #
- # This template defines your site’s global layout. It can be
- # “extended” by other templates to fill in the gaps.
- #
- # See Twig’s Template Inheritance documentation for more details:
- # http://twig.sensiolabs.org/doc/templates.html#template-inheritance
- #}
-
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<!--[if IE 8 ]>    <html dir="ltr" lang="en-US" class="no-js ie8 oldie"> <![endif]-->
+<!--[if IE 9 ]>    <html dir="ltr" lang="en-US" class="no-js ie9 oldie"> <![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html dir="ltr" lang="en-US" class="no-js"><!--<![endif]-->
 <head>
 	<meta charset="utf-8" />
-	<title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
+	<title>{% if title is defined %}{{ title }} | {% endif %}{{ siteName }}</title>
 	<link rel="home" href="{{ siteUrl }}" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="{% if entry.metaDescription != '' %}{{ entry.metaDescription }}{% else %}{{ global.metaDescription }}{% endif %}"/>
 
-	<style type="text/css">
-		body { margin: 50px; font-family: sans-serif; background: #fff; }
-		#container { margin: 0 auto; width: 700px;
-			-webkit-box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-			        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-		}
+	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="/_ui/img/favicons/apple-touch-icon-57x57.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/_ui/img/favicons/apple-touch-icon-114x114.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/_ui/img/favicons/apple-touch-icon-72x72.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/_ui/img/favicons/apple-touch-icon-144x144.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="60x60" href="/_ui/img/favicons/apple-touch-icon-60x60.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="/_ui/img/favicons/apple-touch-icon-120x120.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="76x76" href="/_ui/img/favicons/apple-touch-icon-76x76.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/_ui/img/favicons/apple-touch-icon-152x152.png" />
+	<link rel="icon" type="image/png" href="/_ui/img/favicons/favicon-196x196.png" sizes="196x196" />
+	<link rel="icon" type="image/png" href="/_ui/img/favicons/favicon-96x96.png" sizes="96x96" />
+	<link rel="icon" type="image/png" href="/_ui/img/favicons/favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" type="image/png" href="/_ui/img/favicons/favicon-16x16.png" sizes="16x16" />
+	<link rel="icon" type="image/png" href="/_ui/img/favicons/favicon-128.png" sizes="128x128" />
+	<meta name="application-name" content="Bridge Partners Consulting"/>
+	<meta name="msapplication-TileColor" content="#FFFFFF" />
+	<meta name="msapplication-TileImage" content="/_ui/img/favicons/mstile-144x144.png" />
+	<meta name="msapplication-square70x70logo" content="/_ui/img/favicons/mstile-70x70.png" />
+	<meta name="msapplication-square150x150logo" content="/_ui/img/favicons/mstile-150x150.png" />
+	<meta name="msapplication-wide310x150logo" content="/_ui/img/favicons/mstile-310x150.png" />
+	<meta name="msapplication-square310x310logo" content="/_ui/img/favicons/mstile-310x310.png" />
 
-		#header, #footer { display: block; color: #fff; background: #da5a47; }
-		#header a, #footer a { color: #fff; }
-		#header { border-radius: 7px 7px 0 0; padding: 25px; }
-		#header:after { content: '.'; display: block; height: 0; clear: both; visibility: hidden; }
-		#header a { text-decoration: none; }
-		#header h1 { float: left; margin: 0; font-weight: normal; font-size: 30px; line-height: 1; }
-		#header nav { display: block; float: right; }
-		#header nav ul { margin: 0; list-style-type: none; }
-		#header nav ul li { float: left; margin-left: 20px; }
-		#header nav ul li a { display: block; margin-top: 4px; line-height: 22px; }
-		#header nav ul li a:hover,
-		#header nav ul li a.active { border-bottom: 2px solid #fff; }
-		#header nav ul li a.active { cursor: default; }
+	<meta property="og:title" content="Bridge Partners Consulting"/>
+	<!-- FILL IN -->
+	<meta property="og:description" content=""/>
+	<meta property="og:url" content="http://bridgepartnersconsulting.com"/>
+	<meta property="og:site_name" content="Bridge Partners Consulting"/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:image" content="http://eathomegrown.com/_ui/img/global/bridge-share.png"/>
 
-		#content { display: block; padding: 25px; background: #fff; }
-		#content h1 { margin-top: 0; font-size: 35px; font-weight: bold; }
-		#content a { color: #da5a47; text-decoration: none; }
-		#content a:hover { text-decoration: underline; }
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@_BridgePartners">
+	<meta name="twitter:title" content="Bridge Partners Consulting">
+	<!-- FILL IN -->
+	<meta name="twitter:description" content="">
+	<meta name="twitter:image:src" content="http://bridgepartnersconsulting.com/_ui/img/global/homegrown-share.png">
+	<meta name="twitter:domain" content="bridgepartnersconsulting.com">
 
-		#footer { border-radius: 0 0 7px 7px; padding: 15px; font-size: 12px; text-align: center; }
-	</style>
+	{# Test to see if we're in dev mode... #}
+	{% if craft.config.devMode %}
+		{# If so, provide concatonated, header CSS/JS files #}
+		<link rel="stylesheet" href="/_ui/compiled/main.css" type="text/css" media="all">
+		<script src="/_ui/compiled/header-scripts.js"></script>
+	{% else %}
+		{# If not, provide concatonated, minified/uglified header CSS/JS files #}
+		<link rel="stylesheet" href="/_ui/dist/main.min.css" type="text/css" media="all">
+		<script src="/_ui/dist/header-scripts.min.js"></script>
+	{% endif %}
 </head>
 
-<body>
+<body class="">
 	<div id="container">
-		<header id="header">
-			<h1><a href="{{ siteUrl }}">{{ siteName }}</a></h1>
-
-			<nav>
-				<ul>
-					<li><a href="{{ url('news') }}" {% if craft.request.firstSegment == 'news' %}class="active"{% endif %}>News</a></li>
-				</ul>
-			</nav>
+		<header>
+			<h1>Bridge Partners Consulting</h1>
 		</header>
 
 		<main id="content" role="main">
@@ -65,9 +72,19 @@
 			{% endblock %}
 		</main>
 
-		<footer id="footer">
-			Copyright {{ now.year }} {{ craft.request.serverName | ucfirst }}. All rights reserved  •  Built with <a href="http://craftcms.com">Craft</a>
-		</footer>
-	</div>
+	</div><!-- /#container -->
+
+	<footer>
+		<small>&copy; 2016 Bridge Partners</small>
+	</footer>
+
+	{# Test to see if we're in dev mode... #}
+	{% if craft.config.devMode %}
+		{# If so, provide concatonated, header CSS/JS files #}
+		<script src="/_ui/compiled/footer-scripts.js"></script>
+	{% else %}
+		{# If not, provide concatonated, minified/uglified header CSS/JS files #}
+		<script src="/_ui/dist/footer-scripts.min.js"></script>
+	{% endif %}
 </body>
 </html>
