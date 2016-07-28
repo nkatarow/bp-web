@@ -18,10 +18,6 @@ $customDbConfig = array(
 		'database' => 'bridgedbnew',
 		'user' => 'bpone',
 		'password' => 'bc?yJXM++3p*vRwa',
-		// 'server' => 'localhost',
-		// 'database' => 'bridge',
-		// 'user' => 'root',
-		// 'password' => 'root',
 		'environmentVariables' => array(
 			'basePath' => '/Users/nick/Sites/bridge-partners/public/',
 			'baseUrl' => 'http://bridge.dev/'
@@ -34,7 +30,7 @@ $customDbConfig = array(
 		'user' => 'bpone',
 		'password' => 'bc?yJXM++3p*vRwa',
 		'environmentVariables' => array(
-			'basePath' => '?',
+			'basePath' => '/home/ethkal1/staging.bridgepartnersconsulting.com/public/',
 			'baseUrl' => 'http://staging.bridgepartnersconsulting.com/'
 		)
   	),
@@ -45,7 +41,7 @@ $customDbConfig = array(
 		'user' => 'eathomeg_newsite',
 		'password' => 'Z5GLBrvB6d8U',
 		'environmentVariables' => array(
-			'basePath' => '?',
+			'basePath' => '/home/ethkal1/bridgepartnersconsulting.com/public/',
 			'baseUrl' => 'http://bridgepartnersconsulting.com/'
 		)
   	)
