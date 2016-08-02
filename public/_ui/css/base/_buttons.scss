@@ -8,35 +8,12 @@ button {
 }
 
 .btn {
-    background-color: $black;
-    border: 0;
-    color: $white;
-    cursor: pointer;
-    display: inline-block;
-    line-height: 1;
-    padding: 1em;
-    text-align: center;
+	@extend .caps;
+	border: 2px solid $neon-green;
+	padding: $space $space-double;
 
-    &:hover,
-    &:focus {
-        background-color: pink;
-    }
-
-    &.alt {
-        background-color: $off-black;
-
-        &:hover,
-        &:focus {
-            background-color: yellow;
-        }
-    }
-
-    &.disabled {
-        background-color: $gray;
-
-        &:hover,
-        &:focus {
-            color: $white;
-        }
-    }
+	&:hover,
+	&:focus {
+		
+	}
 }

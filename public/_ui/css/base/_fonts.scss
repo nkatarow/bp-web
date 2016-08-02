@@ -1,3 +1,53 @@
 /* ==========================================================================
    BASE/_FONTS.SCSS
    ========================================================================== */
+
+// Icons
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?snnb6x');
+  src:  url('../fonts/icomoon.eot?snnb6x#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?snnb6x') format('truetype'),
+    url('../fonts/icomoon.woff?snnb6x') format('woff'),
+    url('../fonts/icomoon.svg?snnb6x#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    @include icon();
+}
+
+.icon-download:before {
+  content: "\e90a";
+}
+.icon-arrow-left:before {
+  content: "\e900";
+}
+.icon-arrow-right:before {
+  content: "\e901";
+}
+.icon-chevron-left:before {
+  content: "\e902";
+}
+.icon-chevron-right:before {
+  content: "\e903";
+}
+.icon-circle-arrow:before {
+  content: "\e904";
+}
+.icon-glassdoor:before {
+  content: "\e905";
+}
+.icon-linkedin:before {
+  content: "\e906";
+}
+.icon-magnifying-glass:before {
+  content: "\e907";
+}
+.icon-twitter:before {
+  content: "\e908";
+}
+.icon-x:before {
+  content: "\e909";
+}

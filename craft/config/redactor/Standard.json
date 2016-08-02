@@ -27,7 +27,15 @@
         "caps": {
             title: 'All Caps',
             args: ['p', 'class', 'caps', 'add']
-        }
+        },
+        "arrow-link": {
+            title: 'Arrow Link',
+            args: ['p', 'class', 'arrow-link', 'add']
+        },
+		"water": {
+			title: 'Color: Water',
+            args: ['p', 'class', 'water', 'add']
+		}
     }
 
 }

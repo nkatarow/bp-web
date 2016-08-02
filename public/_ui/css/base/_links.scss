@@ -11,4 +11,45 @@ a {
     &:hover, &:focus {
         color: $gray;
     }
+
+	&.arrow-link {
+		color: $neon-green;
+		position: relative;
+
+		&:after {
+			@include icon();
+			content: "\e901";
+			font-size: 0.8em;
+			position: absolute;
+			top: 4px;
+			transition: right 250ms linear;
+			right: -$space-and-half;
+		}
+
+		&:hover,
+		&:focus {
+
+			&:after,
+			&:after {
+				right: -$space-double;
+			}
+		}
+	}
+}
+
+// Redactor WYSIWYG
+p.arrow-link a {
+	color: $neon-green;
+
+	&:after {
+		@include icon();
+		content: "\e901";
+		margin-left: $space;
+		transition: margin-left 250ms linear;
+	}
+
+	&:hover:after,
+	&:focus:after {
+		margin-left: $space-and-half;
+	}
 }
