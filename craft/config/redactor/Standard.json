@@ -1,4 +1,33 @@
 {
-	"buttons": ["format","bold","italic","lists","link","file","horizontalrule"],
-	"plugins": ["source","fullscreen"]
+    "buttons": ["format","bold","lists","link","file","image"],
+    "plugins":["source","fullscreen"],
+    "toolbarFixed": true,
+    "formatting": ["p"],
+    "formattingAdd": {
+        "header": {
+            title: 'Header',
+            args: ['p', 'class', 'head', 'add']
+        },
+        "subhead": {
+            title: 'Subhead',
+            args: ['p', 'class', 'subhead', 'add']
+        },
+        "large-bc": {
+            title: 'Large Body Copy',
+            args: ['p', 'class', 'large-bc', 'add']
+        },
+        "large-bc-med": {
+            title: 'Large Body Copy Medium',
+            args: ['p', 'class', 'large-bc-med', 'add']
+        },
+        "med": {
+            title: 'Normal Text Medium',
+            args: ['p', 'class', 'med', 'add']
+        },
+        "caps": {
+            title: 'All Caps',
+            args: ['p', 'class', 'caps', 'add']
+        }
+    }
+
 }

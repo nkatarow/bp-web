@@ -2,48 +2,70 @@
    BASE/_TYPOGRAPHY.SCSS
    ========================================================================== */
 
+/*
+	TYPEKIT WEIGHTS
+	Light - 300
+	Regular - 400
+	Medium - 500
+	Bold - 700
+*/
+
 body {
     font-family: "proxima-nova", sans-serif;
     font-size: 62.5%;
 	color: $off-black;
 }
 
-// Headings
-h1, .h1   {
-    line-height: 1.2;
-}
-
-h2, .h2    {
-    line-height: 1.2;
-}
-
-h3, .h3   {
-    line-height: 1.2;
-}
-
-h4, .h4   {
-
-}
-
-h5, .h5 {
-
-}
-
-h6, .h6    {
-
-}
-
-
-// Subheadings
-.subheading {
-    font-weight: normal;
-}
-
-
-// Paragraphs
+// Copy Types
 p {
+	font-size: 1.4em;
+	line-height: 1.5em;
     margin-bottom: $space;
 }
+
+.med { font-weight: 500; }
+
+.head {
+	font-size: 3.2em;
+	font-weight: 300;
+	line-height: 1em;
+}
+
+.subhead {
+	font-size: 2.1em;
+	font-weight: 400;
+	line-height: 1em;
+}
+
+.large-bc {
+	font-size: 1.8em;
+	font-weight: 300;
+	line-height: 1.333333em;
+}
+
+.large-bc-med {
+	font-size: 1.8em;
+	font-weight: 500;
+	line-height: 1.333333em;
+}
+
+.caps {
+	font-size: 1.3em;
+	font-weight: 700;
+	line-height: 2.77em;
+	text-transform: uppercase;
+}
+
+// Colors
+.water { color: $water; }
+
+
+@media screen and (min-width: $bp-large) {
+	.head { font-size: 4.8em; }
+	.subhead { font-size: 2.8em; }
+}
+
+
 
 
 // Blockquote
