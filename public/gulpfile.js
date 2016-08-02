@@ -9,6 +9,7 @@ var gulp = require ('gulp'),
 		merge = require('merge-stream'),
 		del = require('del'),
 		plumber = require('gulp-plumber');
+		livereload = require('gulp-livereload');
 
 function onError(err) {
 	console.log(err);
@@ -21,7 +22,8 @@ gulp.task('styles', function(){
 		.pipe(sourcemaps.write())
 		.pipe(autoprefixer({browsers: ['last 2 version', 'safari 5', 'ie 9', 'ios 6', 'android 4', '> 1%']}))
 		.pipe(gulp.dest('_ui/compiled'))
-		.pipe(plumber({errorHandler: onError}));
+		.pipe(plumber({errorHandler: onError}))
+		.pipe(livereload());
 });
 
 // Concat JS
@@ -81,6 +83,8 @@ gulp.task('default', ['cleancompiled'], function(){
 
 // Watch task
 gulp.task('watch', function(){
+	livereload.listen();
+
 	gulp.watch('_ui/css/**/*.scss', ['styles']);
 	gulp.watch('_ui/js/**/*.js', ['scripts']);
 });

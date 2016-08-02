@@ -1,0 +1,8 @@
+{% for block in entry.coreModules %}
+	{% switch block.type %}
+
+		{% case 'introduction'  %}
+			{{ block.introCopy }}
+
+	{% endswitch %}
+{% endfor %}

@@ -3,8 +3,9 @@
    ========================================================================== */
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: "proxima-nova", sans-serif;
     font-size: 62.5%;
+	color: $off-black;
 }
 
 // Headings
@@ -50,7 +51,7 @@ blockquote {
     font-style:italic;
     border-left: 1px solid $gray;
     color: $gray;
-    padding-left: $pad;
+    padding-left: $space;
     margin-bottom: $space;
 }
 

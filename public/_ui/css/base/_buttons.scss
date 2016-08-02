@@ -23,8 +23,8 @@ button {
     }
 
     &.alt {
-        background-color: $gray-dark;
-    
+        background-color: $off-black;
+
         &:hover,
         &:focus {
             background-color: yellow;
@@ -33,7 +33,7 @@ button {
 
     &.disabled {
         background-color: $gray;
-    
+
         &:hover,
         &:focus {
             color: $white;

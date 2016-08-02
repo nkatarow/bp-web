@@ -5,20 +5,20 @@
 //Colors
 $black: #000;
 $white: #fff;
-$gray: #808080;
-$gray-dark : #333;
-
-$error: #f00;
-$valid: #089e00;
-
-
-//Typography
+$neon-green: #91EF00;
+$violet: #5317E5;
+$deep-violet: #0D0044;
+$sea-foam: #b4fcee;
+$deep-sea-foam: #0bddbf;
+$cloud: #BBEFFF;
+$sky: #5ECBF7;
+$water: #0086FF;
+$gray: #a7a9ac;
+$off-black: #333333;
 
 
 //Layout
-$max-width: 72em;
-// $offset-left-1: 4.5em;
-// $l-sidebar-width: 19.75em;
+$max-width: 1182px;
 
 
 //Defaults
@@ -29,11 +29,6 @@ $space-triple: $space*3;
 $space-quad: $space*4;
 $space-half: $space/2;
 $space-quarter: $space/4;
-$pad: 1em;
-$pad-and-half: $pad*1.5;
-$pad-double: $pad*2;
-$pad-half: $pad/2;
-$pad-quarter :$pad/4;
 
 
 //Breakpoints

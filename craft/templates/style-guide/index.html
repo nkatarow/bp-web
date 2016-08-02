@@ -1,0 +1,28 @@
+{% if entry is not defined %}
+    {% set entry = craft.entries.section('styleGuide').first() %}
+{% endif %}
+{% extends "_layout" %}
+
+{% block content %}
+	<h1 class="title-ribbon style-guide">Style Guide</h1>
+
+	<section class="">
+		<nav class="subnav">
+			subnav
+		</nav>
+
+		<div class="">
+			<h2>{{ entry.title }}</h2>
+		</div>
+	</section>
+
+	{% if entry.type == 'commonElements' %}
+		<section class="">
+			{{ entry.body }}
+		</section>
+	{% endif %}
+
+	{% if entry.type == 'coreModulesOnly' %}
+		{% include '/components/core-modules.html' %}
+	{% endif %}
+{% endblock %}
