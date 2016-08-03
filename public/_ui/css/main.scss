@@ -23,6 +23,7 @@
 @import "base/grid";
 @import "base/fonts";
 @import "base/forms";
+@import "base/layout";
 @import "base/buttons";
 @import "base/utility";
 @import "base/typography";
@@ -30,4 +31,5 @@
 
 // Components
 @import "components/hamburger";
-@import "components/mobile-nav"
+@import "components/mobile-nav";
+@import "components/footer";

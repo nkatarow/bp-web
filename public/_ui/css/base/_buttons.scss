@@ -5,6 +5,11 @@
 // Reset button font size to match default
 button {
     font-size: 1em;
+
+	&:hover,
+	&:focus {
+		outline: 0;
+	}
 }
 
 .btn {
@@ -23,6 +28,7 @@ button {
 		background-color: $neon-green;
 		color: $white;
 		cursor: pointer;
+		outline: 0;
 	}
 
 	&.alt {

@@ -1,0 +1,50 @@
+/* ==========================================================================
+   COMPONENTS/_FOOTER.SCSS
+   ========================================================================== */
+
+footer {
+	background-color: $black;
+	color: $white;
+	height: 260px;
+	text-align: center;
+
+	.block-link {
+		border-bottom: 1px solid $off-black;
+		display: block;
+		margin-bottom: 0;
+		padding: $space-and-half;
+
+		img {
+			margin: 0 $space-half -13px 0;
+			width: 20px;
+		}
+	}
+
+	a {
+		color: $white;
+
+		&:hover,
+		&:focus {
+			color: $neon-green;
+		}
+	}
+
+	#social {
+		@include clearfix();
+		border-bottom: 1px solid $off-black;
+		font-size: 3em;
+		line-height: 0.5em;
+		padding: $space-half 0;
+
+		ul {
+			display: inline-block;
+
+			li {
+				float: left;
+				margin-right: $space-half;
+
+				&:last-child { margin-right: 0; }
+			}
+		}
+	}
+}
