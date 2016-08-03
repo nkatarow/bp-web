@@ -1,0 +1,15 @@
+{% set image = block.image.first() %}
+<style>
+	#cta-{{ loop.index }} { background-image: url({{ image.getUrl('fullWidthMobile') }}); }
+
+	@media screen and (min-width: 800px) {
+		#cta-{{ loop.index }} { background-image: url({{ image.url }}); }
+	}
+</style>
+
+<section id="cta-{{ loop.index }}" class="cta">
+	<h2 class="caps">{{ block.smallHeader }}</h2>
+	<h3 class="head">{{ block.largeHeader }}</h3>
+
+	<a href="{{ block.linkUrl }}" class="btn alt">{{ block.linkText }} <span class="icon-{{ block.buttonType }}"></span></a>
+</section>

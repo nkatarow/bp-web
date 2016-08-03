@@ -1,0 +1,29 @@
+/* ==========================================================================
+   COMPONENTS/_CTA.SCSS
+   ========================================================================== */
+
+.cta {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	color: $white;
+	display: block;
+	margin-top: -1px;
+	padding: $mobile-buffer;
+	position: relative;
+	text-align: center;
+	width: 100%;
+	z-index: 2;
+
+	.head {
+		margin: $space-and-half 0 $space;
+	}
+}
+
+@media screen and (min-width: $bp-med) {
+	.cta {
+		padding: $space*8 0 $space*12;
+
+		.head { margin: $space-double 0 $space-and-half; }
+	}
+}

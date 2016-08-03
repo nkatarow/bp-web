@@ -36,6 +36,14 @@ header {
 	}
 }
 
+.style-guide header  {
+	#logo .big-p, #logo .letter { fill: $white; }
+
+	.hamburger-inner,
+	.hamburger-inner:before,
+	.hamburger-inner:after { background-color: $white; }
+}
+
 .insights-trigger { display: none; }
 
 .menu {

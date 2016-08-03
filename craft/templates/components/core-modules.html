@@ -2,23 +2,11 @@
 	{% switch block.type %}
 
 		{% case 'introduction'  %}
-			<section class="intro container">
-
-				<div class="left">
-					<h1 class="head water">{{ block.introTitle }}</h1>
-				</div>
-
-				<div class="right">
-					{{ block.introCopy }}
-				</div>
-			</section>
+			{% include '/components/_introduction.html' %}
 
 		{% case 'largeCallToAction' %}
-			<section class="">
-				<h2 class="caps">{{ block.smallHeader }}</h2>
-				<h3 class="head">{{ block.largeHeader }}</h3>
+			{% include '/components/_large-cta.html' %}
 
-				<a href="{{ block.linkUrl }}" class="btn">{{ block.linkText }}</a>
-			</section>
+
 	{% endswitch %}
 {% endfor %}

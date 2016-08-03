@@ -62,7 +62,7 @@
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>
 
-<body class="">
+<body class="{{ craft.request.getSegment(1) }} {{ craft.request.getSegment(2) }}">
 	<div id="container">
 		<header>
 			<a href="/" id="logo">

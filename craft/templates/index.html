@@ -20,14 +20,24 @@
 {% extends "_layout" %}
 
 {% block content %}
-	<h1>{{ entry.title }}</h1>
+	{% for block in entry.hero %}
+		{% set image = block.image.first() %}
+		<style>
+			.hero { background-image: url({{ image.getUrl('fullWidthMobile') }}); }
 
-	{{ entry.body }}
+			@media screen and (min-width: 800px) {
+				.hero { background-image: url({{ image.url }}); }
+			}
+		</style>
 
-	<h2>Recent News</h2>
-	<ul>
-		{% for entry in craft.entries.section('news').limit(5).find() %}
-			<li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
-		{% endfor %}
-	</ul>
+		<section class="hero">
+			<div class="associated-content">
+
+				<div class="copy container">
+					<h2 class="head">{{ block.heroHeadline|nl2br }}</h2>
+					<a href="{{ block.heroLinkUrl }}" class="btn alt">{{ block.heroLinkTitle }} <span class="icon-arrow-right"></span></a>
+				</div>
+			</div>
+		</section>
+	{% endfor %}
 {% endblock %}

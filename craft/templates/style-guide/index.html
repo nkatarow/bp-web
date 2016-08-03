@@ -4,24 +4,26 @@
 {% extends "_layout" %}
 
 {% block content %}
-	{% set image = entry.image.first() %}
-	<style>
-		.hero { background-image: url({{ image.getUrl('fullWidthMobile') }}); }
+	{% for block in entry.hero %}
+		{% set image = block.image.first() %}
+		<style>
+			.hero { background-image: url({{ image.getUrl('fullWidthMobile') }}); }
 
-		@media screen and (min-width: 800px) {
-			.hero { background-image: url({{ image.url }}); }
-		}
-	</style>
+			@media screen and (min-width: 800px) {
+				.hero { background-image: url({{ image.url }}); }
+			}
+		</style>
 
-	<section class="hero">
-		<div class="associated-content">
+		<section class="hero">
+			<div class="associated-content">
 
-			<div class="copy container">
-				<h2>{{ entry.heroHeadline }}</h2>
-				<a href="{{ entry.heroLinkUrl }}" class="btn alt">{{ entry.heroLinkTitle }}</a>
+				<div class="copy container">
+					<h2 class="head">{{ block.heroHeadline|nl2br }}</h2>
+					<a href="{{ block.heroLinkUrl }}" class="btn alt">{{ block.heroLinkTitle }} <span class="icon-arrow-right"></span></a>
+				</div>
 			</div>
-		</div>
-	</section>
+		</section>
+	{% endfor %}
 
 	{% include '/components/core-modules.html' %}
 

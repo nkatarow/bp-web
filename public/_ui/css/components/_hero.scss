@@ -1,0 +1,41 @@
+/* ==========================================================================
+   COMPONENTS/_HERO.SCSS
+   ========================================================================== */
+
+.hero {
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: 50% 0;
+	background-size: cover;
+	height: 100vh;
+	margin-top: -75px;
+	width: 100vw;
+
+	.associated-content {
+		position: absolute;
+		bottom: 15%;
+		width: 100%;
+
+		.copy {
+			h2 {
+				color: $white;
+				margin-bottom: $space-half;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: $bp-large) {
+	.hero {
+		.associated-content {
+
+			.copy {
+				clear: both;
+				margin: 0 auto $desktop-buffer;
+				max-width: $max-width;
+
+				h2 { max-width: 500px; }
+			}
+		}
+	}
+}
