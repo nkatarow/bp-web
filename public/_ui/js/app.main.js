@@ -10,11 +10,73 @@
     TO DO:
 
 */
-var APP = window.APP || {};
+var BP = window.BP || {};
 
 $(document).ready(function(){
-    APP.init();
+    BP.init();
 });
 
-APP.init = function() {
+window.BP = {
+	init: function() {
+		var self = this,
+			ua = window.navigator.userAgent,
+			msie = ua.indexOf("MSIE ");
+
+		// Since new IE versions don't even accept conditional comment, we have to sniff if it's IE via JS
+		if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+			$('body').append('<link rel="stylesheet" href="/_ui/css/IE.css" media="all">');
+            $('html').addClass('ie');
+        }
+
+        self.events.parent = this;
+
+        // Init Components
+        self.nav.init();
+
+
+	},
+    events: {
+        windowResize: function (event) {
+            var self = this.parent,
+                i,
+                ii;
+
+            if (event.width >= 1056 && self.nav.isMobile) {
+                self.nav.mobileOff();
+            } else if (event.width < 1056 && !self.nav.isMobile) {
+                self.nav.mobileOn();
+            }
+        }
+    },
+    getMediaWidth: function () {
+        var self = this,
+            width;
+
+        if (typeof matchMedia !== 'undefined') {
+            width = self.bruteForceMediaWidth();
+        } else {
+            width = window.innerWidth || document.documentElement.clientWidth;
+        }
+
+        return width;
+    },
+    bruteForceMediaWidth: function () {
+        var i = 0,
+            found = false;
+
+        while (!found) {
+            if (matchMedia('(width: ' + i + 'px)').matches) {
+                found = true;
+            } else {
+                i++;
+            }
+
+            // Prevent infinite loop if something goes horribly wrong
+            if (i === 9999) {
+                break;
+            }
+        }
+
+        return i;
+    }
 };

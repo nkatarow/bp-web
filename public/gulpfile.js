@@ -36,7 +36,8 @@ gulp.task('scripts', function(){
 	var footer = gulp.src(['_ui/js/app.main.js', '_ui/js/footer-scripts/*.js', '_ui/js/components/*.js'])
 		.pipe(concat('footer-scripts.js'))
 		.pipe(gulp.dest('_ui/compiled'))
-		.pipe(plumber({errorHandler: onError}));
+		.pipe(plumber({errorHandler: onError}))
+		.pipe(livereload());
 
 	return merge(header, footer);
 });

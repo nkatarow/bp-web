@@ -9,11 +9,28 @@ button {
 
 .btn {
 	@extend .caps;
+	background-color: transparent;
 	border: 2px solid $neon-green;
-	padding: $space $space-double;
+	color: $water;
+	display: inline-block;
+	padding: $space-quarter $space-and-half;
+	transition: background-color 250ms linear, color 250ms linear;
+
+	span { margin-left: $space-half; }
 
 	&:hover,
 	&:focus {
-		
+		background-color: $neon-green;
+		color: $white;
+		cursor: pointer;
+	}
+
+	&.alt {
+		color: $white;
+
+		&:hover,
+		&:focus {
+			color: $water;
+		}
 	}
 }
