@@ -16,7 +16,7 @@
     position: absolute;
     top: -999999px;
 }
-
+.no-mobile { display: none; }
 
 // Clearfix
 .clearfix {
@@ -40,4 +40,8 @@
     hr {
         display: none;
     }
+}
+
+@media screen and (min-width: $bp-large-2) {
+	.no-mobile { display: inline-block; }
 }

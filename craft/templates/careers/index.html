@@ -1,0 +1,8 @@
+{% if entry is not defined %}
+    {% set entry = craft.entries.section('careers').first() %}
+{% endif %}
+{% extends "_layout" %}
+
+{% block content %}
+	{% include '/components/core-modules.html' %}
+{% endblock %}

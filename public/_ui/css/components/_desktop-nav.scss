@@ -1,0 +1,67 @@
+/* ==========================================================================
+   COMPONENTS/_DESKTOP-NAV.SCSS
+   ========================================================================== */
+
+@media screen and (min-width: $bp-large-2) {
+	.homepage header,
+	.style-guide header  {
+		.menu a { color: $white; }
+	}
+
+	header {
+		#logo {
+			float: left;
+			margin: $space-and-half 0;
+			width: 10%;
+		}
+
+		.top-bar {
+			@include clearfix();
+			margin: 0 auto;
+			max-width: $max-width;
+		}
+
+		.menu {
+			background-color: transparent;
+			display: block;
+			float: left;
+			height: 80px;
+			left: auto;
+			opacity: 1;
+			position: relative;
+			top: 2.5em;
+			visibility: visible;
+			width: 90%;
+
+			a:hover,
+			a:focus {
+				color: $neon-green;
+			}
+
+			ul {
+				margin-left: $space*6;
+
+				li {
+					float: left;
+					font-size: 1.3em;
+					font-weight: 700;
+					line-height: 2.77em;
+					letter-spacing: 1px;
+					margin-right: $space-and-half;
+					text-transform: uppercase;
+
+					&.search-li,
+					&.newsletter-li {
+						float: right;
+					}
+				}
+			}
+		}
+	}
+
+	#search-form,
+	#mc_embed_signup {
+		display: none;
+	}
+
+}

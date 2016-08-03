@@ -250,7 +250,7 @@ BP.nav = {
         self.triggersInserted   = false;
 
         // SETUP
-        if (BP.getMediaWidth() < 700) {
+        if (BP.getMediaWidth() < 1056) {
             self.mobileOn();
         } else {
             self.mobileOff();
@@ -331,6 +331,8 @@ BP.nav = {
         // fn mobileOn
         var self = this;
 
+		console.log('mobileon');
+
         if (!self.triggersInserted) {
             self.elPrimaryMenu.before(self.elPrimaryTrigger);
 
@@ -356,8 +358,10 @@ BP.nav = {
     mobileOff: function () {
         // fn mobileOff
         var self = this;
+		console.log('mobileoff');
 
         self.elPrimaryMenu.removeClass('slinky-menu');
+
         if (self.triggersInserted) {
             self.elPrimaryTrigger.hide();
         }

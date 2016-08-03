@@ -3,8 +3,13 @@
    ========================================================================== */
 
 header {
+	background-color: $white;
 	border-top: 5px solid $neon-green;
-	transition: background-color 250ms linear;
+    position: fixed;
+    top: 0;
+    transition: background-color 250ms linear, top 250ms ease-in-out, opacity 150ms linear;
+    width: 100%;
+    z-index: 11;
 
 	#logo {
 		display: inline-block;
@@ -35,13 +40,19 @@ header {
 		}
 	}
 }
-
+.homepage header,
 .style-guide header  {
+	background-color: transparent;
+
 	#logo .big-p, #logo .letter { fill: $white; }
 
 	.hamburger-inner,
 	.hamburger-inner:before,
 	.hamburger-inner:after { background-color: $white; }
+
+	&.active {
+		background-color: $black;
+	}
 }
 
 .insights-trigger { display: none; }
@@ -51,7 +62,7 @@ header {
 	height: calc(100% - 80px);
 	left: 0;
 	opacity: 0;
-	position: absolute;
+	position: fixed;
 	top: 80px;
 	transition: opacity 250ms linear;
 	visibility: hidden;
@@ -64,50 +75,52 @@ header {
 	}
 }
 
-#primary {
-	padding-left: 5%;
 
-	li {
-		margin-top: $space-and-half;
-
-		a {
-			color: $neon-green;
-			font-size: 3.2em;
-		}
-
-		ul li { margin-top: 0; }
-
-	}
-}
-
-#search-form,
-#mc_embed_signup {
-	height: calc(100vh - 100px);
-
-	input[type='search'],
-	input[type='email'],
-	input[type='text'] {
-		appearance: none;
-		border: none;
-		background-color: transparent;
-		color: $white;
-		font-size: 3.2em;
-		padding: $space 0 0;
-
-		&::placeholder {
-			color: $off-black;
-		}
-
-		&:focus { outline: 0; }
-	}
-
-	.btn {
-		bottom: $space;
-		position: absolute;
-	}
-}
 
 @media screen and (max-width: $bp-large-2) {
+	#primary {
+		padding-left: 5%;
+
+		li {
+			margin-top: $space-and-half;
+
+			a {
+				color: $neon-green;
+				font-size: 3.2em;
+			}
+
+			ul li { margin-top: 0; }
+
+		}
+	}
+
+	#search-form,
+	#mc_embed_signup {
+		height: calc(100vh - 100px);
+
+		input[type='search'],
+		input[type='email'],
+		input[type='text'] {
+			appearance: none;
+			border: none;
+			background-color: transparent;
+			color: $white;
+			font-size: 3.2em;
+			padding: $space 0 0;
+
+			&::placeholder {
+				color: $off-black;
+			}
+
+			&:focus { outline: 0; }
+		}
+
+		.btn {
+			bottom: $space;
+			position: absolute;
+		}
+	}
+
 	.slinky-menu {
 		overflow: hidden;
 		transform: translateZ(0);
