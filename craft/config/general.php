@@ -38,7 +38,7 @@ $customConfig = array(
         'devMode' => true,
 		'maxInvalidLogins' => 3,
         'environmentVariables' => array(
-            'basePath' => '?',
+            'basePath' => '/ethkal1/staging.bridgepartnersconsulting.com/public/',
             'baseUrl'  => 'http://staging.bridgepartnersconsulting.com/',
             'siteUrl'  => 'http://staging.bridgepartnersconsulting.com',
         )
@@ -48,7 +48,7 @@ $customConfig = array(
         'devMode' => false,
 		'maxInvalidLogins' => 3,
         'environmentVariables' => array(
-            'basePath' => '?',
+            'basePath' => '/ethkal1/bridgepartnersconsulting.com/public/',
             'baseUrl'  => 'http://bridgepartnersconsulting.com/',
             'siteUrl'  => 'http://bridgepartnersconsulting.com',
         )
