@@ -13,5 +13,12 @@
 				</div>
 			</section>
 
+		{% case 'largeCallToAction' %}
+			<section class="">
+				<h2 class="caps">{{ block.smallHeader }}</h2>
+				<h3 class="head">{{ block.largeHeader }}</h3>
+
+				<a href="{{ block.linkUrl }}" class="btn">{{ block.linkText }}</a>
+			</section>
 	{% endswitch %}
 {% endfor %}
