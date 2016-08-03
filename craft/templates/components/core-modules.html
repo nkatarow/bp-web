@@ -2,7 +2,16 @@
 	{% switch block.type %}
 
 		{% case 'introduction'  %}
-			{{ block.introCopy }}
+			<section class="intro container">
+
+				<div class="left">
+					<h1 class="head water">{{ block.introTitle }}</h1>
+				</div>
+
+				<div class="right">
+					{{ block.introCopy }}
+				</div>
+			</section>
 
 	{% endswitch %}
 {% endfor %}

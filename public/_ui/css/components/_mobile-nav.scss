@@ -8,7 +8,7 @@ header {
 
 	#logo {
 		display: inline-block;
-		margin: $space-and-half;
+		margin: $space-and-half 5%;
 		width: 80px;
 
 		.big-b {
@@ -57,7 +57,7 @@ header {
 }
 
 #primary {
-	padding-left: $space-and-half;
+	padding-left: 5%;
 
 	li {
 		margin-top: $space-and-half;

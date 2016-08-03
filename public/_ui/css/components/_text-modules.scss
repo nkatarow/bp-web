@@ -1,0 +1,23 @@
+/* ==========================================================================
+   COMPONENTS/_TEXT-MODULES.SCSS
+   ========================================================================== */
+
+.intro {
+	margin-top: $mobile-buffer;
+	
+	.left {margin-bottom: $space-double; }
+}
+
+@media screen and (min-width: $bp-large) {
+	.intro {
+		.left {
+			@include column(6);
+			margin-bottom: 0;
+		}
+
+		.right {
+			@include column(6);
+			@include push(6);
+		}
+	}
+}

@@ -4,28 +4,31 @@
 {% extends "_layout" %}
 
 {% block content %}
-	<h1 class="title-ribbon style-guide">Style Guide</h1>
+	{% set image = entry.image.first() %}
+	<style>
+		.hero { background-image: url({{ image.getUrl('fullWidthMobile') }}); }
 
-	<section class="">
-		<nav class="subnav">
-			subnav
-		</nav>
+		@media screen and (min-width: 800px) {
+			.hero { background-image: url({{ image.url }}); }
+		}
+	</style>
 
-		<div class="">
-			<h2>{{ entry.title }}</h2>
+	<section class="hero">
+		<div class="associated-content">
+
+			<div class="copy container">
+				<h2>{{ entry.heroHeadline }}</h2>
+				<a href="{{ entry.heroLinkUrl }}" class="btn alt">{{ entry.heroLinkTitle }}</a>
+			</div>
 		</div>
 	</section>
 
-	{% if entry.type == 'commonElements' %}
-		<section class="">
-			{{ entry.body }}
+	{% include '/components/core-modules.html' %}
 
-			<a href="#" class="btn">Button <span class="icon-arrow-right"></span></a>
-			<a href="#" class="btn alt">Alt Button <span class="icon-download"></span></a>
-		</section>
-	{% endif %}
+	<section>
+		<h2>misc</h2>
 
-	{% if entry.type == 'coreModulesOnly' %}
-		{% include '/components/core-modules.html' %}
-	{% endif %}
+		<a href="#" class="btn">Button <span class="icon-arrow-right"></span></a>
+		<a href="#" class="btn alt">Alt Button <span class="icon-download"></span></a>
+	</section>
 {% endblock %}
