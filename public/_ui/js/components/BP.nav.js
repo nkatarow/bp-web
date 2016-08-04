@@ -14,6 +14,7 @@ BP.nav = {
     init: function () {
         // fn init
         var self = this,
+			prev = 0,
             key;
 
         // ELEMENTS
@@ -33,6 +34,24 @@ BP.nav = {
         } else {
             self.mobileOff();
         }
+
+		if ($('.hero').length) {
+			$('#header').addClass('transparent');
+
+			$(window).on('scroll', function(){
+				if (!self.checkVisible($('.hero'))) {
+					$('#header').removeClass('transparent');
+				} else {
+					$('#header').addClass('transparent');
+				}
+			});
+		}
+
+		$(window).on('scroll', function(){
+			var scrollTop = $(window).scrollTop();
+			$('#header').toggleClass('hidden', scrollTop > prev);
+			prev = scrollTop;
+		});
 
         // $('.search-btn').click(function(event){
         // 	event.preventDefault();
@@ -168,5 +187,16 @@ BP.nav = {
         self.menus[menu].$menu.addClass('active');
         self.menus[menu].$trigger.addClass('is-active');
         self.visibleMenu = menu;
+    },
+    checkVisible: function( elm, evalType ) {
+        evalType = evalType || "visible";
+
+        var vpH = $(window).height(), // Viewport Height
+            st = $(window).scrollTop(), // Scroll Top
+            y = $(elm).offset().top - 80,
+            elementHeight = $(elm).height();
+
+        if (evalType === "visible") return ((y < (vpH + st)) && (y > (st - elementHeight)));
+        if (evalType === "above") return ((y < (vpH + st)));
     }
 };

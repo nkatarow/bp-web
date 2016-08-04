@@ -3,16 +3,15 @@
    ========================================================================== */
 
 @media screen and (min-width: $bp-large-2) {
-	.homepage header,
-	.style-guide header  {
-		.menu a { color: $white; }
-	}
-
 	header {
 		#logo {
 			float: left;
 			margin: $space-and-half 0;
 			width: 10%;
+		}
+
+		&.transparent {
+			.menu a { color: $white; }
 		}
 
 		.top-bar {

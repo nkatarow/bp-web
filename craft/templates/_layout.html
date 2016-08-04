@@ -64,7 +64,7 @@
 
 <body class="{{ craft.request.getSegment(1) }} {{ craft.request.getSegment(2) }} {% if craft.request.getSegment(1) == '' %} homepage{% endif%}">
 	<div id="container">
-		<header>
+		<header id="header">
 			<div class="top-bar">
 
 				<a href="/" id="logo">
@@ -101,7 +101,7 @@
 						<li><a href="/about">About</a></li>
 						<li><a href="/careers">Careers</a></li>
 						<li class="search-li">
-							<a href="#" class="search-btn"><span class="icon-magnifying-glass no-mobile"> Search</span></a>
+							<a href="#" class="search-btn"><span class="icon-magnifying-glass no-mobile"></span> Search</a>
 							<ul id="search-form">
 								<li>
 									<form action="{{ url('search/results') }}">

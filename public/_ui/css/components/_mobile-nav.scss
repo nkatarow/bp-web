@@ -5,11 +5,35 @@
 header {
 	background-color: $white;
 	border-top: 5px solid $neon-green;
-    position: fixed;
-    top: 0;
-    transition: background-color 250ms linear, top 250ms ease-in-out, opacity 150ms linear;
+    // position: fixed;
+    // top: 0;
+    // transition: background-color 250ms linear, top 250ms ease-in-out, opacity 150ms linear;
     width: 100%;
     z-index: 11;
+
+	position: fixed;
+	right: 0px;
+	top: 0px;
+	left: 0px;
+	transition: transform 1s cubic-bezier(0.86, 0, 0.07, 1), background-color 250ms linear, opacity 150ms linear;
+
+	&.hidden {
+		transform: translateY(-100%);
+	}
+
+	&.transparent {
+		background-color: transparent;
+
+		#logo .big-p, #logo .letter { fill: $white; }
+
+		.hamburger-inner,
+		.hamburger-inner:before,
+		.hamburger-inner:after { background-color: $white; }
+
+		&.active {
+			background-color: $black;
+		}		
+	}
 
 	#logo {
 		display: inline-block;
@@ -38,20 +62,6 @@ header {
 		#logo {
 			.big-p, .letter { fill: $white; }
 		}
-	}
-}
-.homepage header,
-.style-guide header  {
-	background-color: transparent;
-
-	#logo .big-p, #logo .letter { fill: $white; }
-
-	.hamburger-inner,
-	.hamburger-inner:before,
-	.hamburger-inner:after { background-color: $white; }
-
-	&.active {
-		background-color: $black;
 	}
 }
 
