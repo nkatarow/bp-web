@@ -9,7 +9,7 @@
 
 <section id="cta-{{ loop.index }}" class="cta">
 	<h2 class="caps reveal">{{ block.smallHeader }}</h2>
-	<h3 class="head reveal">{{ block.largeHeader }}</h3>
+	<h3 class="head reveal">{{ block.largeHeader|nl2br }}</h3>
 
 	<a href="{{ block.linkUrl }}" class="btn alt reveal">{{ block.linkText }} <span class="icon-{{ block.buttonType }}"></span></a>
 </section>

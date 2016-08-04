@@ -9,7 +9,7 @@
 	color: $white;
 	display: block;
 	margin-top: -1px;
-	padding: $mobile-buffer;
+	padding: $mobile-buffer 0;
 	position: relative;
 	text-align: center;
 	width: 100%;
@@ -20,10 +20,28 @@
 	}
 }
 
+.double-cta {
+	background-color: $off-black;
+	padding: $mobile-buffer 0;
+	width: 100%;
+
+	.head { margin-bottom: $space-half; }
+	.left { margin-bottom: $mobile-buffer; }
+}
+
 @media screen and (min-width: $bp-med) {
 	.cta {
 		padding: $space*8 0 $space*12;
 
 		.head { margin: $space-double 0 $space-and-half; }
+	}
+
+	.double-cta {
+		@include clearfix();
+		padding: $desktop-buffer 0;
+
+		.left, .right { @include column(6); }
+		.left { margin-bottom: 0; }
+		.right { @include push(6); }
 	}
 }
