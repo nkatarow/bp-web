@@ -143,8 +143,6 @@ BP.nav = {
         // fn mobileOn
         var self = this;
 
-		console.log('mobileon');
-
         if (!self.triggersInserted) {
             self.elPrimaryMenu.before(self.elPrimaryTrigger);
 
@@ -170,7 +168,6 @@ BP.nav = {
     mobileOff: function () {
         // fn mobileOff
         var self = this;
-		console.log('mobileoff');
 
         self.elPrimaryMenu.removeClass('slinky-menu');
 

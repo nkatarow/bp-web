@@ -33,6 +33,8 @@ window.BP = {
         // Init Components
         self.nav.init();
 
+		window.sr = ScrollReveal({ reset: true });
+		sr.reveal('.reveal');
 
 	},
     events: {
