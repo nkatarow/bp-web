@@ -8,6 +8,19 @@
 	.left {margin-bottom: $space-double; }
 }
 
+.body-copy {
+	@include container();
+	padding: $mobile-buffer 0;
+}
+
+blockquote {
+	&.cta cite {
+		display: block;
+		margin-top: $space-double;
+		font-style: normal;
+	}
+}
+
 @media screen and (min-width: $bp-large) {
 	.intro {
 		.left {
@@ -20,4 +33,18 @@
 			@include push(6);
 		}
 	}
+
+	.body-copy {
+		@include clearfix();
+		padding: $desktop-buffer 0;
+		
+		.reveal {
+			@include column(6);
+			@include push(4);
+		}
+	}
+	/*
+	.insights-detail .body-copy { @include push(3); }
+	// plus add dropcap first word first paragraph
+	*/
 }

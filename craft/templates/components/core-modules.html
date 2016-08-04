@@ -4,6 +4,13 @@
 		{% case 'introduction'  %}
 			{% include '/components/_introduction.html' %}
 
+		{% case 'bodyCopy' %}
+			<section class="body-copy">
+				<div class="reveal">
+					{{ block.bodyCopy }}
+				</div>
+			</section>
+
 		{% case 'largeCallToAction' %}
 			{% include '/components/_large-cta.html' %}
 
