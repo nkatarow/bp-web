@@ -4,14 +4,21 @@
 
 
 // Basic Lists
-ol {
-    margin-left: 1.5em;
-}
+ul { list-style: none; }
 
-ul {
-    list-style: none;
-}
+section {
+	ol, ul {
+		font-size: 1.4em;
+		margin: 0 0 $space $space;
 
+		ol, ul {
+			font-size: 1em;
+			margin-bottom: 0;
+		}
+	}
+
+	ul { list-style: disc; }
+}
 
 // Definition Lists
 dl {
