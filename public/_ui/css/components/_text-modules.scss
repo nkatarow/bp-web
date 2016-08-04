@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .intro {
-	margin: $mobile-buffer auto;
+	padding: $mobile-buffer auto;
 
 	.left {margin-bottom: $space-double; }
 }
@@ -19,10 +19,21 @@ blockquote {
 		margin-top: $space-double;
 		font-style: normal;
 	}
+
+	&.basic {
+		border-bottom: 1px solid $water;
+		border-top: 1px solid $water;
+		padding: $mobile-buffer 0;
+		text-align: center;
+
+		p { margin-bottom: 0; }
+	}
 }
 
 @media screen and (min-width: $bp-large) {
 	.intro {
+		padding: $desktop-buffer 0;
+
 		.left {
 			@include column(6);
 			margin-bottom: 0;
@@ -37,7 +48,7 @@ blockquote {
 	.body-copy {
 		@include clearfix();
 		padding: $desktop-buffer 0;
-		
+
 		.reveal {
 			@include column(6);
 			@include push(4);
@@ -47,4 +58,16 @@ blockquote {
 	.insights-detail .body-copy { @include push(3); }
 	// plus add dropcap first word first paragraph
 	*/
+
+	blockquote {
+		&.basic {
+			@include clearfix();
+
+			p {
+				@include column(10);
+				@include push(1);
+			}
+		}
+	}
+
 }

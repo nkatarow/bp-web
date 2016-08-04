@@ -5,11 +5,7 @@
 			{% include '/components/_introduction.html' %}
 
 		{% case 'bodyCopy' %}
-			<section class="body-copy">
-				<div class="reveal">
-					{{ block.bodyCopy }}
-				</div>
-			</section>
+			{% include '/components/_body-copy.html' %}
 
 		{% case 'largeCallToAction' %}
 			{% include '/components/_large-cta.html' %}
@@ -19,6 +15,10 @@
 
 		{% case 'imageBlockquote' %}
 			{% include '/components/_image-blockquote.html' %}
+
+		{% case 'basicBlockquote'%}
+			{% include '/components/_basic-blockquote.html' %}
+
 
 	{% endswitch %}
 {% endfor %}

@@ -35,7 +35,12 @@
 		"water": {
 			title: 'Color: Water',
             args: ['p', 'class', 'water', 'add']
+		},
+		"gray": {
+			title: 'Color: Gray',
+            args: ['p', 'class', 'gray', 'add']
 		}
+
     }
 
 }
