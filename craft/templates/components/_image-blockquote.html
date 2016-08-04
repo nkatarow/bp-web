@@ -1,0 +1,22 @@
+{% set image = block.image.first() %}
+<style>
+	#quote-{{ loop.index }} { background-image: url({{ image.getUrl('fullWidthMobile') }}); }
+
+	@media screen and (min-width: 800px) {
+		#quote-{{ loop.index }} { background-image: url({{ image.url }}); }
+	}
+</style>
+
+<blockquote id="quote-{{ loop.index }}" class="cta">
+	<div class="container">
+		{% if block.smallHeader|length %}
+			<h2 class="caps reveal">{{ block.smallHeader }}</h2>
+		{% endif %}
+
+		<p class="head reveal">{{ block.quote }}</p>
+
+		{% if block.cite|length %}
+			<cite class="subhead reveal">{{ block.cite|nl2br }}</cite>
+		{% endif %}
+	</div>
+</blockquote>

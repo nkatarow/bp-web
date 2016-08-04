@@ -71,11 +71,11 @@ p {
 
 // Blockquote
 blockquote {
-    font-style:italic;
-    border-left: 1px solid $gray;
-    color: $gray;
-    padding-left: $space;
-    margin-bottom: $space;
+	cite {
+		display: block;
+		margin-top: $space-double;
+		font-style: normal;
+	}
 }
 
 
