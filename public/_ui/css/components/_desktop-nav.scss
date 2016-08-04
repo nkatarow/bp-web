@@ -10,6 +10,16 @@
 			width: 10%;
 		}
 
+		&.black {
+			background-color: $black;
+
+			#logo {
+				.big-p, .letter { fill: $white; }
+			}
+
+			.menu a { color: $white; }
+		}
+
 		&.transparent {
 			.menu a { color: $white; }
 		}
@@ -60,7 +70,36 @@
 
 	#search-form,
 	#mc_embed_signup {
-		display: none;
-	}
+		background-color: $black;
+		display: block;
+		height: calc(100% - 100px);
+		left: 0;
+		margin: 0;
+		opacity: 0;
+		position: fixed;
+		top: 100px;
+		transition: opacity 250ms linear;
+		visibility: hidden;
+		width: 100%;
 
+		&.active {
+			opacity: 1;
+			visibility: visible;
+		}
+
+		li {
+			float: none;
+		}
+
+		li,
+		.clear,
+		.mc-field-group {
+			margin: 0 auto;
+			max-width: $max-width;
+		}
+
+		.btn {
+			bottom: $space-double;
+		}
+	}
 }

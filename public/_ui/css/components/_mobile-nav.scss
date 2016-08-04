@@ -5,9 +5,6 @@
 header {
 	background-color: $white;
 	border-top: 5px solid $neon-green;
-    // position: fixed;
-    // top: 0;
-    // transition: background-color 250ms linear, top 250ms ease-in-out, opacity 150ms linear;
     width: 100%;
     z-index: 11;
 
@@ -32,7 +29,7 @@ header {
 
 		&.active {
 			background-color: $black;
-		}		
+		}
 	}
 
 	#logo {
@@ -85,7 +82,33 @@ header {
 	}
 }
 
+#search-form,
+#mc_embed_signup {
+	height: calc(100vh - 100px);
 
+	input[type='search'],
+	input[type='email'],
+	input[type='text'] {
+		appearance: none;
+		border: none;
+		background-color: transparent;
+		color: $white;
+		font-size: 3.2em;
+		padding: $space 0 0;
+
+		&::placeholder {
+			color: $off-black;
+		}
+
+		&:focus { outline: 0; }
+	}
+
+	.btn {
+		bottom: $space;
+		position: absolute;
+	}
+
+}
 
 @media screen and (max-width: $bp-large-2) {
 	#primary {
@@ -101,33 +124,6 @@ header {
 
 			ul li { margin-top: 0; }
 
-		}
-	}
-
-	#search-form,
-	#mc_embed_signup {
-		height: calc(100vh - 100px);
-
-		input[type='search'],
-		input[type='email'],
-		input[type='text'] {
-			appearance: none;
-			border: none;
-			background-color: transparent;
-			color: $white;
-			font-size: 3.2em;
-			padding: $space 0 0;
-
-			&::placeholder {
-				color: $off-black;
-			}
-
-			&:focus { outline: 0; }
-		}
-
-		.btn {
-			bottom: $space;
-			position: absolute;
 		}
 	}
 
