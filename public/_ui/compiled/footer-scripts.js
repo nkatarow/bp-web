@@ -280,8 +280,11 @@ BP.nav = {
         		event.preventDefault();
 
         		$('#search-form').addClass('active');
+				$('#search-form').css('visibility', 'visible');
 				$('#header').addClass('black');
 				$('body').css('overflow', 'hidden');
+				$('.newsletter-btn').addClass('hidden');
+				$('.search-btn').addClass('hidden');
 
 				setTimeout(function(){
 			        $('#q').focus();
@@ -292,6 +295,12 @@ BP.nav = {
 		        		$('#search-form').removeClass('active');
 						$('#header').removeClass('black');
 						$('body').css('overflow', 'auto');
+						$('.newsletter-btn').removeClass('hidden');
+						$('.search-btn').removeClass('hidden');
+
+						setTimeout(function(){
+							$('#search-form').css('visibility', 'hidden');
+						}, 250);
 					}
 				})
 			});
@@ -300,8 +309,11 @@ BP.nav = {
         		event.preventDefault();
 
         		$('#mc_embed_signup').addClass('active');
+				$('#mc_embed_signup').css('visibility', 'visible');
 				$('#header').addClass('black');
 				$('body').css('overflow', 'hidden');
+				$('.newsletter-btn').addClass('hidden');
+				$('.search-btn').addClass('hidden');
 
 				setTimeout(function(){
 			        $('#q').focus();
@@ -312,6 +324,12 @@ BP.nav = {
 		        		$('#mc_embed_signup').removeClass('active');
 						$('#header').removeClass('black');
 						$('body').css('overflow', 'auto');
+						$('.newsletter-btn').removeClass('hidden');
+						$('.search-btn').removeClass('hidden');
+
+						setTimeout(function(){
+							$('#mc_embed_signup').css('visibility', 'hidden');
+						}, 250);
 					}
 				})
 			});
