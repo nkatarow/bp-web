@@ -22,5 +22,10 @@ html, body {
 		margin: 0 auto;
 		max-width: $max-width;
 	}
+}
 
+@media screen and (min-width: $bp-large-2) {
+	#container {
+		min-height: calc(100vh - 100px);
+	}
 }

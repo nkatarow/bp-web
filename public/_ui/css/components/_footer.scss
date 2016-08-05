@@ -20,7 +20,8 @@ footer {
 		}
 	}
 
-	a {
+	a,
+	.arrow-link {
 		color: $white;
 
 		&:hover,
@@ -47,4 +48,53 @@ footer {
 			}
 		}
 	}
+}
+
+@media screen and (min-width: $bp-large-2) {
+	footer {
+		height: 100px;
+		text-align: left;
+
+		> div {
+			margin: 0 2%;
+			max-width: $max-width;
+			padding: $space*3.5 0;
+		}
+
+		.block-link {
+			border-bottom: 0;
+			padding: 0;
+		}
+
+		.copy {
+			@include column(4);
+			@include push(0);
+		}
+
+		.email {
+			@include column(3);
+			@include push(5);
+			padding-top: 7px;
+		}
+
+		.newsletter {
+			@include column(3);
+			@include push(8);
+			padding-top: 7px;
+		}
+
+		#social {
+			@include column(2);
+			@include push(10);
+			border-bottom: 0;
+			font-size: 2.4em;
+			padding: 5px 0 0 0;
+			text-align: right;
+		}
+
+	}
+}
+
+@media screen and (min-width: $bp-xl) {
+	footer > div { margin: 0 auto; }
 }

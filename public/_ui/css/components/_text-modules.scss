@@ -106,12 +106,14 @@ blockquote {
 
 	.arrow-list {
 		padding: $desktop-buffer 0;
-		
-		&.two-column{
+
+		&.two-column {
 			.icon-circle-arrow { font-size: 7em; }
 
 			.block {
 				@include column(6);
+
+				&:nth-last-child(2) { margin-bottom: 0; }
 
 				.copy {
 					@include column(10);
