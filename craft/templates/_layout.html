@@ -188,5 +188,18 @@
 		{# If not, provide concatonated, minified/uglified header CSS/JS files #}
 		<script src="/_ui/dist/footer-scripts.min.js"></script>
 	{% endif %}
+
+	{% if entry.coreModules|length %}
+		{% for block in entry.coreModules %}
+			{% switch block.type %}
+				{% case 'locationMap'  %}
+					<script type="text/javascript">
+					    if($('#map-canvas').length) {
+					        BP.maps.init( "{{ block.formattedAddress|raw|replace({' ': '+','\n': '+','\r': '+'}) }}" );
+					    }
+					</script>
+			{% endswitch %}
+		{% endfor %}
+	{% endif %}
 </body>
 </html>

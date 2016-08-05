@@ -1,0 +1,33 @@
+/* ==========================================================================
+   COMPONENTS/_LOCATIONS.SCSS
+   ========================================================================== */
+
+.location-map {
+	background-color: $off-black;
+	color: $white;
+
+	.right {
+		@include container;
+		padding: $desktop-buffer 0;
+
+		.head { margin-bottom: $space; }
+		.btn { margin-top: $space; }
+	}
+}
+
+
+@media screen and (min-width: $bp-large) {
+	.location-map {
+		@include clearfix();
+
+		#map-canvas {
+			@include column(6);
+		}
+
+		.right {
+			padding: $space*14 0;
+			@include column(6);
+			@include push(6);
+		}
+	}
+}

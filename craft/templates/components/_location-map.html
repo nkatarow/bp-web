@@ -1,0 +1,13 @@
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCq-kgmDgGnfsKqT8OgbuB5RERpZBZ4OqE"></script>
+
+<section class="location-map">
+	<div id="map-canvas"></div>
+	<div class="right">
+		<h2 class="head">{{ block.headline }}</h2>
+		<p class="subhead water">{{ block.formattedAddress|nl2br }}</p>
+
+		{% if block.buttonText|length %}
+			<a href="{{ block.buttonUrl }}" class="btn alt">{{ block.buttonText }} <span class="icon-{{ block.buttonType }}"></span></a>
+		{% endif %}
+	</div>
+</section>
