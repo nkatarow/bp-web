@@ -5,10 +5,18 @@
 		{% endif %}
 
 		{% for row in block.logos %}
-			<a href="{{ row.articleUrl }}" target="_blank">
-				{% set image = row.sourceLogo.first() %}
-				<img src="{{ image.url }}" alt="{{ row.sourceName }}" />
-			</a>
+			<div class="logo">
+				{% if row.logoLinkUrl|length %}
+					<a href="{{ row.logoLinkUrl }}"{% if row.linkNewWindow == "1" %} target="_blank"{% endif %}>
+				{% endif %}
+
+						{% set image = row.logo.first() %}
+						<img src="{{ image.url }}" alt="{{ row.logoTitle }}" />
+
+				{% if row.logoLinkUrl|length %}
+					</a>
+				{% endif %}
+			</div>
 		{% endfor %}
 	</div>
 </section>

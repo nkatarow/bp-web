@@ -1,43 +1,43 @@
 .logo-soup {
+	padding: $mobile-buffer 0;
+	background-color: $off-white;
 	text-align: center;
 
-	a {
-		display: block;
-		opacity: 0.2;
+	h2.head { margin-bottom: $space-and-half; }
+
+	.logo {
+		@include column(6);
+		margin-bottom: 5%;
+
+		&:nth-of-type(2n) { @include push(6); }
+		&:nth-of-type(2n + 1) { clear: left; }
+	}
+
+	img {
+		opacity: 1;
 		transition: opacity 250ms linear;
-
-		&:hover,
-		&:focus {
-			opacity: 0.8;
-		}
 	}
-}
 
-@media screen and (min-width: $bp-small-2) {
-	.logo-soup {
-		margin: 0 auto;
-		max-width: $max-width;
-
-		a {
-			float: left;
-			width: 47.5%;
-
-			&:nth-child(2n+1) { margin: 0 2.5% 0 0; clear: left;}
-			&:nth-child(2n+2) { margin: 0 0 0 2.5%; }
-		}
-	}
+	a img:hover,
+	a img:focus {
+		opacity: 0.3}
 }
 
 
 @media screen and (min-width: $bp-med) {
 	.logo-soup {
-		a {
-			width: 30%;
+		.logo {
+			@include column(3);
 
-			&:nth-child(2n+1) { clear: none; }
-			&:nth-child(3n+1) { margin: 0 2.5% 0 0; clear: left;}
-			&:nth-child(3n+2) { margin: 0 2.5%; }
-			&:nth-child(3n+3) { margin: 0 0 0 2.5%; }
+			&:nth-of-type(4n+2) { @include push(3); }
+			&:nth-of-type(2n + 1) { clear: none; }
+			&:nth-of-type(4n + 3) { @include push(6); }
+			&:nth-of-type(4n + 4) { @include push(9); }
+			&:nth-of-type(4n + 1) { clear: both; }
 		}
 	}
+}
+
+@media screen and (min-width: $bp-large) {
+	.logo-soup { padding: $desktop-buffer 0; }
 }
