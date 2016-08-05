@@ -1,4 +1,4 @@
-<section class="arrow-list two-column">
+<section class="arrow-list large">
 	<div class="container">
 		{% if block.sectionHeadline|length %}
 			<h2 class="caps">{{ block.sectionHeadline }}</h2>
@@ -10,11 +10,13 @@
 
 				<div class="copy">
 					<h3 class="subhead water">{{ row.subhead|nl2br }}</h3>
-					{{ row.supportCopy }}
+					<div class="support-copy">
+						{{ row.supportCopy }}
 
-					{% if row.buttonText|length %}
-						<a href="{{ row.buttonUrl }}" class="btn alt">{{ row.buttonText }} <span class="icon-{{ row.buttonType }}"></span></a>
-					{% endif %}
+						{% if row.buttonText|length %}
+							<a href="{{ row.buttonUrl }}" class="btn alt">{{ row.buttonText }} <span class="icon-{{ row.buttonType }}"></span></a>
+						{% endif %}
+					</div>
 				</div>
 			</div>
 		{% endfor %}
