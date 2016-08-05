@@ -1,0 +1,10 @@
+{% set image = block.image.first() %}
+<section class="full-width-image">
+	<picture>
+		<!--[if IE 9]><video style="display: none;"><![endif]-->
+			<source srcset="{{ image.url }}" media="(min-width: 800px)" />
+			<img srcset="{{ image.getUrl('fullWidthMobile') }}" alt="">
+		<!--[if IE 9]></video><![endif]-->
+		<!--[if lte IE 9]><img src="{{ image.url }}" alt=""><![endif]-->
+	</picture>
+</section>

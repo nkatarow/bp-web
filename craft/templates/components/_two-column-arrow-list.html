@@ -1,0 +1,22 @@
+<section class="two-column-arrow-list">
+	<div class="container">
+		{% if block.sectionHeadline|length %}
+			<h2 class="caps">{{ block.sectionHeadline }}</h2>
+		{% endif %}
+
+		{% for row in block.listItems %}
+			<div class="block reveal">
+				<span class="icon-circle-arrow water"></span>
+
+				<div class="copy">
+					<h3 class="subhead water">{{ row.subhead }}</h3>
+					{{ row.supportCopy }}
+
+					{% if row.buttonText|length %}
+						<a href="{{ row.buttonUrl }}" class="btn alt">{{ row.buttonText }} <span class="icon-{{ row.buttonType }}"></span></a>
+					{% endif %}
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+</section>

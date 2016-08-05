@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .intro {
-	padding: $mobile-buffer auto;
+	padding: $mobile-buffer 0;
 
 	.left {margin-bottom: $space-double; }
 }
@@ -29,6 +29,38 @@ blockquote {
 		p { margin-bottom: 0; }
 	}
 }
+
+.two-column-arrow-list {
+	background-color: $off-black;
+	color: $white;
+	padding: $mobile-buffer 0;
+
+	h2.caps {
+		margin-bottom: $space-double;
+		text-align: center;
+	}
+
+	.block {
+		@include clearfix();
+		margin: $mobile-buffer 0;
+
+		&:last-child { margin-bottom: 0; }
+
+		.icon-circle-arrow {
+			@include column(2);
+			font-size: 3.7em;
+		}
+
+		.copy {
+			@include column(10);
+			@include push(2);
+
+			h3.subhead { margin-bottom: $space; }
+			.btn { margin: $space-double 0; }
+		}
+	}
+}
+
 
 @media screen and (min-width: $bp-large) {
 	.intro {
@@ -70,4 +102,21 @@ blockquote {
 		}
 	}
 
+	.two-column-arrow-list {
+		.block {
+			@include column(6);
+
+			&:nth-of-type(2n) {
+				@include push(6);
+			}
+			&:nth-of-type(2n + 1) {
+				clear: left;
+			}
+
+			.icon-circle-arrow {
+				font-size: 7em;
+			}
+
+		}
+	}
 }
