@@ -1,0 +1,43 @@
+.logo-soup {
+	text-align: center;
+
+	a {
+		display: block;
+		opacity: 0.2;
+		transition: opacity 250ms linear;
+
+		&:hover,
+		&:focus {
+			opacity: 0.8;
+		}
+	}
+}
+
+@media screen and (min-width: $bp-small-2) {
+	.logo-soup {
+		margin: 0 auto;
+		max-width: $max-width;
+
+		a {
+			float: left;
+			width: 47.5%;
+
+			&:nth-child(2n+1) { margin: 0 2.5% 0 0; clear: left;}
+			&:nth-child(2n+2) { margin: 0 0 0 2.5%; }
+		}
+	}
+}
+
+
+@media screen and (min-width: $bp-med) {
+	.logo-soup {
+		a {
+			width: 30%;
+
+			&:nth-child(2n+1) { clear: none; }
+			&:nth-child(3n+1) { margin: 0 2.5% 0 0; clear: left;}
+			&:nth-child(3n+2) { margin: 0 2.5%; }
+			&:nth-child(3n+3) { margin: 0 0 0 2.5%; }
+		}
+	}
+}

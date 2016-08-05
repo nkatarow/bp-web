@@ -57,6 +57,12 @@ blockquote {
 	}
 }
 
+.two-thirds-with-gutter {
+	background-color: $off-white;
+	padding: $mobile-buffer 0;
+
+}
+
 @media screen and (max-width: $bp-large) {
 	.arrow-list .block .copy {
 		@include column(10);
@@ -144,6 +150,19 @@ blockquote {
 				@include column(8);
 				@include push(4);
 			}
+		}
+	}
+
+	.two-thirds-with-gutter {
+		padding: $desktop-buffer 0;
+
+		.two-thirds {
+			@include column(7);
+		}
+
+		.gutter {
+			@include column(4);
+			@include push(8);
 		}
 	}
 }

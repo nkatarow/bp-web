@@ -1,0 +1,12 @@
+<section class="two-thirds-with-gutter">
+	<div class="container">
+		<div class="two-thirds">
+			{{ block.twoThirdsColumn }}
+		</div>
+		<div class="gutter">
+			{% if block.gutterColumn|length %}
+				{{ block.gutterColumn }}
+			{% endif %}
+		</div>
+	</div>
+</section>

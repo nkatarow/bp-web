@@ -1,0 +1,14 @@
+<section class="logo-soup">
+	<div class="container">
+		{% if block.sectionHeader|length %}
+			<h2 class="head gray">{{ block.sectionHeader }}</h2>
+		{% endif %}
+
+		{% for row in block.logos %}
+			<a href="{{ row.articleUrl }}" target="_blank">
+				{% set image = row.sourceLogo.first() %}
+				<img src="{{ image.url }}" alt="{{ row.sourceName }}" />
+			</a>
+		{% endfor %}
+	</div>
+</section>
