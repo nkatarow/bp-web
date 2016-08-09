@@ -32,6 +32,23 @@ window.BP = {
 
         // Init Components
         self.nav.init();
+		$('.owl-carousel').owlCarousel({
+			// animateOut: 'fadeOutLeft',
+			// animateIn: 'fadeInRight',
+
+			// Speeds
+			navSpeed: 350,
+			dotSpeed: 350,
+
+			// Navigation
+			nav: true,
+			dots: true,
+			navText: ["<span class='icon-chevron-left'></span>","<span class='icon-chevron-right'></span>"],
+
+			// Misc
+			loop: false,
+			items: 1
+		});
 
 		window.sr = ScrollReveal({ reset: true });
 		sr.reveal('.reveal');

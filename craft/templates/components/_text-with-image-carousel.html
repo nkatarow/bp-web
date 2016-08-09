@@ -1,22 +1,23 @@
 <section class="text-with-image-carousel">
 	{% if block.sectionHeader|length %}
 		<h2 class="caps">{{ block.sectionHeader }}</h2>
+	{% endif %}
 
-		<ul>
-			{% for row in slide %}
-				<li>
-					<div class="">
-						<p class="header water">{{ row.copy }}</p>
-						{% if row.cite|length %}
-							<p class="subhead">{{ row.cite }}</p>
-						{% endif %}
-					</div>
+	<ul class="owl-carousel">
+		{% for row in block.slide %}
+			<li>
+				<div class="img">
+					{% set image = row.image.first() %}
+					<img src="{{ image.url }}" alt="{{ image.title }}" />
+				</div>
 
-					<div class="">
-						{% set image = row.image.first() %}
-						<img src="{{ image.url }}" alt="{{ image.title }}" />
-					</div>
-				</li>
-			{% endfor %}
-		</ul>
+				<div class="copy">
+					<p class="subhead water">{{ row.copy }}</p>
+					{% if row.cite|length %}
+						<p class="med">{{ row.cite }}</p>
+					{% endif %}
+				</div>
+			</li>
+		{% endfor %}
+	</ul>
 </section>

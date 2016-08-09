@@ -1,0 +1,243 @@
+/* ==========================================================================
+   COMPONENTS/_CAROUSEL.SCSS
+   ========================================================================== */
+
+/**
+ * Owl Carousel v2.1.0
+ * Copyright 2013-2016 David Deutsch
+ * Licensed under MIT (https://github.com/OwlCarousel2/OwlCarousel2/blob/master/LICENSE)
+ */
+
+// Owl Carousel - Core
+.owl-carousel {
+	display: none;
+	width: 100%;
+	-webkit-tap-highlight-color: transparent;
+	/* position relative and z-index fix webkit rendering fonts issue */
+	position: relative;
+	z-index: 1;
+}
+.owl-carousel .owl-stage {
+	position: relative;
+	-ms-touch-action: pan-Y;
+}
+.owl-carousel .owl-stage:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+.owl-carousel .owl-stage-outer {
+	position: relative;
+	overflow: hidden;
+	/* fix for flashing background */
+	-webkit-transform: translate3d(0px, 0px, 0px);
+}
+.owl-carousel .owl-item {
+	position: relative;
+	min-height: 1px;
+	float: left;
+	-webkit-backface-visibility: hidden;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
+}
+.owl-carousel .owl-item img {
+	display: block;
+	width: 100%;
+	-webkit-transform-style: preserve-3d;
+}
+.owl-carousel .owl-dots.disabled,
+.owl-carousel .owl-nav.disabled {
+	display: none;
+}
+.owl-carousel .owl-dot,
+.owl-carousel .owl-nav .owl-next,
+.owl-carousel .owl-nav .owl-prev {
+	cursor: pointer;
+	cursor: hand;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.owl-carousel.owl-loaded {
+	display: block;
+}
+.owl-carousel.owl-loading {
+	opacity: 0;
+	display: block;
+}
+.owl-carousel.owl-hidden {
+	opacity: 0;
+}
+.owl-carousel.owl-refresh .owl-item {
+	display: none;
+}
+.owl-carousel.owl-drag .owl-item {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.owl-carousel.owl-grab {
+	cursor: move;
+	cursor: grab;
+}
+.owl-carousel.owl-rtl {
+	direction: rtl;
+}
+.owl-carousel.owl-rtl .owl-item {
+	float: right;
+}
+
+// No Js
+.no-js .owl-carousel {
+	display: block;
+}
+
+
+// Owl Carousel - Animate Plugin
+.owl-carousel .animated {
+	-webkit-animation-duration: 1000ms;
+	animation-duration: 1000ms;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+.owl-carousel .owl-animated-in {
+	z-index: 0;
+}
+.owl-carousel .owl-animated-out {
+	z-index: 1;
+}
+.owl-carousel .fadeOut {
+	-webkit-animation-name: fadeOut;
+	animation-name: fadeOut;
+}
+@-webkit-keyframes fadeOut {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+/*
+ * 	Owl Carousel - Auto Height Plugin
+ */
+.owl-height {
+	transition: height 500ms ease-in-out;
+}
+
+
+// Custom Carousels
+.text-with-image-carousel {
+	@include container();
+	padding: $mobile-buffer 0;
+
+	h2 {
+		text-align: center;
+		margin-bottom: $space-double;
+	}
+
+	.owl-carousel {
+		margin: 0;
+		list-style-type: none;
+
+		img { margin-bottom: $space-double; }
+
+		.owl-nav { display: none; }
+
+		.owl-dots {
+			display: block;
+			text-align: center;
+			width: 100%;
+
+			.owl-dot {
+				background-color: $gray;
+				border: 2px solid $gray;
+				border-radius: $space-half;
+				display: inline-block;
+				height: $space;
+				margin-right: $space;
+				transition: border-color 250ms linear, background-color 250ms linear;
+				width: $space;
+
+				&.active {
+					background-color: transparent;
+					border: 2px solid $water;
+				}
+
+				&:last-of-type { margin-right: 0; }
+			}
+		}
+	}
+}
+
+
+@media screen and (min-width: $bp-large) {
+	.text-with-image-carousel {
+		padding: $desktop-buffer 0;
+		margin: 0 auto;
+		max-width: $max-width;
+		width: 100%;
+
+		.owl-carousel {
+			margin-top: $mobile-buffer;
+
+			.owl-nav {
+				display: block;
+				position: absolute;
+				left: -6%;
+				top: 50%;
+				width: 112%;
+    			transform: translateY(-50%);
+
+				.owl-prev,
+				.owl-next {
+					color: $water;
+					display: inline-block;
+					font-size: 2em;
+					position: absolute;
+
+					&.disabled {
+						color: $gray;
+						cursor: default;
+					}
+				}
+
+				.owl-prev { left: 0; }
+				.owl-next { right: 0; }
+			}
+
+			.owl-dots { display: none; }
+
+			li {
+				@include clearfix();
+
+				.copy {
+					@include column(7);
+					@include push(0);
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+				}
+
+				.img {
+					@include column(4);
+					@include push(8);
+				}
+			}
+		}
+	}
+}
