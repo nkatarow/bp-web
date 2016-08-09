@@ -12,6 +12,8 @@
 
 		.head { margin-bottom: $space; }
 		.btn { margin-top: $space; }
+
+		.head, p { max-width: 560px; }
 	}
 }
 

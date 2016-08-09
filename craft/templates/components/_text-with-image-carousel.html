@@ -1,0 +1,22 @@
+<section class="text-with-image-carousel">
+	{% if block.sectionHeader|length %}
+		<h2 class="caps">{{ block.sectionHeader }}</h2>
+
+		<ul>
+			{% for row in slide %}
+				<li>
+					<div class="">
+						<p class="header water">{{ row.copy }}</p>
+						{% if row.cite|length %}
+							<p class="subhead">{{ row.cite }}</p>
+						{% endif %}
+					</div>
+
+					<div class="">
+						{% set image = row.image.first() %}
+						<img src="{{ image.url }}" alt="{{ image.title }}" />
+					</div>
+				</li>
+			{% endfor %}
+		</ul>
+</section>
