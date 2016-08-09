@@ -1,0 +1,15 @@
+<section class="two-column-icon-with-text">
+	{% for row in block.blocks %}
+		<div class="block">
+			<div class="img">
+				{% set image = row.image.first() %}
+				<img src="{{ image.url }}" alt="{{ image.title }}" />
+			</div>
+
+			<div class="copy">
+				{{ row.copy }}
+				<!-- optional button? -->
+			</div>
+		</div>
+	{% endfor %}
+</section>
