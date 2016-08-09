@@ -1,15 +1,20 @@
 <section class="two-column-icon-with-text">
-	{% for row in block.blocks %}
-		<div class="block">
-			<div class="img">
-				{% set image = row.image.first() %}
-				<img src="{{ image.url }}" alt="{{ image.title }}" />
-			</div>
+	<div class="container">
+		{% for row in block.blocks %}
+			<div class="block reveal">
+				<div class="img">
+					{% set image = row.image.first() %}
+					<img src="{{ image.url }}" alt="{{ image.title }}" />
+				</div>
 
-			<div class="copy">
-				{{ row.copy }}
-				<!-- optional button? -->
+				<div class="copy">
+					{{ row.copy }}
+
+					{% if row.buttonText|length %}
+						<a href="{{ row.buttonUrl }}" class="btn alt">{{ row.buttonText }} <span class="icon-{{ row.buttonType }}"></span></a>
+					{% endif %}
+				</div>
 			</div>
-		</div>
-	{% endfor %}
+		{% endfor %}
+	</div>
 </section>

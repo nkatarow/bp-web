@@ -33,9 +33,6 @@ window.BP = {
         // Init Components
         self.nav.init();
 		$('.owl-carousel').owlCarousel({
-			// animateOut: 'fadeOutLeft',
-			// animateIn: 'fadeInRight',
-
 			// Speeds
 			navSpeed: 350,
 			dotSpeed: 350,

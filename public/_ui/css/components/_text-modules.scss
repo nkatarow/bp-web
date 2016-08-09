@@ -48,7 +48,7 @@ blockquote {
 
 		&:last-child { margin-bottom: 0; }
 
-		.icon-circle-arrow { @include column(2); }
+		.img, .icon-circle-arrow { @include column(2); }
 
 		.copy {
 			h3.subhead { margin-bottom: $space; }
@@ -60,7 +60,21 @@ blockquote {
 .two-thirds-with-gutter {
 	background-color: $off-white;
 	padding: $mobile-buffer 0;
+}
 
+.two-column-icon-with-text {
+	background-color: $off-black;
+	color: $white;
+	padding: $mobile-buffer 0;
+
+	.block {
+		margin-bottom: $desktop-buffer;
+
+		&:last-of-type { margin-bottom: 0; }
+	}
+
+	.img { margin-bottom: $space-double; }
+	.btn { margin-top: $space-double; }
 }
 
 @media screen and (max-width: $bp-large) {
@@ -164,5 +178,30 @@ blockquote {
 			@include column(4);
 			@include push(8);
 		}
+	}
+
+	.two-column-icon-with-text {
+		padding: $desktop-buffer 0;
+
+		.block {
+			@include column(6);
+
+			&:nth-last-child(2) { margin-bottom: 0; }
+
+			.img { @include column(3); }
+			.copy {
+				@include column(9);
+				@include push(3);
+			}
+
+			&:nth-of-type(2n) {
+				@include push(6);
+			}
+			&:nth-of-type(2n + 1) {
+				clear: left;
+			}
+		}
+
+		.img { margin-bottom: $space-double; }
 	}
 }

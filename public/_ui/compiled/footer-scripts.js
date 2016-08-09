@@ -33,9 +33,6 @@ window.BP = {
         // Init Components
         self.nav.init();
 		$('.owl-carousel').owlCarousel({
-			// animateOut: 'fadeOutLeft',
-			// animateIn: 'fadeInRight',
-
 			// Speeds
 			navSpeed: 350,
 			dotSpeed: 350,
@@ -1132,7 +1129,7 @@ window.BP = {
 		if ($.support.transform3d && $.support.transition) {
 			this.$stage.css({
 				transform: 'translate3d(' + coordinate + 'px,0px,0px)',
-				transition: (this.speed() / 1000) + 's'
+				transition: (this.speed() / 1000) + 's' + ' ease-in-out'
 			});
 		} else if (animate) {
 			this.$stage.animate({
