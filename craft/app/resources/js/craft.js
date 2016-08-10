@@ -13993,9 +13993,6 @@ Craft.PasswordInput = Garnish.Base.extend(
 		this.setCurrentInput(this.$passwordInput);
 		this.updateToggleLabel(Craft.t('Show'));
 		this.showingPassword = false;
-
-		// Alt key temporarily shows the password
-		this.addListener(this.$passwordInput, 'keydown', 'onKeyDown');
 	},
 
 	togglePassword: function()
@@ -14010,27 +14007,6 @@ Craft.PasswordInput = Garnish.Base.extend(
 		}
 
 		this.settings.onToggleInput(this.$currentInput);
-	},
-
-	onKeyDown: function(ev)
-	{
-		if (ev.keyCode == Garnish.ALT_KEY && this.$currentInput.val())
-		{
-			this.showPassword();
-			this.$showPasswordToggle.hide();
-			this.addListener(this.$textInput, 'keyup', 'onKeyUp');
-		}
-	},
-
-	onKeyUp: function(ev)
-	{
-		ev.preventDefault();
-
-		if (ev.keyCode == Garnish.ALT_KEY)
-		{
-			this.hidePassword();
-			this.$showPasswordToggle.show();
-		}
 	},
 
 	onInputChange: function()
