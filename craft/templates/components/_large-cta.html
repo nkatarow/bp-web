@@ -8,8 +8,10 @@
 </style>
 
 <section id="cta-{{ loop.index }}" class="cta">
-	<h2 class="caps reveal">{{ block.smallHeader }}</h2>
-	<h3 class="head reveal">{{ block.largeHeader|nl2br }}</h3>
+	<div class="reveal">
+		<h2 class="caps">{{ block.smallHeader }}</h2>
+		<h3 class="head">{{ block.largeHeader|nl2br }}</h3>
 
-	<a href="{{ block.linkUrl }}" class="btn alt reveal">{{ block.linkText }} <span class="icon-{{ block.buttonType }}"></span></a>
+		<a href="{{ block.linkUrl }}" class="btn alt">{{ block.linkText }} <span class="icon-{{ block.buttonType }}"></span></a>
+	</div>
 </section>

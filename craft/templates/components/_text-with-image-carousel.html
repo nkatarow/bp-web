@@ -1,9 +1,9 @@
 <section class="text-with-image-carousel">
 	{% if block.sectionHeader|length %}
-		<h2 class="caps">{{ block.sectionHeader }}</h2>
+		<h2 class="caps reveal">{{ block.sectionHeader }}</h2>
 	{% endif %}
 
-	<ul class="owl-carousel">
+	<ul class="owl-carousel reveal">
 		{% for row in block.slide %}
 			<li>
 				<div class="img">

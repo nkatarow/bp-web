@@ -1,11 +1,11 @@
-<section class="logo-soup">
+<section class="logo-soup sequence" id="seq-{{ loop.index }}">
 	<div class="container">
 		{% if block.sectionHeader|length %}
 			<h2 class="head gray reveal">{{ block.sectionHeader }}</h2>
 		{% endif %}
 
 		{% for row in block.logos %}
-			<div class="logo reveal">
+			<div class="logo seq">
 				{% if row.logoLinkUrl|length %}
 					<a href="{{ row.logoLinkUrl }}"{% if row.linkNewWindow == "1" %} target="_blank"{% endif %}>
 				{% endif %}

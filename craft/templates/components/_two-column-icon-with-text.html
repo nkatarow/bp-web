@@ -1,7 +1,7 @@
-<section class="two-column-icon-with-text">
+<section class="two-column-icon-with-text sequence" id="seq-{{ loop.index }}">
 	<div class="container">
 		{% for row in block.blocks %}
-			<div class="block reveal">
+			<div class="block seq">
 				<div class="img">
 					{% set image = row.image.first() %}
 					<img src="{{ image.url }}" alt="{{ image.title }}" />

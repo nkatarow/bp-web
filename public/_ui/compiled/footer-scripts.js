@@ -47,9 +47,21 @@ window.BP = {
 			items: 1
 		});
 
-		window.sr = ScrollReveal({ reset: true });
+		window.sr = ScrollReveal({
+			distance: '30px',
+			duration: 750,
+			scale: 1,
+			mobile: true,
+			reset: false,
+		});
+
 		sr.reveal('.reveal');
 
+		if ($('.sequence').length) {
+			$('.sequence').each(function(){
+				sr.reveal('#' + $(this).attr('id') + ' .seq', 250);
+			})
+		}
 	},
     events: {
         windowResize: function (event) {

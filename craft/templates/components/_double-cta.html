@@ -1,11 +1,11 @@
-<section class="double-cta">
+<section class="double-cta sequence" id="seq-{{ loop.index }}">
 	<div class="container">
-		<div class="left reveal">
+		<div class="left seq">
 			<h2 class="head water">{{ block.leftHeader|nl2br }}</h2>
 			<a href="{{ block.leftLinkUrl }}" class="arrow-link caps">{{ block.leftLinkText }}</a>
 		</div>
 
-		<div class="right reveal">
+		<div class="right seq">
 			<h2 class="head water">{{ block.rightHeader|nl2br }}</h2>
 			<a href="{{ block.rightLinkUrl }}" class="arrow-link caps">{{ block.rightLinkText }}</a>
 		</div>

@@ -1,11 +1,11 @@
-<section class="arrow-list two-column">
+<section class="arrow-list two-column sequence" id="seq-{{ loop.index }}">
 	<div class="container">
 		{% if block.sectionHeadline|length %}
-			<h2 class="caps">{{ block.sectionHeadline }}</h2>
+			<h2 class="caps reveal">{{ block.sectionHeadline }}</h2>
 		{% endif %}
 
 		{% for row in block.listItems %}
-			<div class="block reveal">
+			<div class="block seq">
 				<span class="icon-circle-arrow water"></span>
 
 				<div class="copy">

@@ -1,9 +1,9 @@
-<section class="two-thirds-with-gutter">
+<section class="two-thirds-with-gutter sequence" id="seq-{{ loop.index }}">
 	<div class="container">
-		<div class="two-thirds reveal">
+		<div class="two-thirds seq">
 			{{ block.twoThirdsColumn }}
 		</div>
-		<div class="gutter reveal">
+		<div class="gutter seq">
 			{% if block.gutterColumn|length %}
 				{{ block.gutterColumn }}
 			{% endif %}

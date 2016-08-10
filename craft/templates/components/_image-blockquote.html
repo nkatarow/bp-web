@@ -8,15 +8,15 @@
 </style>
 
 <blockquote id="quote-{{ loop.index }}" class="cta">
-	<div class="container">
+	<div class="container reveal">
 		{% if block.smallHeader|length %}
-			<h2 class="caps reveal">{{ block.smallHeader }}</h2>
+			<h2 class="caps">{{ block.smallHeader }}</h2>
 		{% endif %}
 
-		<p class="head reveal">{{ block.quote }}</p>
+		<p class="head">{{ block.quote }}</p>
 
 		{% if block.cite|length %}
-			<cite class="subhead reveal">{{ block.cite|nl2br }}</cite>
+			<cite class="subhead">{{ block.cite|nl2br }}</cite>
 		{% endif %}
 	</div>
 </blockquote>
