@@ -1,0 +1,46 @@
+/* ==========================================================================
+   COMPONENTS/_VIDEO.SCSS
+   ========================================================================== */
+
+.vimeo-player {
+	background-color: $black;
+    display: none;
+    opacity: 0;
+    position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+    z-index: 11;
+    transition: opacity 250ms linear;
+	margin-bottom: 0;
+}
+
+.video-close-btn {
+	color: $white;
+	font-size: 2em;
+    display: none;
+	position: absolute;
+	top: $space;
+	left: $space;
+    z-index: 12;
+}
+
+.play-button {
+    .icon-play {
+        color: $white;
+        font-size: 8em;
+        display: block;
+        position: absolute;
+        transition: color 250ms linear;
+        text-align: center;
+        top: 50%;
+		transform: translateY(-50%);
+        width: 100%;
+    }
+
+    &:hover .icon-play,
+    &:focus .icon-play {
+        color: $neon-green;
+    }
+}

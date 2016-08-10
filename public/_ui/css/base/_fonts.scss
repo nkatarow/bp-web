@@ -18,6 +18,9 @@
     @include icon();
 }
 
+.icon-play:before {
+  content: "\e90b";
+}
 .icon-download:before {
   content: "\e90a";
 }

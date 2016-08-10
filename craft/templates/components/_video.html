@@ -1,0 +1,10 @@
+<section class="full-width-image video-module" id="video-module-{{ loop.index }}">
+	<a href="#" class="play-button" id="play-button-{{ loop.index }}">
+		{% set image = block.image.first() %}
+		<img srcset="{{ image.getUrl() }}" alt="">
+		<span class="icon-play"></span>
+	</a>
+
+	<iframe src="https://player.vimeo.com/video/{{ block.vimeoVideoId }}?api=1&player_id=player{{ loop.index }}" id="player{{ loop.index }}" class="vimeo-player" height="100%" width="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	<a href="#" id="video-close-{{ loop.index }}" class="video-close-btn"><span class="icon-x"></span></a>
+</section>

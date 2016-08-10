@@ -62,6 +62,12 @@ window.BP = {
 				sr.reveal('#' + $(this).attr('id') + ' .seq', 250);
 			})
 		}
+
+		$('.video-module').each(function(){
+			self.video.init(this);
+		});
+
+
 	},
     events: {
         windowResize: function (event) {
