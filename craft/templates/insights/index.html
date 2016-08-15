@@ -1,0 +1,37 @@
+{% if entry is not defined %}
+    {% set entry = craft.entries.section('insights').first() %}
+{% endif %}
+
+{% extends "_layout" %}
+{% set title = "Bridge Insights" %}
+
+{% block content %}
+	<h2>Articles</h2>
+	<ul>
+
+		{% for entry in craft.entries.section('insightsArticles').find() %}
+			<li>
+				{{ entry.title }}
+				
+			</li>
+		{% endfor %}
+
+	</ul>
+
+	<h2>Categories</h2>
+	<ul>
+	{% set entryIds = craft.entries.section('insightsArticles').ids() %}
+	{% set categories = craft.categories.relatedTo({ sourceElement: entryIds }).groupId(1).find() %}
+		<li><a href="/blog" {% if craft.request.getSegment(2) == null %} class="active" {% endif %}>All</a></li>
+		{% for category in categories %}
+			<li><a href="{{ category.url }}" {% if craft.request.getSegment(3) == category.slug %} class="active" {% endif %}>{{ category.title }}</a></li>
+		{% endfor %}﻿
+	</ul>
+
+	<h2>Tags</h2>
+	<ul>
+		{% for tag in craft.tags.group('insightsTags') %}
+		    <li><a href="{{ url('blog/tags/'~tag.id) }}">{{ tag.title }}</a></li>
+		{% endfor %}
+	</ul>
+{% endblock %}
