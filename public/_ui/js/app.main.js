@@ -32,7 +32,7 @@ window.BP = {
 
         // Init Components
         self.nav.init();
-		$('.owl-carousel').owlCarousel({
+		$('.default-carousel').owlCarousel({
 			// Speeds
 			navSpeed: 350,
 			dotSpeed: 350,
@@ -45,6 +45,32 @@ window.BP = {
 			// Misc
 			loop: false,
 			items: 1
+		});
+
+		$('.owl-people-carousel').owlCarousel({
+			// Speeds
+			navSpeed: 350,
+			dotSpeed: 350,
+
+			// Navigation
+			nav: true,
+			dots: true,
+			navText: ["<span class='icon-chevron-left'></span>","<span class='icon-chevron-right'></span>"],
+
+			// Misc
+			loop: false,
+
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                479: {
+                    items: 2,
+                },
+                768: {
+                    items: 3,
+                }
+            },
 		});
 
 		window.sr = ScrollReveal({

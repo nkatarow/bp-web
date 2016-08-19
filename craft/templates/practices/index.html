@@ -24,7 +24,7 @@
 							<h3 class="caps gray">Leadership</h3>
 						</div>
 
-						<ul class="owl-carousel">
+						<ul class="owl-carousel default-carousel">
 							{% for entry in entry.practiceLeaders %}
 								<li>
 									{% set portrait = entry.portrait.first() %}
@@ -39,6 +39,11 @@
 						</ul>
 					</div>
 				{% endif %}
+
+				<div class="reveal practice-introduction">
+					{{ entry.practiceIntroduction }}
+				</div>
+
 			</div>
 		</section>
 	{% endif %}

@@ -1,7 +1,13 @@
 <section class="full-width-image video-module" id="video-module-{{ loop.index }}">
 	<a href="#" class="play-button" id="play-button-{{ loop.index }}">
 		{% set image = block.image.first() %}
-		<img srcset="{{ image.getUrl() }}" alt="">
+		<picture>
+			<!--[if IE 9]><video style="display: none;"><![endif]-->
+				<source srcset="{{ image.url }}" media="(min-width: 800px)" />
+				<img srcset="{{ image.getUrl('fullWidthMobile') }}" alt="">
+			<!--[if IE 9]></video><![endif]-->
+			<!--[if lte IE 9]><img src="{{ image.url }}" alt=""><![endif]-->
+		</picture>
 		<span class="icon-play"></span>
 	</a>
 

@@ -15,9 +15,6 @@ BP.video = {
 		var elementId = $(elem).attr('id'),
 			videoId = elementId.replace('video-module-', '');
 
-		console.log(elementId);
-		console.log(videoId);
-
 	    var player = $('#player' + videoId);
 	    var playerOrigin = '*';
 

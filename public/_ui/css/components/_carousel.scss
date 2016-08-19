@@ -251,6 +251,84 @@
 	}
 }
 
+.people-carousel {
+    margin: 0 5%;
+	padding: $mobile-buffer 0;
+    width: 90%;
+
+	h2 {
+		text-align: center;
+		margin-bottom: $space-double;
+	}
+
+	.owl-people-carousel {
+		list-style-type: none;
+		margin: 0;
+
+		.owl-dots {
+			display: block;
+			margin-top: $space-double;
+		}
+
+		.owl-nav { display: none; }
+
+		li {
+			position: relative;
+
+			a {
+                display: block;
+
+				.overlay {
+                    transition: background-color 250ms linear;
+                    height: 99%;
+                    padding: $space-double;
+                    position: absolute;
+                    width: 100%;
+					bottom: 0;
+
+					.copy {
+						bottom: 0;
+                		color: $white;
+						position: absolute;
+						transition: color 250ms linear;
+					}
+
+					.subhead { margin-bottom: 0; }
+				}
+
+                &:hover,
+                &:focus {
+                    .overlay {
+                        background-color: rgba(0, 0, 0, 0.4);
+
+						.copy { color: $neon-green; }
+					}
+                }
+
+			}
+		}
+	}
+
+	.view-all {
+		margin-top: $mobile-buffer;
+		text-align: center;
+	}
+}
+
+
+@media screen and (min-width: 479px) {
+	.people-carousel {
+    	width: 87%;
+
+		.owl-people-carousel {
+			.owl-item {
+				padding: 0 $space;
+			}
+		}
+	}
+}
+
+
 @media screen and (min-width: $bp-large) {
 	.text-with-image-carousel {
 		padding: $desktop-buffer 0;
@@ -288,12 +366,11 @@
 		margin-top: $space*4;
 
 		.owl-carousel {
-
 			.owl-dots { display: none; }
 
 			.owl-nav {
 				display: block;
-				top: 35%;
+				top: 40%;
 				width: 100%;
 			}
 
@@ -308,6 +385,26 @@
 					@include column(7);
 					@include push(5);
 				}
+			}
+		}
+	}
+
+	.people-carousel {
+		padding: $desktop-buffer 0;
+		width: 90%;
+
+		.owl-people-carousel {
+			.owl-dots { display: none; }
+
+			.owl-nav {
+				display: block;
+				top: 48%;
+				width: 110%;
+				left: -5%
+			}
+
+			.owl-item {
+				// padding: 0 $space;
 			}
 		}
 	}
