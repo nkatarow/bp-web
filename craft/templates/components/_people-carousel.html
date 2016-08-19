@@ -1,27 +1,29 @@
 <section class="people-carousel">
-	{% if block.sectionHeader|length %}
-		<h2 class="caps reveal">{{ block.sectionHeader }}</h2>
-	{% endif %}
+	<div class="container">
+		{% if block.sectionHeader|length %}
+			<h2 class="caps reveal">{{ block.sectionHeader }}</h2>
+		{% endif %}
 
-	<ul class="owl-people-carousel owl-carousel reveal">
-		{% for entry in block.people %}
-			<li>
-				<a href="/people/{{ entry.slug }}">
-					{% set portrait = entry.portrait.first() %}
-					<img src="{{ portrait.url() }}" alt="{{ portrait.title() }}" />
+		<ul class="owl-people-carousel owl-carousel reveal">
+			{% for entry in block.people %}
+				<li>
+					<a href="/people/{{ entry.slug }}">
+						{% set portrait = entry.portrait.first() %}
+						<img src="{{ portrait.url() }}" alt="{{ portrait.title() }}" />
 
-					<div class="overlay">
-						<div class="copy">
-							<p class="subhead">{{ entry.title }}</p>
-							<p class="caps">{{ entry.position }}</p>
+						<div class="overlay">
+							<div class="copy">
+								<p class="subhead">{{ entry.title }}</p>
+								<p class="caps">{{ entry.position }}</p>
+							</div>
 						</div>
-					</div>
-				</a>
-			</li>
-		{% endfor %}
-	</ul>
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
 
-	<div class="view-all">
-		<a href="/people" class="btn">View all people <span class="icon-arrow-right"></span></a>
+		<div class="view-all">
+			<a href="/people" class="btn">View all people <span class="icon-arrow-right"></span></a>
+		</div>
 	</div>
 </section>

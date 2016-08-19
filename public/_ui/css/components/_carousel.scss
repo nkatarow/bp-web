@@ -252,9 +252,9 @@
 }
 
 .people-carousel {
-    margin: 0 5%;
+    // margin: 0 5%;
 	padding: $mobile-buffer 0;
-    width: 90%;
+    // width: 90%;
 
 	h2 {
 		text-align: center;
@@ -318,7 +318,7 @@
 
 @media screen and (min-width: 479px) {
 	.people-carousel {
-    	width: 87%;
+    	// width: 87%;
 
 		.owl-people-carousel {
 			.owl-item {
@@ -391,9 +391,11 @@
 
 	.people-carousel {
 		padding: $desktop-buffer 0;
-		width: 90%;
 
 		.owl-people-carousel {
+			width: 90%;
+			margin: 0 auto;
+			
 			.owl-dots { display: none; }
 
 			.owl-nav {
