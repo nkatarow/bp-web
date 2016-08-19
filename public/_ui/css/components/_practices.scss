@@ -1,0 +1,92 @@
+/* ==========================================================================
+   COMPONENTS/_PRACTICES.SCSS
+   ========================================================================== */
+
+.practice-intro {
+	padding: $mobile-buffer 0 0;
+
+	.title {
+		@include clearfix();
+		position: relative;
+
+		img { @include column(4); }
+
+		.name {
+			@include column(8);
+			@include push(4);
+
+			h1 {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+	}
+
+	.leadership-carousel {
+		// padding-top: $space-double;
+
+		h3:before {
+			background-color: $gray;
+			content: '';
+			display: inline-block;
+			height: 1px;
+			margin: 0 $space 3px 0;
+			width: 80px;
+		}
+	}
+}
+
+
+@media screen and (min-width: $bp-large) {
+	.practice-intro {
+		@include clearfix();
+		padding: $desktop-buffer 0 0;
+
+		.title {
+			img { @include column(3); }
+
+			.name {
+				@include column(7);
+				@include push(3);
+
+				.head {
+					position: relative;
+					top: 0;
+					transform: none;
+				}
+			}
+		}
+
+		.left {
+			@include column(4);
+		}
+
+		.right {
+			@include column(8);
+			@include push(4);
+		}
+	}
+
+	.leadership-carousel {
+		@include clearfix();
+		// padding-top: $desktop-buffer;
+		position: relative;
+
+		.leadership-title {
+			@include column(4);
+			height: 100%;
+
+			h3 {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+
+		.owl-carousel {
+			@include column(8);
+			@include push(4);
+		}
+	}
+}

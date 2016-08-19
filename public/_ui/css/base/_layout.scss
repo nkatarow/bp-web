@@ -17,6 +17,8 @@ html, body {
 	@include clearfix();
 }
 
+#content { margin-top: 80px; }
+
 @media screen and (min-width: $bp-med) {
 	.container {
 		margin: 0 auto;
@@ -28,7 +30,10 @@ html, body {
 	.container {
 		margin: 0 auto;
 		max-width: $max-width;
+		width: 100%;
 	}
+
+	#content { margin-top: 100px; }
 }
 
 @media screen and (min-width: $bp-large-2) {

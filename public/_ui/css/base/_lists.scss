@@ -11,6 +11,8 @@ section {
 		font-size: 1.4em;
 		margin: 0 0 $space $space;
 
+		&.owl-carousel { font-size: 1em; }
+
 		ol, ul {
 			font-size: 1em;
 			margin-bottom: 0;

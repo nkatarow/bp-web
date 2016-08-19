@@ -18,6 +18,9 @@
     @include icon();
 }
 
+.icon-chevron-down:before {
+  content: "\e90c";
+}
 .icon-play:before {
   content: "\e90b";
 }

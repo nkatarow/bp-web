@@ -1,0 +1,75 @@
+/* ==========================================================================
+   COMPONENTS/_SUBNAV.SCSS
+   ========================================================================== */
+
+.status-container {
+    transition: all 250ms linear;
+    max-height: 0;
+    overflow: hidden;
+    padding-bottom: 0;
+}
+
+.subnav {
+	border-bottom: 1px solid $water;
+	border-top: 1px solid $water;
+	padding: $space-double 0;
+	margin: $mobile-buffer 0;
+
+	.more-info {
+		font-size: 1.4em;
+		display: block;
+
+		span {
+			float: right;
+			font-size: 0.65em;
+			margin-top: $space-half;
+		}
+
+		&:hover,
+		&:focus {
+			color: $water;
+		}
+	}
+
+	ul {
+		list-style-type: none;
+		margin: 0;
+
+		li {
+			margin: $space 0;
+
+			&:last-of-type { margin-bottom: 0; }
+			&.active { display: none; }
+		}
+	}
+}
+
+
+@media screen and (min-width: $bp-large) {
+	.status-container { max-height: 100%; }
+
+	.subnav {
+		border: 0;
+
+		.more-info { display: none; }
+
+		ul li {
+			padding-left: $space-and-half;
+
+			&.active {
+				display: block;
+				margin-left: -$space-and-half;
+				
+				a {
+					color: $water;
+
+					&:before {
+						@include icon();
+						content: "\e901";
+						margin-right: $space-half;
+					}
+				}
+			}
+		}
+	}
+}

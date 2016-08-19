@@ -140,7 +140,55 @@
 }
 
 
-// Custom Carousels
+// CUSTOM CAROUSELS
+.owl-dots {
+	display: block;
+	text-align: center;
+	width: 100%;
+
+	.owl-dot {
+		background-color: $gray;
+		border: 2px solid $gray;
+		border-radius: $space-half;
+		display: inline-block;
+		height: $space;
+		margin-right: $space;
+		transition: border-color 250ms linear, background-color 250ms linear;
+		width: $space;
+
+		&.active {
+			background-color: transparent;
+			border: 2px solid $water;
+		}
+
+		&:last-of-type { margin-right: 0; }
+	}
+}
+.owl-nav {
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 100%;
+	transform: translateY(-50%);
+
+	.owl-prev,
+	.owl-next {
+		color: $water;
+		display: inline-block;
+		font-size: 2em;
+		position: absolute;
+
+		&.disabled {
+			color: $gray;
+			cursor: default;
+		}
+	}
+
+	.owl-prev { left: 0; }
+	.owl-next { right: 0; }
+}
+
+// text with image
 .text-with-image-carousel {
 	@include container();
 	padding: $mobile-buffer 0;
@@ -156,34 +204,52 @@
 
 		img { margin-bottom: $space-double; }
 
-		.owl-nav { display: none; }
-
-		.owl-dots {
-			display: block;
-			text-align: center;
-			width: 100%;
-
-			.owl-dot {
-				background-color: $gray;
-				border: 2px solid $gray;
-				border-radius: $space-half;
-				display: inline-block;
-				height: $space;
-				margin-right: $space;
-				transition: border-color 250ms linear, background-color 250ms linear;
-				width: $space;
-
-				&.active {
-					background-color: transparent;
-					border: 2px solid $water;
-				}
-
-				&:last-of-type { margin-right: 0; }
-			}
+		.owl-dots { display: block; }
+		.owl-nav {
+			display: none;
+			left: -6%;
+			width: 112%;
 		}
 	}
 }
 
+// practice leaders
+.leadership-carousel {
+	margin-top: $space-double;
+
+	.owl-carousel {
+		list-style-type: none;
+		margin: 0;
+
+		.owl-dots {
+			display: block;
+			margin-top: $space-double;
+		}
+
+		.owl-nav { display: none; }
+
+		li {
+			@include clearfix();
+			position: relative;
+
+			img {
+				@include column(4);
+				padding: 5px;
+				border-radius: 50px;
+			}
+
+			.copy {
+				@include column(8);
+				@include push(4);
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+
+				p { margin-bottom: 0; }
+			}
+		}
+	}
+}
 
 @media screen and (min-width: $bp-large) {
 	.text-with-image-carousel {
@@ -195,35 +261,16 @@
 		.owl-carousel {
 			margin-top: $mobile-buffer;
 
-			.owl-nav {
-				display: block;
-				position: absolute;
-				left: -6%;
-				top: 50%;
-				width: 112%;
-    			transform: translateY(-50%);
-
-				.owl-prev,
-				.owl-next {
-					color: $water;
-					display: inline-block;
-					font-size: 2em;
-					position: absolute;
-
-					&.disabled {
-						color: $gray;
-						cursor: default;
-					}
-				}
-
-				.owl-prev { left: 0; }
-				.owl-next { right: 0; }
-			}
-
+			.owl-nav { display: block; }
 			.owl-dots { display: none; }
 
 			li {
 				@include clearfix();
+
+				.img {
+					@include column(4);
+					@include push(8);
+				}
 
 				.copy {
 					@include column(7);
@@ -232,10 +279,34 @@
 					top: 50%;
 					transform: translateY(-50%);
 				}
+			}
+		}
+	}
 
-				.img {
-					@include column(4);
-					@include push(8);
+	// practice leaders
+	.leadership-carousel {
+		margin-top: $space*4;
+
+		.owl-carousel {
+
+			.owl-dots { display: none; }
+
+			.owl-nav {
+				display: block;
+				top: 35%;
+				width: 100%;
+			}
+
+			li {
+				img {
+					@include column(3);
+					@include push(2);
+					border-radius: 60px;
+				}
+
+				.copy {
+					@include column(7);
+					@include push(5);
 				}
 			}
 		}

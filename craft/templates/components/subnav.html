@@ -1,0 +1,41 @@
+<nav class="subnav">
+	<a href="#submenu" class="more-info med water">
+		{% if entry.level == 1 %}
+			Overview
+		{% elseif entry.level == 2 %}
+			{{ entry.title }}
+		{% endif %}
+
+		<span class="icon-chevron-down"></span>
+	</a>
+
+	<div id="submenu" class="status-container">
+		<ul class="content">
+			<!-- If this is a top level page -->
+			{% if entry.level == 1 %}
+				<li class="active"><a href="#">Overview</a></li>
+
+				<!-- Get it's children -->
+				{% for subpage in entry.children %}
+					<li><a href="{{ subpage.url }}">{{ subpage.title }}</a></li>
+				{% endfor %}
+
+			<!-- If this is a second level page -->
+			{% elseif entry.level == 2 %}
+				<!-- Get this page's parent -->
+				{% set ancestors = entry.getAncestors(1) %}
+				{% for ancestor in ancestors %}
+					<li><a href="{{ ancestor.url }}">Overview</a></li>
+				{% endfor %}
+
+				<!-- Get all others on this level -->
+				{% set parent = entry.getParent() %}
+				{% set sibsPlusMe = parent.getDescendants(1) %}
+				{% for sib in sibsPlusMe %}
+					<li{% if entry.url == sib.url %} class="active"{% endif %}><a href="{{ sib.url }}">{{ sib }}</a></li>
+				{% endfor %}
+			{% endif %}
+		</ul>
+	</div>
+
+</nav><!-- /subnav -->

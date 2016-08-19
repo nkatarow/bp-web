@@ -67,6 +67,10 @@ window.BP = {
 			self.video.init(this);
 		});
 
+		// Any instance of more info widget
+		if($('.more-info').length) {
+			window.moreInfo = new BP.MoreInfo();
+		}
 
 	},
     events: {
