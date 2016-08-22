@@ -4478,6 +4478,8 @@ BP.insights = {
 			$('#insights-filter').css('visibility', 'visible');
 			$('#header').addClass('black');
 			$('#header button').hide();
+			$('#header .search-li').hide();
+			$('#header .newsletter-li').hide();
 			$('body').css('overflow', 'hidden');
 		});
 
@@ -4488,6 +4490,8 @@ BP.insights = {
 		$('#insights-filter').removeClass('active');
 		$('#header').removeClass('black');
 		$('#header button').show();
+		$('#header .search-li').show();
+		$('#header .newsletter-li').show();
 		$('body').css('overflow', 'visible');
 
 		setTimeout(function(){

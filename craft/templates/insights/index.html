@@ -7,30 +7,32 @@
 
 {% block content %}
 	<div id="insights-filter">
-		<a href="#" id="close-filter"><span class="icon-arrow-left"></span> Back</a>
-		<div class="left">
-			<h2 class="head">Categories</h2>
-			<ul class="filter-button-group">
-				{% set entryIds = craft.entries.section('insightsArticles').ids() %}
-				{% set categories = craft.categories.relatedTo({ sourceElement: entryIds }).groupId(1).find() %}
-				<li><a href="#" data-filter="*">All</a></li>
-				{% for category in categories %}
-					<li><a href="#" data-filter=".{{ category.slug }}">{{ category.title }}</a></li>
-				{% endfor %}﻿
-			</ul>
-		</div>
+		<div class="container">
+			<a href="#" id="close-filter"><span class="icon-arrow-left"></span> Back</a>
+			<div class="left">
+				<h2 class="subhead">Categories</h2>
+				<ul class="filter-button-group">
+					{% set entryIds = craft.entries.section('insightsArticles').ids() %}
+					{% set categories = craft.categories.relatedTo({ sourceElement: entryIds }).groupId(1).find() %}
+					<li><a href="#" data-filter="*">All</a></li>
+					{% for category in categories %}
+						<li><a href="#" data-filter=".{{ category.slug }}">{{ category.title }}</a></li>
+					{% endfor %}﻿
+				</ul>
+			</div>
 
-		<div class="right">
-			<h2 class="head">Tags</h2>
-			<ul class="filter-button-group">
-				{% for tag in craft.tags.group('insightsTags') %}
-				    <li><a href="#" data-filter=".{{ tag.slug }}">{{ tag.title }}</a></li>
-				{% endfor %}
-			</ul>
+			<div class="right">
+				<h2 class="subhead">Tags</h2>
+				<ul class="filter-button-group">
+					{% for tag in craft.tags.group('insightsTags') %}
+					    <li><a href="#" data-filter=".{{ tag.slug }}">{{ tag.title }}</a></li>
+					{% endfor %}
+				</ul>
+			</div>
 		</div>
 	</div>
 
-	<div class="insights-title">
+	<div class="insights-title container">
 		<h1 class="head water">Bridge Insights</h1>
 
 		<div class="filter-select subhead">

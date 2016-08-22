@@ -59,15 +59,17 @@
 					margin-right: $space-and-half;
 					text-transform: uppercase;
 
+					&.search-li { margin-right: 0; }
+
 					&.search-li,
 					&.newsletter-li {
 						float: right;
 
 						a {
 							opacity: 1;
-							transition: opacity 250ms linear;
+							transition: opacity 250ms linear, color 250ms linear;
 
-							&.hidden { opacity: 0; }							
+							&.hidden { opacity: 0; }
 						}
 					}
 				}
