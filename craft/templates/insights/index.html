@@ -6,32 +6,45 @@
 {% set title = "Bridge Insights" %}
 
 {% block content %}
-	<h2>Articles</h2>
-	<ul>
+	<h1>Articles</h1>
+	<ul class="grid">
 
 		{% for entry in craft.entries.section('insightsArticles').find() %}
-			<li>
-				<a href="/insights/{{ entry.slug }}">{{ entry.title }}</a>
+			{% set cat = entry.category.first() %}
 
+			<li class="grid-item {% if cat %} {{ cat.slug }}{% endif %}{% if entry.tags | length %}{% for tag in entry.tags %} {{ tag.slug }}{% endfor %}{% endif %}">
+				<a href="/insights/{{ entry.slug }}">
+					{% set hero = entry.heroImage.first() %}
+					{% if hero %}
+						<img src="{{ hero.url() }}" alt="{{ hero.title() }}" />
+					{% else %}
+						<img src="" alt="" />
+					{% endif %}
+
+					<h2>{{ entry.title }}</h2>
+					{% if cat %}
+						<p>{{ cat }}</p>
+					{% endif %}
+				</a>
 			</li>
 		{% endfor %}
 
 	</ul>
 
 	<h2>Categories</h2>
-	<ul>
+	<ul class="filter-button-group">
 	{% set entryIds = craft.entries.section('insightsArticles').ids() %}
 	{% set categories = craft.categories.relatedTo({ sourceElement: entryIds }).groupId(1).find() %}
-		<li><a href="/blog" {% if craft.request.getSegment(2) == null %} class="active" {% endif %}>All</a></li>
+		<li><a href="#" data-filter="*">All</a></li>
 		{% for category in categories %}
-			<li><a href="{{ category.url }}" {% if craft.request.getSegment(3) == category.slug %} class="active" {% endif %}>{{ category.title }}</a></li>
+			<li><a href="#" data-filter=".{{ category.slug }}">{{ category.title }}</a></li>
 		{% endfor %}﻿
 	</ul>
 
 	<h2>Tags</h2>
-	<ul>
+	<ul class="filter-button-group">
 		{% for tag in craft.tags.group('insightsTags') %}
-		    <li><a href="{{ url('blog/tags/'~tag.id) }}">{{ tag.title }}</a></li>
+		    <li><a href="#" data-filter=".{{ tag.slug }}">{{ tag.title }}</a></li>
 		{% endfor %}
 	</ul>
 {% endblock %}

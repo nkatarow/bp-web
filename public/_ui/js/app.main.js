@@ -32,6 +32,7 @@ window.BP = {
 
         // Init Components
         self.nav.init();
+
 		$('.default-carousel').owlCarousel({
 			// Speeds
 			navSpeed: 350,
@@ -71,6 +72,17 @@ window.BP = {
                     items: 3,
                 }
             },
+		});
+
+		var $grid = $('.grid').isotope({
+			// options
+			itemSelector: '.grid-item'
+		});
+
+		$('.filter-button-group').on( 'click', 'a', function(event) {
+			event.preventDefault();
+			var filterValue = $(this).attr('data-filter');
+			$grid.isotope({ filter: filterValue });
 		});
 
 		window.sr = ScrollReveal({
