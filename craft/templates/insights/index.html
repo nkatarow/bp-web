@@ -40,8 +40,8 @@
 		</div>
 	</div>
 
-	<ul class="grid">
-		{% for entry in craft.entries.section('insightsArticles').find() %}
+	<ul class="grid container">
+		{% for entry in craft.entries.section('insightsArticles').order('postDate').find() %}
 			{% set cat = entry.category.first() %}
 
 			<li class="grid-item {% if cat %} {{ cat.slug }}{% endif %}{% if entry.tags | length %}{% for tag in entry.tags %} {{ tag.slug }}{% endfor %}{% endif %}">

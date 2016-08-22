@@ -29,6 +29,9 @@ window.BP = {
         }
 
         self.events.parent = this;
+		$(window).bind('resize', function(event) {
+			self.events.windowResize({width: self.getMediaWidth()});
+		});
 
         // Init Components
         self.nav.init();

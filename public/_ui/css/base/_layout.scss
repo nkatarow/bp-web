@@ -28,16 +28,25 @@ html, body {
 
 @media screen and (min-width: $bp-large) {
 	.container {
+		padding: 0 5%;
 		margin: 0 auto;
 		max-width: $max-width;
 		width: 100%;
 	}
 
-	#content { margin-top: 100px; }
 }
 
 @media screen and (min-width: $bp-large-2) {
 	#container {
 		min-height: calc(100vh - 100px);
 	}
+
+	#content { margin-top: 100px; }
+}
+
+@media screen and (min-width: 1240px) {
+	.container {
+		padding: 0;
+	}
+
 }
