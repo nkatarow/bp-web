@@ -33,6 +33,7 @@ window.BP = {
         // Init Components
         self.nav.init();
 
+		// Carousels
 		$('.default-carousel').owlCarousel({
 			// Speeds
 			navSpeed: 350,
@@ -74,17 +75,11 @@ window.BP = {
             },
 		});
 
-		var $grid = $('.grid').isotope({
-			// options
-			itemSelector: '.grid-item'
-		});
 
-		$('.filter-button-group').on( 'click', 'a', function(event) {
-			event.preventDefault();
-			var filterValue = $(this).attr('data-filter');
-			$grid.isotope({ filter: filterValue });
-		});
+		if ($('.insights').length) { self.insights.init(); }
 
+
+		// Scrolling animations
 		window.sr = ScrollReveal({
 			distance: '30px',
 			duration: 750,
@@ -93,7 +88,7 @@ window.BP = {
 			reset: false,
 		});
 
-		sr.reveal('.reveal');
+		if ($('.reveal').length) { sr.reveal('.reveal'); }
 
 		if ($('.sequence').length) {
 			$('.sequence').each(function(){
@@ -101,15 +96,25 @@ window.BP = {
 			})
 		}
 
-		$('.video-module').each(function(){
-			self.video.init(this);
-		});
+        $('.smooth').click(function() {
+            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+
+		// Any instance of the video module
+		$('.video-module').each(function(){ self.video.init(this); });
 
 		// Any instance of more info widget
-		if($('.more-info').length) {
-			window.moreInfo = new BP.MoreInfo();
-		}
-
+		if($('.more-info').length) { window.moreInfo = new BP.MoreInfo(); }
 	},
     events: {
         windowResize: function (event) {
@@ -4437,6 +4442,59 @@ return t=a?function(t){return t&&a(r(t))}:function(t){return t&&r(t)}}function e
     window.ScrollReveal = ScrollReveal
   }
 }())
+
+/*
+
+    Insights Functionality
+    VERSION 1.0.0
+    AUTHORS: Nick Katarow
+
+    DEPENDENCIES:
+    - jQuery 1.7.2
+    - BP.main.js
+
+*/
+
+BP.insights = {
+    init: function() {
+		var self = this,
+			$grid = $('.grid').isotope({
+				// options
+				itemSelector: '.grid-item'
+			});
+
+		$('.filter-button-group').on( 'click', 'a', function(event) {
+			event.preventDefault();
+			var filterValue = $(this).attr('data-filter');
+			$grid.isotope({ filter: filterValue });
+
+			$('#filter-select').empty();
+			$('#filter-select').append(this.innerHTML)
+			self.closeFilter();
+		});
+
+		$('#filter-select').click(function(){
+    		$('#insights-filter').addClass('active');
+			$('#insights-filter').css('visibility', 'visible');
+			$('#header').addClass('black');
+			$('#header button').hide();
+			$('body').css('overflow', 'hidden');
+		});
+
+		$('#close-filter').click(function(){ self.closeFilter() });
+    },
+
+	closeFilter: function() {
+		$('#insights-filter').removeClass('active');
+		$('#header').removeClass('black');
+		$('#header button').show();
+		$('body').css('overflow', 'visible');
+
+		setTimeout(function(){
+			$('#insights-filter').css('visibility', 'hidden');
+		}, 250);
+	}
+};
 
 /*
 

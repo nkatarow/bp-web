@@ -17,18 +17,69 @@
 }
 
 .insights {
+	#insights-filter {
+		background-color: $black;
+		height: 100%;
+		left: 0;
+		overflow: scroll;
+		padding: $space-double 5%;
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		visibility: hidden;
+		width: 100%;
+		z-index: 2;
+		transition: opacity 250ms linear;
+
+		&.active {
+			visibility: visible;
+			opacity: 1;
+		}
+
+		#close-filter {
+			color: $neon-green;
+			display: block;
+			margin-bottom: $space;
+		}
+
+		h2 {
+			color: $neon-green;
+			margin-bottom: $space-half;
+		}
+
+		a {
+			color: $white;
+			font-size: 2.4em;
+		}
+
+		ul {
+			margin-bottom: $space-double;
+
+			li { margin-bottom: $space-half; }
+		}
+	}
+
+	.insights-title {
+		@include container();
+		padding: $mobile-buffer 0 0;
+
+		.head { margin-bottom: $space; }
+	}
+
 	.grid {
 		@include container();
 		margin-bottom: $mobile-buffer;
 		padding-top: $mobile-buffer;
 
-		.grid-sizer,
 		.grid-item {
 			width: 100%;
 		}
 
 		.grid-item {
 			padding: $space-double 0 $space;
+
+			img { margin-bottom: $space-double; }
+			.subhead { margin-bottom: $space-half; }
 		}
 	}
 
