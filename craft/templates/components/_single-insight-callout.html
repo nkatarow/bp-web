@@ -1,0 +1,16 @@
+<section class="single-insight-callout">
+	<div class="container">
+		{% if block.sectionHeader|length %}
+			<h2 class="caps reveal">{{ block.sectionHeader }}</h2>
+		{% endif %}
+
+		{% for entry in block.insight %}
+			<img src="#" alt="" />
+
+			<div class="copy reveal">
+				<h3 class="head water">{{ entry.title }}</h3>
+				<a href="/insights/{{ entry.slug }}" class="btn">Read More <span class="icon-arrow-right"></span></a>
+			</div>
+		{% endfor %}
+	</div>
+</section>

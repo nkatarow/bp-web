@@ -1,0 +1,20 @@
+{% extends "_layout" %}
+
+{% block content %}
+	<time>{{ entry.postDate | date("M d, Y") }}</time>
+	{% set cat = entry.category.first() %}
+	<p>{{ cat }}</p>
+	<h1>{{ entry.title }}</h1>
+	<p>By:
+		{% for author in entry.authoredBy %}
+			<a href="/people/{{ author.slug }}">{{ author.title }}</a>
+		{% endfor %}
+	</p>
+
+	{% set hero = entry.heroImage.first() %}
+	{% if hero %}
+		<img src="{{ hero.url() }}" alt="" />
+	{% endif %}
+
+	{% include '/components/core-modules.html' %}
+{% endblock %}

@@ -1,0 +1,21 @@
+/* ==========================================================================
+   COMPONENTS/_INSIGHTS.SCSS
+   ========================================================================== */
+
+.single-insight-callout {
+	background-color: $off-white;
+	padding: $mobile-buffer 0;
+
+	h2 {
+		text-align: center;
+		margin-bottom: $space-double;
+	}
+
+	img {}
+
+	h3 { margin-bottom: $space; }
+}
+
+@media screen and (min-width: $bp-large) {
+	padding: $desktop-buffer 0;
+}
