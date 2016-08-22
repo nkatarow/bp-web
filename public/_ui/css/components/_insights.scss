@@ -16,6 +16,33 @@
 	h3 { margin-bottom: $space; }
 }
 
+.insights {
+	.insight-title-block {
+		@include container();
+		text-align: center;
+		padding: $mobile-buffer 0;
+		margin: 0 auto;
+		max-width: 750px;
+
+		.head { margin: $space-half 0; }
+
+		.author a { color: $water; }
+	}
+
+	.insight-hero {
+		margin: 0 auto;
+		max-width: $max-width;
+	}
+}
+
 @media screen and (min-width: $bp-large) {
-	padding: $desktop-buffer 0;
+	.single-insight-callout {
+		padding: $desktop-buffer 0;
+	}
+
+	.insights {
+		.insight-title-block {
+			padding: $desktop-buffer 0;
+		}
+	}
 }

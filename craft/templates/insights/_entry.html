@@ -1,19 +1,25 @@
 {% extends "_layout" %}
 
 {% block content %}
-	<time>{{ entry.postDate | date("M d, Y") }}</time>
-	{% set cat = entry.category.first() %}
-	<p>{{ cat }}</p>
-	<h1>{{ entry.title }}</h1>
-	<p>By:
-		{% for author in entry.authoredBy %}
-			<a href="/people/{{ author.slug }}">{{ author.title }}</a>
-		{% endfor %}
-	</p>
+	<div class="insight-title-block">
+		<p class="med gray">
+			<time>{{ entry.postDate | date("M d, Y") }}</time> /
+			{% set cat = entry.category.first() %}
+			{{ cat }}
+		</p>
+		<h1 class="head water">{{ entry.title }}</h1>
+		<p class="author med water">By
+			{% for author in entry.authoredBy %}
+				<a href="/people/{{ author.slug }}">{{ author.title }}</a>{% if loop.length > 1 and not loop.last  %}, {% endif %}
+			{% endfor %}
+		</p>
+	</div>
 
 	{% set hero = entry.heroImage.first() %}
 	{% if hero %}
-		<img src="{{ hero.url() }}" alt="" />
+		<div class="insight-hero">
+			<img src="{{ hero.url() }}" alt="{{ hero.title() }}" />
+		</div>
 	{% endif %}
 
 	{% include '/components/core-modules.html' %}
