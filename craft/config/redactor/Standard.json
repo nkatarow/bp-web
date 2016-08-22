@@ -1,5 +1,5 @@
 {
-    "buttons": ["format","bold","lists","link","file","image"],
+    "buttons": ["format","bold","italic","lists","link","file","image"],
     "plugins":["source","fullscreen"],
     "toolbarFixed": true,
     "formatting": ["p"],
