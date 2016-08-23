@@ -11,9 +11,9 @@
 		margin-bottom: $space-double;
 	}
 
-	img {}
+	img { margin-bottom: $mobile-buffer; }
 
-	h3 { margin-bottom: $space; }
+	h3 { margin-bottom: $space-and-half; }
 }
 
 .insights {
@@ -133,7 +133,17 @@
 
 @media screen and (min-width: $bp-large) {
 	.single-insight-callout {
+		@include clearfix();
 		padding: $desktop-buffer 0;
+
+		h2 { margin-bottom: $mobile-buffer; }
+
+		img { @include column(6); }
+
+		.copy {
+			@include column(6);
+			@include push(6);
+		}
 	}
 
 	.insights {
@@ -185,7 +195,7 @@
 	.insights {
 		.grid {
 			margin: 0 auto $desktop-buffer;
-			max-width: calc(1182px + 5%);
+			max-width: calc(1182px + 2.5%);
 		}
 	}
 }
