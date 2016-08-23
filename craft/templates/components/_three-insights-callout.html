@@ -1,0 +1,40 @@
+<section class="three-insights-callout">
+	<div class="container">
+		{% if block.sectionHeader|length %}
+			<h2 class="caps reveal">{{ block.sectionHeader }}</h2>
+		{% endif %}
+	</div>
+
+	<ul class="grid container">
+		{% for entry in block.insight %}
+			<li class="grid-item">
+				{% set cat = entry.category.first() %}
+				{% set hero = entry.heroImage.first() %}
+				<a href="/insights/{{ entry.slug }}">
+					{% if hero %}
+						<img src="{{ hero.url() }}" alt="{{ hero.title() }}" />
+					{% else %}
+						{% if cat == "News" %}
+							<img src="/_ui/img/insights/fpo-news.jpg" alt="" />
+						{% elseif cat == "Insights" %}
+							<img src="/_ui/img/insights/fpo-insights.jpg" alt="" />
+						{% elseif cat == "Customer Stories" %}
+							<img src="/_ui/img/insights/fpo-customer-stories.jpg" alt="" />
+						{% else %}
+							<img src="/_ui/img/insights/fpo.jpg" alt="" />
+						{% endif %}
+					{% endif %}
+
+					<h3 class="subhead water">{{ entry.title }}</h3>
+					{% if cat %}
+						<p class="med gray">{{ cat }}</p>
+					{% endif %}
+				</a>
+			</li>
+		{% endfor %}
+	</ul>
+
+	<div class="view-all">
+		<a href="{{ block.buttonUrl }}" class="btn">{{ block.buttonText }} <span class="icon-arrow-right"></span></a>
+	</div>
+</section>

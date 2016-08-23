@@ -12,21 +12,7 @@
 
 BP.insights = {
     init: function() {
-		var self = this,
-			$grid = $('.grid').isotope({
-				// options
-				itemSelector: '.grid-item'
-			});
-
-		$('.filter-button-group').on( 'click', 'a', function(event) {
-			event.preventDefault();
-			var filterValue = $(this).attr('data-filter');
-			$grid.isotope({ filter: filterValue });
-
-			$('#filter-select').empty();
-			$('#filter-select').append(this.innerHTML)
-			self.closeFilter();
-		});
+		var self = this;
 
 		$('#filter-select').click(function(){
     		$('#insights-filter').addClass('active');
@@ -39,7 +25,67 @@ BP.insights = {
 		});
 
 		$('#close-filter').click(function(){ self.closeFilter() });
+
+		// init Isotope
+		var $grid = $('.grid');
+
+		// bind filter button click
+		var $filterButtonGroup = $('.filter-button-group');
+		$filterButtonGroup.on( 'click', 'a', function(event) {
+			event.preventDefault();
+			var filterAttr = $( this ).attr('data-filter');
+			// set filter in hash
+			location.hash = 'filter=' + encodeURIComponent( filterAttr );
+			$grid.isotope({ filter: filterAttr });
+
+			$('#filter-select').empty();
+			$('#filter-select').append(this.innerHTML)
+			self.closeFilter();
+		});
+
+		var isIsotopeInit = false;
+
+		function onHashchange() {
+			var hashFilter = self.getHashFilter();
+
+			if ( !hashFilter && isIsotopeInit ) {
+				return;
+			}
+
+			isIsotopeInit = true;
+			// filter isotope
+			$grid.isotope({
+				itemSelector: '.grid-item',
+				filter: hashFilter
+			});
+			// set selected class on button
+			if ( hashFilter ) {
+				var cleanHash;
+				$filterButtonGroup.find('.is-checked').removeClass('is-checked');
+				$filterButtonGroup.find('[data-filter="' + hashFilter + '"]').addClass('is-checked');
+
+				if (hashFilter != '*') {
+					cleanHash = hashFilter.replace('.', '');
+				} else {
+					cleanHash = 'all';
+				}
+				$('#filter-select').empty();
+				$('#filter-select').append(document.getElementById('filter-' + cleanHash).innerHTML)
+			}
+		}
+
+		$(window).on( 'hashchange', onHashchange );
+
+		// trigger event handler to init Isotope
+		onHashchange();
     },
+
+	getHashFilter: function() {
+		// get filter=filterName
+		var matches = location.hash.match( /filter=([^&]+)/i );
+		var hashFilter = matches && matches[1];
+		return hashFilter && decodeURIComponent( hashFilter );
+	},
 
 	closeFilter: function() {
 		$('#insights-filter').removeClass('active');

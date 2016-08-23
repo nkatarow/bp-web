@@ -14,9 +14,9 @@
 				<ul class="filter-button-group">
 					{% set entryIds = craft.entries.section('insightsArticles').ids() %}
 					{% set categories = craft.categories.relatedTo({ sourceElement: entryIds }).groupId(1).find() %}
-					<li><a href="#" data-filter="*">All</a></li>
+					<li><a href="#" id="filter-all" data-filter="*">All</a></li>
 					{% for category in categories %}
-						<li><a href="#" data-filter=".{{ category.slug }}">{{ category.title }}</a></li>
+						<li><a href="#" id="filter-{{ category.slug }}" data-filter=".{{ category.slug }}">{{ category.title }}</a></li>
 					{% endfor %}﻿
 				</ul>
 			</div>
@@ -25,7 +25,7 @@
 				<h2 class="subhead">Tags</h2>
 				<ul class="filter-button-group">
 					{% for tag in craft.tags.group('insightsTags') %}
-					    <li><a href="#" data-filter=".{{ tag.slug }}">{{ tag.title }}</a></li>
+					    <li><a href="#" id="filter-{{ tag.slug }}" data-filter=".{{ tag.slug }}">{{ tag.title }}</a></li>
 					{% endfor %}
 				</ul>
 			</div>

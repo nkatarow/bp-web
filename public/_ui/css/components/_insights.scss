@@ -16,7 +16,9 @@
 	h3 { margin-bottom: $space-and-half; }
 }
 
-.insights {
+
+.insights,
+.three-insights-callout {
 	#insights-filter {
 		background-color: $black;
 		height: 100%;
@@ -70,13 +72,12 @@
 		// @include container();
 		margin-bottom: $mobile-buffer;
 		padding-top: $mobile-buffer;
+		list-style-type: none;
 
 		.grid-item {
+			padding: 0 0 $space;
+			// padding: $space-double 0 $space;
 			width: 100%;
-		}
-
-		.grid-item {
-			padding: $space-double 0 $space;
 
 			img { margin-bottom: $space-double; }
 			.subhead { margin-bottom: $space-half; }
@@ -101,9 +102,25 @@
 	}
 }
 
+.three-insights-callout {
+	padding: $mobile-buffer 0;
+
+	h2 {
+		text-align: center;
+		margin-bottom: $space-double;
+	}
+
+	.grid { padding-top: 0; }
+
+	.view-all {
+		text-align: center;
+	}
+}
+
 
 @media screen and (min-width: $bp-med) {
-	.insights {
+	.insights,
+	.three-insights-callout {
 		#insights-filter {
 			@include clearfix();
 
@@ -170,10 +187,19 @@
 			padding: $desktop-buffer 0;
 		}
 	}
+
+	.three-insights-callout {
+		padding: $desktop-buffer 0;
+
+		h2 { margin-bottom: $mobile-buffer; }
+
+		.grid { margin-bottom: $space-double; }
+	}
 }
 
 @media screen and (min-width: $bp-large-2) {
-	.insights {
+	.insights,
+	.three-insights-callout {
 		.grid {
 			padding-top: 0;
 			margin: 0 2.5% $desktop-buffer;
@@ -189,13 +215,22 @@
 			.grid-item:nth-child(4) { padding-top: 0; }
 		}
 	}
+
+	.three-insights-callout {
+		.grid { margin-bottom: $space-double; }
+	}
 }
 
 @media screen and (min-width: 1240px) {
-	.insights {
+	.insights,
+	.three-insights-callout {
 		.grid {
 			margin: 0 auto $desktop-buffer;
 			max-width: calc(1182px + 2.5%);
 		}
+	}
+
+	.three-insights-callout {
+		.grid { margin-bottom: $space-double; }
 	}
 }
