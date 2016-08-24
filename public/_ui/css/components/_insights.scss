@@ -73,7 +73,8 @@
 		margin-bottom: $mobile-buffer;
 		padding-top: $mobile-buffer;
 		list-style-type: none;
-
+		font-size: 1em;
+		
 		.grid-item {
 			padding: 0 0 $space;
 			// padding: $space-double 0 $space;
