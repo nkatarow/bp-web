@@ -33,7 +33,7 @@
 
 	<meta property="og:title" content="Bridge Partners Consulting"/>
 	<!-- FILL IN -->
-	<meta property="og:description" content=""/>
+	<meta property="og:description" content="{% if entry.metaDescription != '' %}{{ entry.metaDescription }}{% else %}{{ global.metaDescription }}{% endif %}"/>
 	<meta property="og:url" content="http://bridgepartnersconsulting.com"/>
 	<meta property="og:site_name" content="Bridge Partners Consulting"/>
 	<meta property="og:type" content="website"/>
@@ -43,7 +43,7 @@
 	<meta name="twitter:site" content="@_BridgePartners">
 	<meta name="twitter:title" content="Bridge Partners Consulting">
 	<!-- FILL IN -->
-	<meta name="twitter:description" content="">
+	<meta name="twitter:description" content="{% if entry.metaDescription != '' %}{{ entry.metaDescription }}{% else %}{{ global.metaDescription }}{% endif %}">
 	<meta name="twitter:image:src" content="http://bridgepartnersconsulting.com/_ui/img/global/homegrown-share.png">
 	<meta name="twitter:domain" content="bridgepartnersconsulting.com">
 
