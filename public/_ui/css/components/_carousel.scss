@@ -328,7 +328,7 @@
 
 @media screen and (min-width: $bp-large) {
 	.text-with-image-carousel {
-		padding: $desktop-buffer 0;
+		padding: $desktop-buffer 5%;
 		margin: 0 auto;
 		max-width: $max-width;
 		width: 100%;
@@ -389,7 +389,7 @@
 	}
 
 	.people-carousel {
-		padding: $desktop-buffer 0;
+		padding: $desktop-buffer 5%;
 
 		h2 { margin-bottom: $mobile-buffer; }
 
@@ -413,4 +413,9 @@
 			}
 		}
 	}
+}
+
+@media screen and (min-width: $bp-xxl) {
+	.text-with-image-carousel { padding: $desktop-buffer 0; }
+	.people-carousel { padding: $desktop-buffer 0; }
 }

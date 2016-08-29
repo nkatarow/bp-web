@@ -104,7 +104,7 @@
 	}
 }
 
-@media screen and (min-width: 1240px) {
+@media screen and (min-width: $bp-xl-2) {
 	.people {
 		.grid {
 			margin: 0 auto $desktop-buffer;
