@@ -1,7 +1,7 @@
 {% extends "_layout" %}
 
 {% block content %}
-	<div class="insight-title-block">
+	<div class="insight-title-block reveal">
 		<p class="med gray">
 			<time>{{ entry.postDate | date("M d, Y") }}</time> /
 			{% set cat = entry.category.first() %}
@@ -18,7 +18,7 @@
 	{% set hero = entry.heroImage.first() %}
 	{% if hero %}
 		<div class="insight-hero">
-			<img src="{{ hero.url() }}" alt="{{ hero.title() }}" />
+			<img src="{{ hero.url() }}" alt="{{ hero.title() }}" class="reveal" />
 		</div>
 	{% endif %}
 

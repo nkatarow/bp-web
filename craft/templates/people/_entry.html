@@ -1,0 +1,35 @@
+{% extends "_layout" %}
+
+{% block content %}
+	<section class="people-title-block reveal">
+		<h1 class="head water">{{ entry.title }}</h1>
+		<p class="gray">
+			{{ entry.position }} /
+			{% for location in entry.locations %}
+				<a href="{{ location.url }}" class="water">{{ location.title }}</a>{% if loop.length > 1 and not loop.last  %}, {% endif %}
+			{% endfor %}
+		</p>
+	</section>
+
+	<section class="people-profile container">
+		{% set img = entry.portrait.first() %}
+		<img src="{{ img.url }}" alt="{{ img.title }}" class="reveal" />
+
+		<div class="bio reveal">
+			{{ entry.biography }}
+
+			{% if entry.insightsAuthored %}
+				<h2>{{ entry.title }}'s Insights:</h2>
+				<ul class="insights-list">
+					{% for entry in entry.insightsAuthored %}
+						<li><a href="{{ entry.url }}" class="med water">{{ entry.title }}</a></li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+
+			<a href="mailto:{{ entry.emailAddress }}" class="btn">Email {{ entry.title }}<span class="icon-arrow-right"></span></a>
+		</div>
+	</section>
+
+	{% include '/components/core-modules.html' %}
+{% endblock %}

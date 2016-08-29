@@ -79,7 +79,7 @@ window.BP = {
 		});
 
 
-		if ($('.insights').length || $('.three-insights-callout').length) { self.insights.init(); }
+		if ($('.insights').length || $('.three-insights-callout').length || $('.people-listing').length ) { self.insights.init(); }
 
 
 		// Scrolling animations

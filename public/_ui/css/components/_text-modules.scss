@@ -11,6 +11,16 @@
 .body-copy {
 	@include container();
 	padding: $mobile-buffer 0;
+
+	a {
+		color: $water;
+		transition: color 250ms linear;
+
+		&:hover,
+		&:focus {
+			color: $gray;
+		}
+	}
 }
 
 blockquote {

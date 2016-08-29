@@ -1,0 +1,114 @@
+/* ==========================================================================
+   COMPONENTS/_PEOPLE.SCSS
+   ========================================================================== */
+
+.people-listing {
+	li {
+		position: relative;
+		// margin-bottom: 2em !important;
+
+		a {
+
+            display: block;
+
+			.overlay {
+                transition: background-color 250ms linear;
+                height: 96%;
+                padding: $space-double;
+                position: absolute;
+                width: 100%;
+				top: 0;
+
+				.copy {
+					bottom: 0;
+            		color: $white;
+					position: absolute;
+					transition: color 250ms linear;
+				}
+
+				.subhead { margin-bottom: 0 !important; }
+			}
+
+            &:hover,
+            &:focus {
+                .overlay {
+                    background-color: rgba(0, 0, 0, 0.4);
+
+					.copy { color: $neon-green; }
+				}
+            }
+
+		}
+	}
+
+}
+
+.people-title-block {
+	@include container();
+	text-align: center;
+	padding: $mobile-buffer 0;
+	margin: 0 auto;
+	max-width: 750px;
+
+	.head { margin: $space-half 0; }
+}
+
+.people-profile {
+	.bio { padding: $mobile-buffer 0; }
+
+	.insights-list {
+		list-style-type: none;
+		margin: $space-half 0 $space-double;
+
+		li { padding-bottom: $space-half; }
+	}
+}
+
+@media screen and (min-width: $bp-large) {
+	.people-title-block {
+		padding-top: $desktop-buffer;
+		padding-bottom: $desktop-buffer;
+	}
+
+	.people-profile {
+		@include clearfix();
+		padding-top: 0;
+		padding-bottom: $desktop-buffer;
+
+		img { @include column(4); }
+
+		.bio {
+			@include column(6);
+			@include push(6);
+			padding: 0;
+		}
+	}
+}
+
+@media screen and (min-width: $bp-large-2) {
+	.people {
+		.grid {
+			padding-top: 0;
+			margin: 0 1% $desktop-buffer;
+
+			.grid-sizer,
+			.grid-item {
+				margin: 0 1% 1%;
+				width: 31.333333%;
+
+				img { margin-bottom: 0; }
+			}
+
+			.grid-item:nth-child(4) { padding-top: 0; }
+		}
+	}
+}
+
+@media screen and (min-width: 1240px) {
+	.people {
+		.grid {
+			margin: 0 auto $desktop-buffer;
+			max-width: calc(1182px + 1%);
+		}
+	}
+}

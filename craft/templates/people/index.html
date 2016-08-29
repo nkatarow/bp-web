@@ -1,0 +1,50 @@
+{% extends "_layout" %}
+{% set title = "People" %}
+
+{% block content %}
+	<div id="insights-filter">
+		<div class="container">
+			<a href="#" id="close-filter"><span class="icon-arrow-left"></span> Back</a>
+			<div class="left">
+				<h2 class="subhead">Filter By</h2>
+				<ul class="filter-button-group">
+					<li><a href="#" id="filter-all" data-filter="*">All</a></li>
+					<li><a href="#" id="filter-leadership" data-filter=".leadership">Leadership</a></li>
+					<li><a href="#" id="filter-corporateStaff" data-filter=".corporateStaff">Corporate Staff</a></li>
+					<li><a href="#" id="filter-consultant" data-filter=".consultant">Consultants</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="insights-title container">
+		<h1 class="head water">
+			Different People.
+			Better Results.
+		</h1>
+
+		<div class="filter-select subhead">
+			Filter by <a href="#header" id="filter-select" class="smooth water">All</a>
+		</div>
+	</div>
+
+	<ul class="grid people-listing container">
+		{% for entry in craft.entries.section('peopleEntries').find() %}
+			<li class="grid-item {% for option in entry.roles %}{{ option }} {% endfor %}">
+				<a href="/people/{{ entry.slug }}">
+					{% set portrait = entry.portrait.first() %}
+					{% if portrait %}
+						<img src="{{ portrait.url() }}" alt="{{ portrait.title() }}" />
+					{% endif %}
+
+					<div class="overlay">
+						<div class="copy">
+							<p class="subhead">{{ entry.title }}</p>
+							<p class="caps">{{ entry.position }}</p>
+						</div>
+					</div>
+				</a>
+			</li>
+		{% endfor %}
+	</ul>
+{% endblock %}
