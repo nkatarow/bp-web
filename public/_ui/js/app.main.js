@@ -118,6 +118,14 @@ window.BP = {
 
 		// Any instance of more info widget
 		if($('.more-info').length) { window.moreInfo = new BP.MoreInfo(); }
+
+        // Wrap each youtube embed in a fitvids container for responsive behavior
+        $('iframe[src*="youtube.com"]').each(function() {
+            $(this).wrap('<div class="fitvids"></div>');
+        });
+
+        // Init fitvids
+        $(".fitvids").fitVids();
 	},
     events: {
         windowResize: function (event) {

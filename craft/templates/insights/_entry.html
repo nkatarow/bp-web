@@ -8,11 +8,13 @@
 			{{ cat }}
 		</p>
 		<h1 class="head water">{{ entry.title }}</h1>
-		<p class="author med water">By
-			{% for author in entry.authoredBy %}
-				<a href="/people/{{ author.slug }}">{{ author.title }}</a>{% if loop.length > 1 and not loop.last  %}, {% endif %}
-			{% endfor %}
-		</p>
+		{% if entry.authoredBy|length %}
+			<p class="author med water">By
+				{% for author in entry.authoredBy %}
+					<a href="/people/{{ author.slug }}">{{ author.title }}</a>{% if loop.length > 1 and not loop.last  %}, {% endif %}
+				{% endfor %}
+			</p>
+		{% endif %}
 	</div>
 
 	{% set hero = entry.heroImage.first() %}
