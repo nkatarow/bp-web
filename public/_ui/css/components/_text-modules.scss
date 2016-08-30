@@ -94,6 +94,34 @@ blockquote {
 	.btn { margin-top: $space-double; }
 }
 
+.stats {
+	background-color: $off-black;
+	color: $white;
+	padding-top: $mobile-buffer;
+	padding-bottom: $mobile-buffer;
+
+	.stat {
+		@include clearfix();
+		margin-bottom: $mobile-buffer;
+
+		img { @include column(3); }
+
+		.copy {
+			@include column(9);
+			@include push(3);
+
+			color: $water;
+			line-height: $space-double;
+			padding-top: $space-half;
+
+			.number {
+				display: block;
+				font-size: 2.3em;
+			}
+		}
+	}
+}
+
 @media screen and (min-width: $bp-large) {
 	.intro {
 		padding: $desktop-buffer 5%;
@@ -229,6 +257,50 @@ blockquote {
 
 		.img { margin-bottom: $space-double; }
 	}
+}
+
+@media screen and (min-width: $bp-large-2) {
+	.stats {
+		padding-top: $desktop-buffer;
+		padding-bottom: $desktop-buffer;
+
+		.left,
+		.right {
+			@include column(6);
+		}
+
+		.right {
+			@include push(6);
+		}
+
+		.stat {
+			@include clearfix();
+			margin-bottom: $mobile-buffer;
+
+			&:last-child { margin-bottom: 0; }
+
+			img { @include column(2); }
+
+			.copy {
+				@include column(10);
+				@include push(2);
+				line-height: 1em;
+				padding-top: 0;
+
+				.number {
+					@include column(4);
+					padding-top: $space-quarter;
+				}
+
+				.stat-desc {
+					@include column(6);
+					@include push(5);
+					padding-top: 0;
+				}
+			}
+		}
+	}
+
 }
 
 @media screen and (min-width: $bp-xl-2) {

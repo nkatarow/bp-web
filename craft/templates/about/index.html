@@ -2,7 +2,37 @@
 
 {% block content %}
 	{% if entry.type == 'aboutLanding' %}
-		landing
+		<section class="intro container">
+			<div class="left reveal">
+				<h1 class="head water">{{ entry.introTitle|nl2br }}</h1>
+			</div>
+
+			<div class="right reveal">
+				{{ entry.introCopy }}
+			</div>
+		</section>
+
+		<section class="stats">
+			<div class="container">
+				<div class="left">
+					{% for stat in entry.stats %}
+						<div class="stat">
+							{% set img = stat.image.first() %}
+							<img src="{{ img.url }}" alt="{{ img.title }}" />
+
+							<p class="copy subhead">
+								<span class="number">{{ stat.statAmount }}</span>
+								<span class="stat-desc">{{ stat.stat }}</span>
+							</p>
+						</div>
+					{% endfor %}
+				</div>
+
+				<div class="right">
+					{{ entry.statSupportCopy }}
+				</div>
+			</div>
+		</section>
 	{% endif %}
 
 	{% include '/components/core-modules.html' %}
