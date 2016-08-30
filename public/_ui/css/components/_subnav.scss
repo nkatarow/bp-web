@@ -13,7 +13,7 @@
 	border-bottom: 1px solid $water;
 	border-top: 1px solid $water;
 	padding: $space-double 0;
-	margin: $mobile-buffer 0;
+	margin-bottom: $mobile-buffer;
 
 	.more-info {
 		font-size: 1.4em;
@@ -45,7 +45,7 @@
 }
 
 
-@media screen and (min-width: $bp-large) {
+@media screen and (min-width: $bp-large-2) {
 	.status-container { max-height: 100%; }
 
 	.subnav {
@@ -59,7 +59,7 @@
 			&.active {
 				display: block;
 				margin-left: -$space-and-half;
-				
+
 				a {
 					color: $water;
 

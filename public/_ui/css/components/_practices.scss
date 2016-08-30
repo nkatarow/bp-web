@@ -3,23 +3,28 @@
    ========================================================================== */
 
 .practice-intro {
-	padding: $mobile-buffer 0 0;
+	padding-top: $mobile-buffer;
+	padding-bottom: $mobile-buffer;
 
 	.title {
 		@include clearfix();
 		position: relative;
+		margin-bottom: $mobile-buffer;
 
-		img { @include column(4); }
+		img {
+			@include column(4);
+
+		}
 
 		.name {
 			@include column(8);
 			@include push(4);
 
-			h1 {
-				position: absolute;
-				top: 50%;
-				transform: translateY(-50%);
-			}
+			// h1 {
+			// 	position: absolute;
+			// 	top: 50%;
+			// 	transform: translateY(-50%);
+			// }
 		}
 	}
 
@@ -42,11 +47,23 @@
 	}
 }
 
+@media screen and (min-width: $bp-small-3) {
+	.practice-intro {
+		.title {
+			img { @include column(2); }
+			.name {
+				@include column(10);
+				@include push(2);
+			}
+		}
+	}
+}
 
-@media screen and (min-width: $bp-large) {
+@media screen and (min-width: $bp-large-2) {
 	.practice-intro {
 		@include clearfix();
-		padding: $desktop-buffer 0 0;
+		padding-top: $desktop-buffer;
+		padding-bottom: $desktop-buffer;
 
 		.title {
 			img { @include column(3); }
