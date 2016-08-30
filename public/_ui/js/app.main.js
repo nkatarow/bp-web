@@ -79,8 +79,15 @@ window.BP = {
 		});
 
 
-		if ($('.insights').length || $('.three-insights-callout').length || $('.people-listing').length ) { self.insights.init(); }
+		if ($('.insights').length || $('.people-listing').length ) { self.insights.init(); }
 
+		if ($('.three-insights-callout').length) {
+			$('.three-insights-callout .grid').imagesLoaded(function(){
+				$('.three-insights-callout .grid').isotope({
+					itemSelector: '.grid-item'
+				});
+			});
+		}
 
 		// Scrolling animations
 		window.sr = ScrollReveal({
