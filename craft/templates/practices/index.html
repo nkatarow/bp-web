@@ -9,7 +9,7 @@
 					<img src="{{ icon.url() }}" alt="" />
 
 					<div class="name">
-						<h1 class="head water">
+						<h1 class="subhead water">
 							{% if entry.level == 1 %}
 								{{ entry.title }}
 							{% elseif entry.level == 2 %}
@@ -20,7 +20,9 @@
 					</div>
 				</div>
 
-				{% include '/components/subnav.html' %}
+				{% if entry.level == 1 and entry.hasDescendants() or entry.level == 2 %}
+					{% include '/components/subnav.html' %}
+				{% endif %}
 			</div>
 			<div class="right">
 				<h2 class="head">{{ entry.practiceHeadline }}</h2>
