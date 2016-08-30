@@ -4856,17 +4856,6 @@ BP.insights = {
 			$('img.lazy').load(function(){
 				isotopeUdate();
 			});
-		// if ($('.blog').length){
-		// 	$('img.lazy').lazyload({
-		// 		effect: 'fadeIn',
-		// 		effectspeed: 500,
-		// 		threshold: 200
-		// 	});
-		//
-		// 	$('img.lazy').load(function(){
-		// 		self.masonryUpdate();
-		// 	});
-		// }
 
 			function isotopeUdate() {
 				$('.grid').imagesLoaded(function(){
