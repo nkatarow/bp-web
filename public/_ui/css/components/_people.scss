@@ -3,6 +3,8 @@
    ========================================================================== */
 
 .people-listing {
+	@include clearfix();
+	
 	li {
 		position: relative;
 		// margin-bottom: 2em !important;

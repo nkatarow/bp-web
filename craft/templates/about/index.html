@@ -1,7 +1,4 @@
 {% extends "_layout" %}
-{% if entry is not defined %}
-    {% set entry = craft.entries.section('about').first() %}
-{% endif %}
 
 {% block content %}
 	{% if entry.type == 'aboutLanding' %}

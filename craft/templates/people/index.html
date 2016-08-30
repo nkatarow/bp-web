@@ -26,12 +26,12 @@
 	</div>
 
 	<ul class="grid people-listing container">
-		{% for entry in craft.entries.section('peopleEntries').find() %}
+		{% for entry in craft.entries.section('peopleEntries').order('RAND()') %}
 			<li class="grid-item {% for option in entry.roles %}{{ option }} {% endfor %}">
 				<a href="/people/{{ entry.slug }}">
 					{% set portrait = entry.portrait.first() %}
 					{% if portrait %}
-						<img src="{{ portrait.url() }}" alt="{{ portrait.title() }}" />
+						<img src="{{ portrait.url() }}" alt="{{ portrait.title() }}" class="lazy" />
 					{% endif %}
 
 					<div class="overlay">

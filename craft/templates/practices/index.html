@@ -9,7 +9,14 @@
 					<img src="{{ icon.url() }}" alt="" />
 
 					<div class="name">
-						<h1 class="head water">{{ entry.title }}</h1>
+						<h1 class="head water">
+							{% if entry.level == 1 %}
+								{{ entry.title }}
+							{% elseif entry.level == 2 %}
+								{% set parent = craft.entries.ancestorOf(entry).level(1).first() %}
+								{{ parent.title }}
+							{% endif %}
+						</h1>
 					</div>
 				</div>
 

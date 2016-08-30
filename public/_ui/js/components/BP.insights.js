@@ -53,11 +53,40 @@ BP.insights = {
 			}
 
 			isIsotopeInit = true;
-			// filter isotope
-			$grid.isotope({
-				itemSelector: '.grid-item',
-				filter: hashFilter
+
+			$('img.lazy').lazyload({
+				failure_limit: Math.max($('img.lazy').length - 1, 0)
 			});
+
+			$('img.lazy').load(function(){
+				isotopeUdate();
+			});
+		// if ($('.blog').length){
+		// 	$('img.lazy').lazyload({
+		// 		effect: 'fadeIn',
+		// 		effectspeed: 500,
+		// 		threshold: 200
+		// 	});
+		//
+		// 	$('img.lazy').load(function(){
+		// 		self.masonryUpdate();
+		// 	});
+		// }
+
+			function isotopeUdate() {
+				$('.grid').imagesLoaded(function(){
+					// filter isotope
+					$grid.isotope({
+						itemSelector: '.grid-item',
+						filter: hashFilter,
+						onLayout: function(){
+							$(window).trigger("scroll");
+						}
+					});
+				});
+			}
+
+
 			// set selected class on button
 			if ( hashFilter ) {
 				var cleanHash;
@@ -72,7 +101,9 @@ BP.insights = {
 				$('#filter-select').empty();
 				$('#filter-select').append(document.getElementById('filter-' + cleanHash).innerHTML)
 			}
+
 		}
+
 
 		$(window).on( 'hashchange', onHashchange );
 
