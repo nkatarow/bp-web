@@ -63,7 +63,6 @@ BP.insights = {
 			});
 
 			function isotopeUdate() {
-				console.log("update");
 				$('.grid').imagesLoaded(function(){
 					// filter isotope
 					$grid.isotope({

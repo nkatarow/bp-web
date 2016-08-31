@@ -12,16 +12,16 @@
 				{% set hero = entry.heroImage.first() %}
 				<a href="/insights/{{ entry.slug }}">
 					{% if hero %}
-						<img src="{{ hero.url() }}" alt="{{ hero.title() }}" class="lazy" />
+						<img src="/_ui/img/global/dummy.gif" data-original="{{ hero.url() }}" alt="{{ hero.title() }}" class="lazy" />
 					{% else %}
 						{% if cat == "News" %}
-							<img src="/_ui/img/insights/fpo-news.jpg" alt="" class="lazy" />
+							<img src="/_ui/img/global/dummy.gif" data-original="/_ui/img/insights/fpo-news.jpg" alt="" class="lazy" />
 						{% elseif cat == "Insights" %}
-							<img src="/_ui/img/insights/fpo-insights.jpg" alt="" class="lazy" />
+							<img src="/_ui/img/global/dummy.gif" data-original="/_ui/img/insights/fpo-insights.jpg" alt="" class="lazy" />
 						{% elseif cat == "Customer Stories" %}
-							<img src="/_ui/img/insights/fpo-customer-stories.jpg" alt="" class="lazy" />
+							<img src="/_ui/img/global/dummy.gif" data-original="/_ui/img/insights/fpo-customer-stories.jpg" alt="" class="lazy" />
 						{% else %}
-							<img src="/_ui/img/insights/fpo.jpg" alt="" class="lazy" />
+							<img src="/_ui/img/global/dummy.gif" data-original="/_ui/img/insights/fpo.jpg" alt="" class="lazy" />
 						{% endif %}
 					{% endif %}
 

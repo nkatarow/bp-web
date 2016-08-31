@@ -78,15 +78,7 @@ window.BP = {
             },
 		});
 
-		if ($('.insights').length || $('.people-listing').length ) { self.insights.init(); }
-
-		if ($('.three-insights-callout').length) {
-			$('.three-insights-callout .grid').imagesLoaded(function(){
-				$('.three-insights-callout .grid').isotope({
-					itemSelector: '.grid-item'
-				});
-			});
-		}
+		if ($('.insights').length || $('.people-listing').length || $('.three-insights-callout').length) { self.insights.init(); }
 
 		// Scrolling animations
 		window.sr = ScrollReveal({
@@ -97,7 +89,13 @@ window.BP = {
 			reset: false,
 		});
 
-		if ($('.reveal').length) { sr.reveal('.reveal'); }
+		if ($('.reveal').length) {
+			sr.reveal('.reveal');
+
+			if (($('#hero-title').height() * 2.25) < $(window).height()) {
+				sr.reveal('#hero-title', { reset: true, viewFactor: 1.5 });
+			}
+		}
 
 		if ($('.sequence').length) {
 			$('.sequence').each(function(){
@@ -4885,7 +4883,6 @@ BP.insights = {
 			});
 
 			function isotopeUdate() {
-				console.log("update");
 				$('.grid').imagesLoaded(function(){
 					// filter isotope
 					$grid.isotope({
