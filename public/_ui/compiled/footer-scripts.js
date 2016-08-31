@@ -4834,8 +4834,19 @@ return t=a?function(t){return t&&a(r(t))}:function(t){return t&&r(t)}}function e
 
 BP.insights = {
     init: function() {
-		var self = this;
+		var self = this,
+			$grid = $('.grid'),
+			isIsotopeInit = false,
+			$filterButtonGroup = $('.filter-button-group');
 
+		// SETUP
+		$('img.lazy').lazyload({
+			effect: 'fadeIn',
+			effectspeed: 500,
+			threshold: 200
+		});
+
+		// FILTERING
 		$('#filter-select').click(function(){
     		$('#insights-filter').addClass('active');
 			$('#insights-filter').css('visibility', 'visible');
@@ -4848,11 +4859,6 @@ BP.insights = {
 
 		$('#close-filter').click(function(){ self.closeFilter() });
 
-		// init Isotope
-		var $grid = $('.grid');
-
-		// bind filter button click
-		var $filterButtonGroup = $('.filter-button-group');
 		$filterButtonGroup.on( 'click', 'a', function(event) {
 			event.preventDefault();
 			var filterAttr = $( this ).attr('data-filter');
@@ -4865,8 +4871,6 @@ BP.insights = {
 			self.closeFilter();
 		});
 
-		var isIsotopeInit = false;
-
 		function onHashchange() {
 			var hashFilter = self.getHashFilter();
 
@@ -4876,23 +4880,21 @@ BP.insights = {
 
 			isIsotopeInit = true;
 
-			$('img.lazy').lazyload({
-				failure_limit: Math.max($('img.lazy').length - 1, 0)
-			});
-
 			$('img.lazy').load(function(){
 				isotopeUdate();
 			});
 
 			function isotopeUdate() {
+				console.log("update");
 				$('.grid').imagesLoaded(function(){
 					// filter isotope
 					$grid.isotope({
 						itemSelector: '.grid-item',
 						filter: hashFilter,
-						onLayout: function(){
-							$(window).trigger("scroll");
-						}
+						percentPosition: true
+						// onLayout: function(){
+						// 	$(window).trigger("scroll");
+						// }
 					});
 				});
 			}

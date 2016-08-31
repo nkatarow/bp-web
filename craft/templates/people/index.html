@@ -31,7 +31,7 @@
 				<a href="/people/{{ entry.slug }}">
 					{% set portrait = entry.portrait.first() %}
 					{% if portrait %}
-						<img src="{{ portrait.url() }}" alt="{{ portrait.title() }}" class="lazy" />
+						<img src="/_ui/img/global/dummy.gif" data-original="{{ portrait.url() }}" alt="{{ portrait.title() }}" class="lazy" />
 					{% endif %}
 
 					<div class="overlay">

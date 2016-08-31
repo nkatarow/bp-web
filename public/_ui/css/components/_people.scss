@@ -4,7 +4,7 @@
 
 .people-listing {
 	@include clearfix();
-	
+
 	li {
 		position: relative;
 		// margin-bottom: 2em !important;
@@ -15,7 +15,7 @@
 
 			.overlay {
                 transition: background-color 250ms linear;
-                height: 96%;
+                height: 97%;
                 padding: $space-double;
                 position: absolute;
                 width: 100%;
