@@ -92,8 +92,10 @@ window.BP = {
 		if ($('.reveal').length) {
 			sr.reveal('.reveal');
 
-			if (($('#hero-title').height() * 2.25) < $(window).height()) {
-				sr.reveal('#hero-title', { reset: true, viewFactor: 1.5 });
+			if ($('#hero-title').length) {
+				if (($('#hero-title').height() * 2.25) < $(window).height()) {
+					sr.reveal('#hero-title', { reset: true, viewFactor: 1.5 });
+				}
 			}
 		}
 
