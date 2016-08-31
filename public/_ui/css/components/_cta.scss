@@ -18,6 +18,39 @@
 	.head {
 		margin: $space-and-half 0 $space;
 	}
+
+	&.locations {
+		background-color: $off-black;
+		padding: 0;
+
+		.bg {
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center center;
+			height: 100%;
+			position: absolute;
+			opacity: 0;
+			transition: opacity 250ms linear;
+			width: 100%;
+
+			&.active { opacity: 1; }
+		}
+
+		.reveal { padding: $mobile-buffer 0; }
+
+		ul {
+			margin-top: $mobile-buffer;
+
+			a {
+				color: $white;
+
+				&:hover,
+				&:focus {
+					color: $neon-green;
+				}
+			}
+		}
+	}
 }
 
 .double-cta {
@@ -34,6 +67,10 @@
 		padding: $space*8 0 $space*12;
 
 		.head { margin: $space-double 0 $space-and-half; }
+
+		&.locations {
+			.reveal { padding: $desktop-buffer 0; }
+		}
 	}
 
 	.double-cta {

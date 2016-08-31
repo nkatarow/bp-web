@@ -33,6 +33,33 @@
 				</div>
 			</div>
 		</section>
+
+		<section class="cta locations seattle">
+			{% set categories = craft.categories.group('locations') %}
+		    {% for category in categories %}
+				{% set image = category.fullWidthImage.first() %}
+				<style>
+					.{{ category.slug }} { background-image: url({{ image.getUrl('fullWidthMobile') }}); }
+
+					@media screen and (min-width: 800px) {
+						.{{ category.slug }} { background-image: url({{ image.url }}); }
+					}
+				</style>
+				<div class="bg {{ category.slug }}"></div>
+			{% endfor %}
+
+			<div class="reveal">
+				<h2 class="caps">Our Locations</h2>
+
+				<ul>
+				    {% for category in categories %}
+						{% set image = category.fullWidthImage.first() %}
+				        <li><a href="{{ category.slug }}" class="head location-link">{{ category.title }}</a></li>
+				    {% endfor %}
+				</ul>
+			</div>
+
+		</section>
 	{% endif %}
 
 	{% include '/components/core-modules.html' %}

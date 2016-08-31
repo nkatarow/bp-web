@@ -78,7 +78,6 @@ window.BP = {
             },
 		});
 
-
 		if ($('.insights').length || $('.people-listing').length ) { self.insights.init(); }
 
 		if ($('.three-insights-callout').length) {
@@ -119,6 +118,27 @@ window.BP = {
                 }
             }
         });
+
+		if ($('.cta.locations').length) {
+			$('.location-link')
+				.focus(function(){
+					var loc = $(this).attr('href');
+
+					if ($('.bg').hasClass('active')) {
+						$('.bg').removeClass('active');
+					}
+					$('.' + loc).addClass('active');
+				})
+				.hover(function(){
+					var loc = $(this).attr('href');
+
+					if ($('.bg').hasClass('active')) {
+						$('.bg').removeClass('active');
+					}
+					$('.' + loc).addClass('active');
+				})
+		}
+
 
 		// Any instance of the video module
 		$('.video-module').each(function(){ self.video.init(this); });
