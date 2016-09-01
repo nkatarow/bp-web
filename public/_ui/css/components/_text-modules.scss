@@ -8,6 +8,20 @@
 	.left {margin-bottom: $space-double; }
 }
 
+.title-block {
+	@include container();
+	text-align: center;
+	padding: $mobile-buffer 0;
+	margin: 0 auto;
+	max-width: 750px;
+
+	&.border-bottom { border-bottom: 1px solid $water; }
+	
+	.head { margin: $space-half 0; }
+
+	.author a { color: $water; }
+}
+
 .body-copy {
 	@include container();
 	padding: $mobile-buffer 0;
@@ -135,6 +149,10 @@ blockquote {
 			@include column(6);
 			@include push(6);
 		}
+	}
+
+	.title-block {
+		padding: $desktop-buffer 0;
 	}
 
 	.body-copy {

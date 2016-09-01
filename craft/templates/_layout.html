@@ -62,7 +62,7 @@
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>
 
-<body class="{{ craft.request.getSegment(1) }} {{ craft.request.getSegment(2) }} {% if craft.request.getSegment(1) == '' %} homepage{% endif%}">
+<body class="{{ entry.getType() }} {{ craft.request.getSegment(1) }} {{ craft.request.getSegment(2) }} {% if craft.request.getSegment(1) == '' %} homepage{% endif%}">
 	<div id="container">
 		<header id="header">
 			<div class="top-bar container">

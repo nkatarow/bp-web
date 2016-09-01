@@ -85,18 +85,6 @@
 		}
 	}
 
-	.insight-title-block {
-		@include container();
-		text-align: center;
-		padding: $mobile-buffer 0;
-		margin: 0 auto;
-		max-width: 750px;
-
-		.head { margin: $space-half 0; }
-
-		.author a { color: $water; }
-	}
-
 	.insight-hero {
 		margin: 0 auto;
 		max-width: $max-width;
@@ -186,10 +174,6 @@
 				@include push(6);
 				text-align: right;
 			}
-		}
-
-		.insight-title-block {
-			padding: $desktop-buffer 0;
 		}
 	}
 

@@ -1,0 +1,21 @@
+/* ==========================================================================
+   COMPONENTS/_CAREERS.SCSS
+   ========================================================================== */
+
+.careers {
+	.title-block {
+		.med { margin-top: $space; }
+	}
+}
+
+@media screen and (min-width: $bp-large) {
+	.careers {
+		.title-block {
+			.med { margin-top: $space-double; }
+		}
+	}
+
+	.careerListings {
+		.body-copy .reveal { @include push(3); }
+	}
+}

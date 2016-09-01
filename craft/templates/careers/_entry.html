@@ -1,0 +1,20 @@
+{% extends "_layout" %}
+
+{% block content %}
+	<div class="title-block border-bottom reveal">
+		<h1 class="head water">{{ entry.title }}</h1>
+		<a href="mailto:careers@bridgepartnersconsulting.com?subject=Job Application: {{ entry.title }}" class="btn">Apply Now <span class="icon-arrow-right"></span></a>
+
+		{% if entry.applicationInstructions != "" %}
+			<p class="med gray">{{ entry.applicationInstructions }}
+		{% else %}
+			<p class="med gray">Please attach your resume as a PDF or Word document.</p>
+		{% endif %}
+	</div>
+
+	{% include '/components/core-modules.html' %}
+
+	<div class="title-block reveal">
+		<a href="/careers" class="btn">All Careers <span class="icon-arrow-right"></span></a>
+	</div>
+{% endblock %}

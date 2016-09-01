@@ -1,7 +1,7 @@
 {% extends "_layout" %}
 
 {% block content %}
-	<div class="insight-title-block reveal">
+	<div class="title-block reveal">
 		<p class="med gray">
 			<time>{{ entry.postDate | date("M d, Y") }}</time> /
 			{% set cat = entry.category.first() %}
