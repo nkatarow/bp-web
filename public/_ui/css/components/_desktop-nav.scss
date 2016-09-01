@@ -20,6 +20,8 @@
 			.menu a { color: $white; }
 		}
 
+		&.active { height: 100%; }
+
 		&.transparent {
 			.menu a { color: $white; }
 		}

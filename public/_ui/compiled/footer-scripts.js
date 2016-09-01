@@ -5174,6 +5174,7 @@ BP.nav = {
         	$('.search-btn').click(function(event){
         		event.preventDefault();
 
+				$('header').addClass('active');
         		$('#search-form').addClass('active');
 				$('#search-form').css('visibility', 'visible');
 				$('#header').addClass('black');
@@ -5187,6 +5188,7 @@ BP.nav = {
 
 				$('#search-form').click(function(event){
 					if ($(event.target).hasClass('active')){
+						$('header').removeClass('active');
 		        		$('#search-form').removeClass('active');
 						$('#header').removeClass('black');
 						$('body').css('overflow', 'auto');
@@ -5203,6 +5205,7 @@ BP.nav = {
         	$('.newsletter-btn').click(function(event){
         		event.preventDefault();
 
+				$('header').addClass('active');
         		$('#mc_embed_signup').addClass('active');
 				$('#mc_embed_signup').css('visibility', 'visible');
 				$('#header').addClass('black');
@@ -5216,6 +5219,7 @@ BP.nav = {
 
 				$('#mc_embed_signup').click(function(event){
 					if ($(event.target).hasClass('active')){
+						$('header').removeClass('active');
 		        		$('#mc_embed_signup').removeClass('active');
 						$('#header').removeClass('black');
 						$('body').css('overflow', 'auto');
