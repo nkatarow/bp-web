@@ -6,18 +6,18 @@
 
 		{% for entry in block.insight %}
 			{% set cat = entry.category.first() %}
-			{% set hero = entry.heroImage.first() %}
-			{% if hero %}
-				<img src="{{ hero.url() }}" alt="{{ hero.title() }}" />
+			{% set thumb = entry.thumbnailImage.first() %}
+			{% if thumb %}
+				<img src="/_ui/img/global/dummy.gif" data-original="{{ hero.url() }}" alt="{{ hero.title() }}" class="lazy" />
 			{% else %}
 				{% if cat == "News" %}
-					<img src="/_ui/img/insights/fpo-news.jpg" alt="" />
+					<img src="/_ui/img/global/dummy.gif" data-original="/_ui/img/insights/insights-news.png" alt="" class="lazy" />
 				{% elseif cat == "Insights" %}
-					<img src="/_ui/img/insights/fpo-insights.jpg" alt="" />
-				{% elseif cat == "Customer Stories" %}
-					<img src="/_ui/img/insights/fpo-customer-stories.jpg" alt="" />
+					<img src="/_ui/img/global/dummy.gif" data-original="/_ui/img/insights/insights-insights.png" alt="" class="lazy" />
+				{% elseif cat == "Customer Story" %}
+					<img src="/_ui/img/global/dummy.gif" data-original="/_ui/img/insights/insights-customer-stories.png" alt="" class="lazy" />
 				{% else %}
-					<img src="/_ui/img/insights/fpo.jpg" alt="" />
+					<img src="/_ui/img/global/dummy.gif" data-original="/_ui/img/insights/fpo.jpg" alt="" class="lazy" />
 				{% endif %}
 			{% endif %}
 
