@@ -58,11 +58,11 @@ blockquote {
 
 		&:last-child { margin-bottom: 0; }
 
-		.img, .icon-circle-arrow { @include column(1); }
+		.img, .icon-circle-arrow { @include column(2); }
 
 		.copy {
-			@include column(11);
-			@include push(1);
+			@include column(10);
+			@include push(2);
 
 			h3.subhead { margin-bottom: $space; }
 			.btn { margin: $space-double 0; }
@@ -167,28 +167,23 @@ blockquote {
 		}
 	}
 
-	// .arrow-list .block .copy {
-	// 	@include column(10);
-	// 	@include push(2);
-	// }
-
 	.arrow-list {
 		padding: $desktop-buffer 0;
 
 		&.large {
 			.icon-circle-arrow {
-				// @include column(2);
+				@include column(1);
 				font-size: 5.5em;
 			}
 
-			.copy { @include push(2); }
+			.copy { @include push(1); }
+
 			h3.subhead {
 				@include column(4);
-				// @include push(1);
 			}
 
 			.support-copy {
-				@include column(6);
+				@include column(8);
 				@include push(4);
 			}
 		}
