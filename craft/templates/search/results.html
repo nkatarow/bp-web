@@ -1,0 +1,39 @@
+{% set title = "Search Results" %}
+{% extends "_layout" %}
+
+{% block content %}
+	{% set query = craft.request.getParam('q') %}
+	{% set entries = craft.entries.search(query).order('score') %}
+	<section class="search-results">
+		<div class="container">
+			<div class="left">
+				<h1 class="head">Search Results</h1>
+			    <p class="gray">{{ entries|length }} results for "{{ query }}"</p>
+			</div>
+
+			<div class="right">
+				{% if entries|length %}
+					{% paginate entries.limit(10) as entriesOnPage %}
+
+				        {% for entry in entriesOnPage %}
+							<article>
+			            		<h2><a href="{{ entry.url }}" class="subhead water">{{ entry.title }}</a></h2>
+								<p class="gray">{{ entry.section }}</p>
+				            </article>
+				        {% endfor %}
+
+
+						<nav class="pagination">
+							{% if paginate.prevUrl %}
+								<a href="{{ paginate.prevUrl }}?q={{ query }}" class="prev caps water"><span class="icon-arrow-left"></span> Prev</a>
+							{% endif %}
+
+							{% if paginate.nextUrl %}
+								<a href="{{ paginate.nextUrl }}?q={{ query }}" class="next caps water">Next <span class="icon-arrow-right"></span></a>
+							{% endif %}
+						</nav>
+				{% endif %}
+				</div>
+		</div>
+	</section>
+{% endblock %}
