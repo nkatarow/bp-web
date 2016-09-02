@@ -16,11 +16,18 @@
  # http://craftcms.com/docs/routing
  #}
 
-{% extends "_layout" %}
 {% set title = "404" %}
+{% extends "_layout" %}
 
 {% block content %}
-	<h1>Page not found</h1>
+	<script type="text/javascript">
+		$('header').addClass('black');
+	</script>
 
-	<p>What’s worse, a hilarious 404 page can’t be found either.</p>
+	<section class="fourohfour">
+		<div class="container">
+			<h1 class="head">Uh oh. This page does not exist.</h1>
+			<a href="/" class="btn alt">Back Home <span class="icon-arrow-right"></span></a>
+		</div>
+	</section>
 {% endblock %}

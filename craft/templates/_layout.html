@@ -8,7 +8,7 @@
 	<link rel="home" href="{{ siteUrl }}" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="{% if entry.metaDescription != '' %}{{ entry.metaDescription }}{% else %}{{ global.metaDescription }}{% endif %}"/>
+	<meta name="description" content="{% if entry is defined %}{% if entry.metaDescription != '' %}{{ entry.metaDescription }}{% else %}{{ global.metaDescription }}{% endif %}{% else %}{{ global.metaDescription }}{% endif %}"/>
 
 	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="/_ui/img/favicons/apple-touch-icon-57x57.png" />
 	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/_ui/img/favicons/apple-touch-icon-114x114.png" />
@@ -32,7 +32,7 @@
 	<meta name="msapplication-square310x310logo" content="/_ui/img/favicons/mstile-310x310.png" />
 
 	<meta property="og:title" content="Bridge Partners Consulting"/>
-	<meta property="og:description" content="{% if entry.metaDescription != '' %}{{ entry.metaDescription }}{% else %}{{ global.metaDescription }}{% endif %}"/>
+	<meta property="og:description" content="{% if entry is defined %}{% if entry.metaDescription != '' %}{{ entry.metaDescription }}{% else %}{{ global.metaDescription }}{% endif %}{% else %}{{ global.metaDescription }}{% endif %}"/>
 	<meta property="og:url" content="http://bridgepartnersconsulting.com"/>
 	<meta property="og:site_name" content="Bridge Partners Consulting"/>
 	<meta property="og:type" content="website"/>
@@ -41,7 +41,7 @@
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:site" content="@_BridgePartners">
 	<meta name="twitter:title" content="Bridge Partners Consulting">
-	<meta name="twitter:description" content="{% if entry.metaDescription != '' %}{{ entry.metaDescription }}{% else %}{{ global.metaDescription }}{% endif %}">
+	<meta name="twitter:description" content="{% if entry is defined %}{% if entry.metaDescription != '' %}{{ entry.metaDescription }}{% else %}{{ global.metaDescription }}{% endif %}{% else %}{{ global.metaDescription }}{% endif %}">
 	<meta name="twitter:image:src" content="http://bridgepartnersconsulting.com/_ui/img/global/bridge-partners-share.png">
 	<meta name="twitter:domain" content="bridgepartnersconsulting.com">
 
@@ -60,7 +60,7 @@
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>
 
-<body class="{{ entry.getType() }} {{ craft.request.getSegment(1) }} {{ craft.request.getSegment(2) }} {% if craft.request.getSegment(1) == '' %} homepage{% endif%}">
+<body class="{% if entry is defined %}{{ entry.getType() }}{% endif %} {{ craft.request.getSegment(1) }} {{ craft.request.getSegment(2) }} {% if craft.request.getSegment(1) == '' %} homepage{% endif%}">
 	<div id="container">
 		<header id="header">
 			<div class="top-bar container">
@@ -187,7 +187,7 @@
 		<script src="/_ui/dist/footer-scripts.min.js"></script>
 	{% endif %}
 
-	{% if entry.coreModules|length %}
+	{% if entry is defined and entry.coreModules|length %}
 		{% for block in entry.coreModules %}
 			{% switch block.type %}
 				{% case 'locationMap'  %}

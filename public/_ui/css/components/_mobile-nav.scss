@@ -62,6 +62,17 @@ header {
 			.big-p, .letter { fill: $white; }
 		}
 	}
+
+	&.black {
+		.hamburger .hamburger-inner {
+			background-color: $white;
+
+			&::before,
+    		&::after {
+	  			background-color: $white;
+  			}
+    	}
+	}
 }
 
 .insights-trigger { display: none; }
