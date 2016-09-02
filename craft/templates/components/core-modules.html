@@ -1,7 +1,7 @@
 {% for block in entry.coreModules %}
 	{% switch block.type %}
 
-		{% case 'introduction'  %}
+		{% case 'introduction' %}
 			{% include '/components/_introduction.html' %}
 
 		{% case 'bodyCopy' %}
@@ -25,34 +25,37 @@
 		{% case 'basicBlockquote'%}
 			{% include '/components/_basic-blockquote.html' %}
 
-		{% case 'fullWidthImage'  %}
+		{% case 'fullWidthImage' %}
 			{% include '/components/_full-width-image.html' %}
 
-		{% case 'twoColumnArrowList'  %}
+		{% case 'twoColumnArrowList' %}
 			{% include '/components/_two-column-arrow-list.html' %}
 
-		{% case 'largeArrowList'  %}
+		{% case 'largeArrowList' %}
 			{% include '/components/_large-arrow-list.html' %}
 
-		{% case 'twoColumnIconWithText'  %}
+		{% case 'twoColumnIconWithText' %}
 			{% include '/components/_two-column-icon-with-text.html' %}
 
-		{% case 'logoSoup'  %}
+		{% case 'logoSoup' %}
 			{% include '/components/_logo-soup.html' %}
 
-		{% case 'peopleCarousel'  %}
+		{% case 'peopleCarousel' %}
 			{% include '/components/_people-carousel.html' %}
 
-		{% case 'singleInsightCallout'  %}
+		{% case 'singleInsightCallout' %}
 			{% include '/components/_single-insight-callout.html' %}
 
-		{% case 'insightsList'  %}
+		{% case 'insightsList' %}
 			{% include '/components/_insights-list.html' %}
 
-		{% case 'locationMap'  %}
+		{% case 'locationMap' %}
 			{% include '/components/_location-map.html' %}
 
-		{% case 'video'  %}
+		{% case 'careersListing' %}
+			{% include '/components/_careers-listing.html' %}
+
+		{% case 'video' %}
 			{% include '/components/_video.html' %}
 
 	{% endswitch %}

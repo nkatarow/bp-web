@@ -1,0 +1,63 @@
+<section class="careers-listing">
+	<div class="container">
+		<div class="left">
+			{% if block.leftCopyBlock %}
+				{{ block.leftCopyBlock }}
+			{% endif %}
+
+			{% if block.careerCategoriesLeft|length %}
+				{% set relationParamLeft = ['and'] %}
+
+				{% for cat in block.careerCategoriesLeft %}
+					{% set careerCategoryLeft = craft.categories.group('careerCategories').slug(cat.slug) %}
+					{% set relationParamLeft = relationParamLeft|merge([{ targetElement: careerCategoryLeft }]) %}
+				{% endfor %}
+
+				<ul>
+					{%
+						set searchParamsLeft = {
+	  						relatedTo: relationParamLeft,
+							section: 'careerListings'
+						}
+					%}
+					{% set entriesLeft = craft.entries(searchParamsLeft) %}
+
+					{% for entry in entriesLeft %}
+						<li><a href="{{ entry.url }}" class="med water">{{ entry.title }}</a></li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+		</div>
+
+		<div class="right">
+			{% if block.rightCopyBlock %}
+				{{ block.rightCopyBlock }}
+			{% endif %}
+
+			{% if block.careerCategoriesRight|length %}
+				{% set relationParamRight = ['and'] %}
+
+				{% for cat in block.careerCategoriesRight %}
+					{% set careerCategoryRight = craft.categories.group('careerCategories').slug(cat.slug) %}
+
+					{# And merge them into the relationParam array. #}
+					{% set relationParamRight = relationParamRight|merge([{ targetElement: careerCategoryRight }]) %}
+				{% endfor %}
+
+				<ul>
+					{%
+						set searchParamsRight = {
+	  						relatedTo: relationParamRight,
+							section: 'careerListings'
+						}
+					%}
+					{% set entriesRight = craft.entries(searchParamsRight) %}
+
+					{% for entry in entriesRight %}
+						<li><a href="{{ entry.url }}" class="med water">{{ entry.title }}</a></li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+		</div>
+	</div>
+</section>

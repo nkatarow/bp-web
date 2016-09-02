@@ -8,11 +8,32 @@
 	}
 }
 
+.careers-listing {
+	background-color: $off-black;
+	color: $white;
+	padding: $mobile-buffer 0;
+
+	.left { margin-bottom: $mobile-buffer; }
+
+	ul {
+		list-style-type: none;
+		margin: 0;
+	}
+}
+
 @media screen and (min-width: $bp-large) {
 	.careers {
 		.title-block {
 			.med { margin-top: $space-double; }
 		}
+	}
+
+	.careers-listing {
+		padding: $desktop-buffer 0;
+
+		.left,
+		.right { @include column(5); }
+		.right { @include push(6); }
 	}
 
 	.careerListings {
