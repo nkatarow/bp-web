@@ -93,7 +93,7 @@ window.BP = {
 			sr.reveal('.reveal');
 
 			if ($('#hero-title').length) {
-				if (($('#hero-title').height() * 2.25) < $(window).height()) {
+				if (($('#hero-title').height() * 3) < $(window).height()) {
 					sr.reveal('#hero-title', { reset: true, viewFactor: 1.5 });
 				}
 			}

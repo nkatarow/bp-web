@@ -155,6 +155,8 @@
 		}
 	}
 
+	.insightsArticles .body-copy .reveal { @include push(3); }
+
 	.people,
 	.insights {
 		#insights-filter {
