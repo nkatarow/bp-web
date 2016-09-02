@@ -59,11 +59,18 @@ p {
 
 .tweet {
 	border: 2px solid $water;
-	color: $gray;
-	display: block;
 	font-size: 2.8em;
-	padding: $space $space $space*3;
+	margin-top: $space;
+	padding: $space $space 0;
 	position: relative;
+	line-height: 1.2em;
+
+	a {
+		color: $gray;
+		display: block;
+		padding-bottom: $space*3;
+		z-index: 1;
+	}
 
 	&:before {
     	@include icon();
@@ -73,6 +80,7 @@ p {
 		display: inline-block;
 		font-size: 0.75em;
 		position: absolute;
+		z-index: -1;
 	}
 	&:after {
 		bottom: $space-and-half;
@@ -86,6 +94,7 @@ p {
 		line-height: 2.77em;
 		position: absolute;
 		text-transform: uppercase;
+		z-index: -1;
 	}
 }
 
