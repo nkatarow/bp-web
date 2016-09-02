@@ -28,6 +28,10 @@
             title: 'All Caps',
             args: ['p', 'class', 'caps', 'add']
         },
+        "tweet": {
+            title: 'Tweet This',
+            args: ['p', 'class', 'tweet', 'add']
+        },
         "arrow-link": {
             title: 'Arrow Link',
             args: ['p', 'class', 'arrow-link', 'add']

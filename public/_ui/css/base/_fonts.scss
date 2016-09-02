@@ -18,6 +18,9 @@
     @include icon();
 }
 
+.icon-tweet:before {
+  content: "\e90d";
+}
 .icon-chevron-down:before {
   content: "\e90c";
 }

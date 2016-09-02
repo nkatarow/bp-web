@@ -57,6 +57,38 @@ p {
 	text-transform: uppercase;
 }
 
+.tweet {
+	border: 2px solid $water;
+	color: $gray;
+	display: block;
+	font-size: 2.8em;
+	padding: $space $space $space*3;
+	position: relative;
+
+	&:before {
+    	@include icon();
+		bottom: $space-and-half;
+		color: $water;
+		content: '\e90d';
+		display: inline-block;
+		font-size: 0.75em;
+		position: absolute;
+	}
+	&:after {
+		bottom: $space-and-half;
+		content: 'Tweet This';
+		color: $water;
+		display: inline-block;
+		font-size: 0.465em;
+		font-weight: 700;
+		left: $space*5;
+		letter-spacing: 1px;
+		line-height: 2.77em;
+		position: absolute;
+		text-transform: uppercase;
+	}
+}
+
 // Colors
 .water { color: $water; }
 .gray { color: $gray; }
