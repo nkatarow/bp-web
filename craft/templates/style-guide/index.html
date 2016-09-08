@@ -4,7 +4,10 @@
 {% extends "_layout" %}
 
 {% block content %}
-	{% for block in entry.hero %}
+
+	{% set blocks = entry.hero.limit(1).order('RAND()') %}
+
+	{% for block in blocks %}
 		{% set image = block.image.first() %}
 		<style>
 			.hero { background-image: url({{ image.getUrl('fullWidthMobile') }}); }
