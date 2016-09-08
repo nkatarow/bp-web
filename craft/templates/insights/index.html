@@ -48,7 +48,7 @@
 				<a href="/insights/{{ entry.slug }}">
 					{% set thumb = entry.thumbnailImage.first() %}
 					{% if thumb %}
-						<img src="/_ui/img/global/dummy.gif" data-original="{{ hero.url() }}" alt="{{ hero.title() }}" class="lazy" />
+						<img src="/_ui/img/global/dummy.gif" data-original="{{ thumb.url() }}" alt="{{ thumb.title() }}" class="lazy" />
 					{% else %}
 						{% if cat == "News" %}
 							<img src="/_ui/img/global/dummy.gif" data-original="/_ui/img/insights/insights-news.png" alt="" class="lazy" />
