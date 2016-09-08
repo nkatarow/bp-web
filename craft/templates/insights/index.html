@@ -41,7 +41,7 @@
 	</div>
 
 	<ul class="grid container">
-		{% for entry in craft.entries.section('insightsArticles').order('dateCreated').limit(null) %}
+		{% for entry in craft.entries.section('insightsArticles').limit(null) %}
 			{% set cat = entry.category.first() %}
 
 			<li class="grid-item {% if cat %} {{ cat.slug }}{% endif %}{% if entry.tags | length %}{% for tag in entry.tags %} {{ tag.slug }}{% endfor %}{% endif %}">
