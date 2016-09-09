@@ -30,6 +30,7 @@
 			@include clearfix();
 			margin: 0 auto;
 			max-width: $max-width;
+			overflow: visible;
 		}
 
 		.menu {
@@ -60,6 +61,23 @@
 					letter-spacing: 1px;
 					margin-right: $space-and-half;
 					text-transform: uppercase;
+
+					a.active {
+						color: $water;
+						position: relative;
+
+						&:before {
+							background-color: $water;
+							content: '';
+							display: block;
+							height: 5px;
+							position: absolute;
+							top: -40px;
+							width: 100%;
+							z-index: 10;
+						}
+					}
+
 
 					&.search-li { margin-right: 0; }
 

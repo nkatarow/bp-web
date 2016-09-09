@@ -93,11 +93,11 @@
 
 				<nav id="primary" class="menu">
 					<ul>
-						<li><a href="/practices/overview">Practices</a></li>
-						<li><a href="/insights">Insights</a></li>
-						<li><a href="/people">People</a></li>
-						<li><a href="/about">About</a></li>
-						<li><a href="/careers">Careers</a></li>
+						<li><a href="/practices/overview"{% if craft.request.getSegment(1) == 'practices' %} class="active"{% endif %}>Practices</a></li>
+						<li><a href="/insights"{% if craft.request.getSegment(1) == 'insights' %} class="active"{% endif %}>Insights</a></li>
+						<li><a href="/people"{% if craft.request.getSegment(1) == 'people' %} class="active"{% endif %}>People</a></li>
+						<li><a href="/about"{% if craft.request.getSegment(1) == 'about' %} class="active"{% endif %}>About</a></li>
+						<li><a href="/careers"{% if craft.request.getSegment(1) == 'careers' %} class="active"{% endif %}>Careers</a></li>
 						<li class="search-li">
 							<a href="#" class="search-btn"><span class="icon-magnifying-glass no-mobile"></span> Search</a>
 							<ul id="search-form">
