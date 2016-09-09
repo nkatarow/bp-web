@@ -107,7 +107,11 @@
 		}
 
 		.btn {
+			font-size: 1em;
 			bottom: $space-double;
 		}
 	}
+
+	#search-form .btn { font-size: 0.775em; }
+
 }
