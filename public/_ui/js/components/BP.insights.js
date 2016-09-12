@@ -58,11 +58,13 @@ BP.insights = {
 
 			isIsotopeInit = true;
 
-			isotopeUdate();
-
-			// $('img.lazy').load(function(){
-			// 	isotopeUdate();
-			// });
+			if ($('.grid').hasClass('people-listing')) {
+				isotopeUdate();
+			} else {
+				$('img.lazy').load(function(){
+					isotopeUdate();
+				});
+			}
 
 			function isotopeUdate() {
 				$('.grid').imagesLoaded(function(){
@@ -71,9 +73,6 @@ BP.insights = {
 						itemSelector: '.grid-item',
 						filter: hashFilter,
 						percentPosition: true
-						// onLayout: function(){
-						// 	$(window).trigger("scroll");
-						// }
 					});
 				});
 			}
