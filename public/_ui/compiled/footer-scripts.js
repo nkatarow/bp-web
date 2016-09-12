@@ -4842,7 +4842,7 @@ BP.insights = {
 
 		// SETUP
 		$('img.lazy').lazyload({
-			// effect: 'fadeIn',
+			effect: 'fadeIn',
 			effectspeed: 250,
 			threshold: 300
 		});
@@ -4881,9 +4881,11 @@ BP.insights = {
 
 			isIsotopeInit = true;
 
-			$('img.lazy').load(function(){
-				isotopeUdate();
-			});
+			isotopeUdate();
+
+			// $('img.lazy').load(function(){
+			// 	isotopeUdate();
+			// });
 
 			function isotopeUdate() {
 				$('.grid').imagesLoaded(function(){
