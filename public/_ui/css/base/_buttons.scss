@@ -20,7 +20,8 @@ button {
 	display: inline-block;
 	padding: $space-quarter $space-and-half;
 	transition: background-color 250ms linear, color 250ms linear;
-
+	margin-bottom: 1px; /* safari was cutting of the bottom of some of these */
+	
 	span { margin-left: $space-half; }
 
 	&:hover,

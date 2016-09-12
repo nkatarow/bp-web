@@ -46,6 +46,7 @@ window.BP = {
 			nav: true,
 			dots: true,
 			navText: ["<span class='icon-chevron-left'></span>","<span class='icon-chevron-right'></span>"],
+			margin: 1,
 
 			// Misc
 			loop: false,

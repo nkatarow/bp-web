@@ -46,6 +46,7 @@ window.BP = {
 			nav: true,
 			dots: true,
 			navText: ["<span class='icon-chevron-left'></span>","<span class='icon-chevron-right'></span>"],
+			margin: 1,
 
 			// Misc
 			loop: false,
@@ -692,7 +693,7 @@ return t=a?function(t){return t&&a(r(t))}:function(t){return t&&r(t)}}function e
 }(jQuery));
 
 /**
- * Owl Carousel v2.1.0
+ * Owl Carousel v2.1.1
  * Copyright 2013-2016 David Deutsch
  * Licensed under MIT (https://github.com/OwlCarousel2/OwlCarousel2/blob/master/LICENSE)
  */
@@ -1584,7 +1585,7 @@ return t=a?function(t){return t&&a(r(t))}:function(t){return t&&r(t)}}function e
 		if ($.support.transform3d && $.support.transition) {
 			this.$stage.css({
 				transform: 'translate3d(' + coordinate + 'px,0px,0px)',
-				transition: (this.speed() / 1000) + 's' + ' ease-in-out'
+				transition: (this.speed() / 1000) + 's'
 			});
 		} else if (animate) {
 			this.$stage.animate({
@@ -2856,7 +2857,7 @@ return t=a?function(t){return t&&a(r(t))}:function(t){return t&&r(t)}}function e
 					https://vimeo.com/groups/:group/videos/:id
 					https://app.vzaar.com/videos/:id
 
-					Visual example: http://regexper.com/#(http%3A%7Chttps%3A%7C)%5C%2F%5C%2F(player.%7Cwww.%7Capp.)%3F(vimeo%5C.com%7Cyoutu(be%5C.com%7C%5C.be%7Cbe%5C.googleapis%5C.com)%7Cvzaar%5C.com)%5C%2F(video%5C%2F%7Cvideos%5C%2F%7Cembed%5C%2F%7Cchannels%5C%2F.%2B%5C%2F%7Cgroups%5C%2F.%2B%5C%2F%7Cwatch%5C%3Fv%3D%7Cv%5C%2F)%3F(%5BA-Za-z0-9._%25-%5D*)(%5C%26%5CS%2B)%3F
+					Visual example: https://regexper.com/#(http%3A%7Chttps%3A%7C)%5C%2F%5C%2F(player.%7Cwww.%7Capp.)%3F(vimeo%5C.com%7Cyoutu(be%5C.com%7C%5C.be%7Cbe%5C.googleapis%5C.com)%7Cvzaar%5C.com)%5C%2F(video%5C%2F%7Cvideos%5C%2F%7Cembed%5C%2F%7Cchannels%5C%2F.%2B%5C%2F%7Cgroups%5C%2F.%2B%5C%2F%7Cwatch%5C%3Fv%3D%7Cv%5C%2F)%3F(%5BA-Za-z0-9._%25-%5D*)(%5C%26%5CS%2B)%3F
 			*/
 
 			id = url.match(/(http:|https:|)\/\/(player.|www.|app.)?(vimeo\.com|youtu(be\.com|\.be|be\.googleapis\.com)|vzaar\.com)\/(video\/|videos\/|embed\/|channels\/.+\/|groups\/.+\/|watch\?v=|v\/)?([A-Za-z0-9._%-]*)(\&\S+)?/);
@@ -5138,7 +5139,7 @@ BP.nav = {
         self.elPrimaryTrigger       = $('<button class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button>');
         self.elPrimaryMenu          = $('#primary');
         self.elSearchClose			= $('<a href="#" class="search-close"></a>');
-        self.elNewsletterClose			= $('<a href="#" class="newsletter-close"></a>');
+        self.elNewsletterClose		= $('<a href="#" class="newsletter-close"></a>');
 
         // PROPERTIES
         self.isMobile           = false;
@@ -5166,7 +5167,9 @@ BP.nav = {
 
 		$(window).on('scroll', function(){
 			var scrollTop = $(window).scrollTop();
-			$('#header').toggleClass('hidden', scrollTop > prev);
+			if (prev > 0) {
+				$('#header').toggleClass('hidden', scrollTop > prev);
+			}
 			prev = scrollTop;
 		});
 

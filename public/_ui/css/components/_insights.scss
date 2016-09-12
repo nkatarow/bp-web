@@ -69,7 +69,6 @@
 	}
 
 	.grid {
-		// @include container();
 		margin-bottom: $mobile-buffer;
 		padding-top: $mobile-buffer;
 		list-style-type: none;
@@ -77,11 +76,20 @@
 
 		.grid-item {
 			padding: 0 0 $space;
-			// padding: $space-double 0 $space;
 			width: 100%;
 
 			img { margin-bottom: $space-double; }
-			.subhead { margin-bottom: $space-half; }
+
+			.subhead {
+				margin-bottom: $space-half;
+				transition: color 250ms linear;
+			}
+
+
+			a:hover,
+			a:focus {
+				.subhead { color: $neon-green; }
+			}
 		}
 	}
 

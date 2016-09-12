@@ -21,7 +21,7 @@ BP.nav = {
         self.elPrimaryTrigger       = $('<button class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button>');
         self.elPrimaryMenu          = $('#primary');
         self.elSearchClose			= $('<a href="#" class="search-close"></a>');
-        self.elNewsletterClose			= $('<a href="#" class="newsletter-close"></a>');
+        self.elNewsletterClose		= $('<a href="#" class="newsletter-close"></a>');
 
         // PROPERTIES
         self.isMobile           = false;
@@ -49,7 +49,9 @@ BP.nav = {
 
 		$(window).on('scroll', function(){
 			var scrollTop = $(window).scrollTop();
-			$('#header').toggleClass('hidden', scrollTop > prev);
+			if (prev > 0) {
+				$('#header').toggleClass('hidden', scrollTop > prev);
+			}
 			prev = scrollTop;
 		});
 
