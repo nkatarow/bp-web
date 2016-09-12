@@ -4842,9 +4842,9 @@ BP.insights = {
 
 		// SETUP
 		$('img.lazy').lazyload({
-			effect: 'fadeIn',
-			effectspeed: 500,
-			threshold: 200
+			// effect: 'fadeIn',
+			effectspeed: 250,
+			threshold: 300
 		});
 
 		// FILTERING

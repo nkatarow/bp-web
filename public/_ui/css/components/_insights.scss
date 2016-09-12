@@ -184,6 +184,14 @@
 				@include push(6);
 				text-align: right;
 			}
+
+			#filter-select {
+				&:hover,
+				&:focus {
+					color: $neon-green;
+					cursor: pointer;
+				}
+			}
 		}
 	}
 
