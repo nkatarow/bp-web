@@ -20,7 +20,11 @@ window.BP = {
 	init: function() {
 		var self = this,
 			ua = window.navigator.userAgent,
+			iPhone = !!ua.match(/iPhone/i),
 			iPad = ua.match(/iPad/i),
+			webkit = !!ua.match(/WebKit/i),
+			iPhoneSafari = iPhone && webkit && !ua.match(/CriOS/i),
+			iPadSafari = iPad && webkit && !ua.match(/CriOS/i),
 			msie = ua.indexOf("MSIE ");
 
 		// Since new IE versions don't even accept conditional comment, we have to sniff if it's IE via JS
@@ -28,6 +32,9 @@ window.BP = {
 			$('body').append('<link rel="stylesheet" href="/_ui/css/IE.css" media="all">');
             $('html').addClass('ie');
         }
+
+		if (iPhoneSafari) { $('html').addClass('iPhoneSafari'); }
+		if (iPadSafari) { $('html').addClass('iPadSafari'); }
 
         self.events.parent = this;
 		$(window).bind('resize', function(event) {
@@ -83,7 +90,7 @@ window.BP = {
 		if ($('.insights').length || $('.people-listing').length || $('.three-insights-callout').length) { self.insights.init(); }
 
 		// maybe change to touch test
-		if (Modernizr.touch) { 
+		if (Modernizr.touch) {
 			$('img.lazy').lazyload({
 				event: 'touchmove',
 				threshold: 300

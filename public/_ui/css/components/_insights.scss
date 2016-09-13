@@ -101,6 +101,16 @@
 	}
 }
 
+.iPhoneSafari {
+	.people,
+	.insights,
+	.three-insights-callout {
+		#insights-filter {
+			padding: $space-double 0 $desktop-buffer;
+		}
+	}
+}
+
 .three-insights-callout {
 	padding: $mobile-buffer 0;
 
