@@ -36,15 +36,15 @@ $customDbConfig = array(
   	),
 
 	'prod' => array(
-		'server' => 'localhost',
-		'database' => 'bridge',
-		'user' => 'eathomeg_newsite',
-		'password' => 'Z5GLBrvB6d8U',
+		'server' => 'mysql.bridgepartnersconsulting.com',
+		'database' => 'bridgedbnew',
+		'user' => 'bpone',
+		'password' => 'bc?yJXM++3p*vRwa',
 		'environmentVariables' => array(
 			'basePath' => '/home/ethkal1/bridgepartnersconsulting.com/public/',
 			'baseUrl' => 'http://bridgepartnersconsulting.com/'
 		)
-  	)
+	)
 );
 
 // If a local db file exists, merge the local db settings

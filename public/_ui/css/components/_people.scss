@@ -7,7 +7,6 @@
 
 	li {
 		position: relative;
-		// margin-bottom: 2em !important;
 
 		a {
 
@@ -26,6 +25,11 @@
             		color: $white;
 					position: absolute;
 					transition: color 250ms linear;
+
+					.caps {
+						line-height: 1.6em;
+						margin-top: $space-half;
+					}
 				}
 
 				.subhead { margin-bottom: 0 !important; }
