@@ -4855,13 +4855,6 @@ BP.insights = {
 			isIsotopeInit = false,
 			$filterButtonGroup = $('.filter-button-group');
 
-		// SETUP
-		// $('img.lazy').lazyload({
-		// 	effect: 'fadeIn',
-		// 	effectspeed: 250,
-		// 	threshold: 300
-		// });
-
 		// FILTERING
 		$('#filter-select').click(function(){
     		$('#insights-filter').addClass('active');
@@ -4870,7 +4863,7 @@ BP.insights = {
 			$('#header button').hide();
 			$('#header .search-li').hide();
 			$('#header .newsletter-li').hide();
-			$('body').css('overflow', 'hidden');
+			$('html').css('overflow', 'hidden');
 		});
 
 		$('#close-filter').click(function(){ self.closeFilter() });
@@ -4953,7 +4946,7 @@ BP.insights = {
 		$('#header button').show();
 		$('#header .search-li').show();
 		$('#header .newsletter-li').show();
-		$('body').css('overflow', 'visible');
+		$('html').css('overflow', 'visible');
 
 		setTimeout(function(){
 			$('#insights-filter').css('visibility', 'hidden');

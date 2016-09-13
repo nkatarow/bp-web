@@ -21,10 +21,11 @@
 .three-insights-callout {
 	#insights-filter {
 		background-color: $black;
+		min-height: 100vh;
 		height: 100%;
 		left: 0;
 		overflow: scroll;
-		padding: $space-double 0;
+		padding: $space-double 0 $desktop-buffer;
 		opacity: 0;
 		position: absolute;
 		top: 0;
