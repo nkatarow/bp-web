@@ -1,0 +1,13 @@
+/* ==========================================================================
+   IE.CSS
+   ========================================================================== */
+
+header #logo { position: relative; }
+header #logo svg {
+	left: 0;
+	position: absolute;
+	top: 0;
+	height: 61px;
+}
+
+#content { display: block; }

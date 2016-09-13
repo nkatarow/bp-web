@@ -9,6 +9,10 @@ switch ($_SERVER['SERVER_NAME']) {
 		define('CRAFT_ENVIRONMENT', 'dev');
 		break;
 
+	case 'bridge.dev.10.1.10.200.xip.io' :
+		define('CRAFT_ENVIRONMENT', 'dev');
+		break;
+
 	case 'staging.bridgepartnersconsulting.com' :
 		define('CRAFT_ENVIRONMENT', 'stage');
 		break;
