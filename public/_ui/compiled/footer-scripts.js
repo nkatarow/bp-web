@@ -82,15 +82,17 @@ window.BP = {
 
 		if ($('.insights').length || $('.people-listing').length || $('.three-insights-callout').length) { self.insights.init(); }
 
-		if (!iPad) {
+		// maybe change to touch test
+		if (Modernizr.touch) { 
+			$('img.lazy').lazyload({
+				event: 'touchmove',
+				threshold: 300
+			});
+		} else {
 			$('img.lazy').lazyload({
 				effect: 'fadeIn',
 				effectspeed: 250,
 				threshold: 300
-			});
-		} else {
-			$('img.lazy').each(function(){
-				$(this).attr('src',$(this).data('original'));
 			});
 		}
 
