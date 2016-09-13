@@ -20,6 +20,7 @@ window.BP = {
 	init: function() {
 		var self = this,
 			ua = window.navigator.userAgent,
+			iPad = ua.match(/iPad/i),
 			msie = ua.indexOf("MSIE ");
 
 		// Since new IE versions don't even accept conditional comment, we have to sniff if it's IE via JS
@@ -81,11 +82,13 @@ window.BP = {
 
 		if ($('.insights').length || $('.people-listing').length || $('.three-insights-callout').length) { self.insights.init(); }
 
-		$('img.lazy').lazyload({
-			effect: 'fadeIn',
-			effectspeed: 250,
-			threshold: 300
-		});
+		if (!iPad) {
+			$('img.lazy').lazyload({
+				effect: 'fadeIn',
+				effectspeed: 250,
+				threshold: 300
+			});
+		}
 
 		// Scrolling animations
 		window.sr = ScrollReveal({
