@@ -88,6 +88,8 @@ window.BP = {
 				effectspeed: 250,
 				threshold: 300
 			});
+		} else {
+			$('img.lazy').attr('src',$(this).data('original'));
 		}
 
 		// Scrolling animations
