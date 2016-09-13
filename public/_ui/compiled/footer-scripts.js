@@ -108,7 +108,7 @@ window.BP = {
 			distance: '30px',
 			duration: 750,
 			scale: 1,
-			mobile: true,
+			mobile: false,
 			reset: false,
 		});
 
