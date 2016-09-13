@@ -26,6 +26,7 @@ BP.insights = {
 			$('#header .search-li').hide();
 			$('#header .newsletter-li').hide();
 			$('html').css('overflow', 'hidden');
+			$('body').css('overflow', 'hidden');
 		});
 
 		$('#close-filter').click(function(){ self.closeFilter() });
@@ -109,6 +110,7 @@ BP.insights = {
 		$('#header .search-li').show();
 		$('#header .newsletter-li').show();
 		$('html').css('overflow', 'visible');
+		$('body').css('overflow', 'visible');
 
 		setTimeout(function(){
 			$('#insights-filter').css('visibility', 'hidden');
