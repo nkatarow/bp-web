@@ -81,6 +81,12 @@ window.BP = {
 
 		if ($('.insights').length || $('.people-listing').length || $('.three-insights-callout').length) { self.insights.init(); }
 
+		$('img.lazy').lazyload({
+			effect: 'fadeIn',
+			effectspeed: 250,
+			threshold: 300
+		});
+
 		// Scrolling animations
 		window.sr = ScrollReveal({
 			distance: '30px',
@@ -4841,11 +4847,11 @@ BP.insights = {
 			$filterButtonGroup = $('.filter-button-group');
 
 		// SETUP
-		$('img.lazy').lazyload({
-			effect: 'fadeIn',
-			effectspeed: 250,
-			threshold: 300
-		});
+		// $('img.lazy').lazyload({
+		// 	effect: 'fadeIn',
+		// 	effectspeed: 250,
+		// 	threshold: 300
+		// });
 
 		// FILTERING
 		$('#filter-select').click(function(){

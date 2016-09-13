@@ -65,11 +65,17 @@ p {
 	position: relative;
 	line-height: 1.2em;
 
+
 	a {
 		color: $gray;
 		display: block;
 		padding-bottom: $space*3;
 		z-index: 1;
+
+		&:hover,
+		&:focus {
+			color: $water;
+		}
 	}
 
 	&:before {

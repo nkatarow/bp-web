@@ -10,6 +10,8 @@ button {
 	&:focus {
 		outline: 0;
 	}
+
+	&::-moz-focus-inner { border: 0; }
 }
 
 .btn {
@@ -21,7 +23,7 @@ button {
 	padding: $space-quarter $space-and-half;
 	transition: background-color 250ms linear, color 250ms linear;
 	margin-bottom: 1px; /* safari was cutting of the bottom of some of these */
-	
+
 	span { margin-left: $space-half; }
 
 	&:hover,

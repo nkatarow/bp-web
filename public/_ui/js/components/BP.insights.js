@@ -18,11 +18,11 @@ BP.insights = {
 			$filterButtonGroup = $('.filter-button-group');
 
 		// SETUP
-		$('img.lazy').lazyload({
-			effect: 'fadeIn',
-			effectspeed: 250,
-			threshold: 300
-		});
+		// $('img.lazy').lazyload({
+		// 	effect: 'fadeIn',
+		// 	effectspeed: 250,
+		// 	threshold: 300
+		// });
 
 		// FILTERING
 		$('#filter-select').click(function(){
