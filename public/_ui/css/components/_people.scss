@@ -15,7 +15,7 @@
 
 			.overlay {
                 transition: background-color 250ms linear;
-                height: 97%;
+                height: 92%;
                 padding: $space-double;
                 position: absolute;
                 width: 100%;
@@ -88,6 +88,16 @@
 }
 
 @media screen and (min-width: $bp-large-2) {
+	.people-listing {
+		li {
+			a {
+				.overlay {
+	                height: 97%;
+				}
+			}
+		}
+	}
+
 	.people {
 		.grid {
 			padding-top: 0;
