@@ -16,7 +16,7 @@
 	max-width: 750px;
 
 	&.border-bottom { border-bottom: 1px solid $water; }
-	
+
 	.head { margin: $space-half 0; }
 
 	.author a { color: $water; }
@@ -135,6 +135,26 @@ blockquote {
 		}
 	}
 }
+
+@media screen and (min-width: $bp-small-3) {
+	.two-column-icon-with-text {
+		padding: $desktop-buffer 0;
+
+		.block {
+			@include column(6);
+
+			&:nth-last-child(2) { margin-bottom: 0; }
+
+			&:nth-of-type(2n) {
+				@include push(6);
+			}
+			&:nth-of-type(2n + 1) {
+				clear: left;
+			}
+		}
+	}
+}
+
 
 @media screen and (min-width: $bp-large) {
 	.intro {
