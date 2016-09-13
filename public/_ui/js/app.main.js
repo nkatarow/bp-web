@@ -89,7 +89,9 @@ window.BP = {
 				threshold: 300
 			});
 		} else {
-			$('img.lazy').attr('src',$(this).data('original'));
+			$('img.lazy').each(function(){
+				$(this).attr('src',$(this).data('original'));
+			});
 		}
 
 		// Scrolling animations
