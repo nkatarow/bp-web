@@ -235,7 +235,8 @@
 			img {
 				@include column(4);
 				padding: 5px;
-				border-radius: 75px;
+				// border-radius: 75px;
+				border-radius: 50%;
 				max-width: 120px;
 			}
 
@@ -346,7 +347,7 @@
 				img {
 					@include column(3);
 					@include push(2);
-					border-radius: 60px;
+					// border-radius: 60px;
 				}
 
 				.copy {
