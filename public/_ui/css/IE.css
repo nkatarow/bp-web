@@ -2,6 +2,7 @@
    IE.CSS
    ========================================================================== */
 
+/* IE11 */
 header #logo { position: relative; }
 header #logo svg {
 	left: 0;
@@ -11,3 +12,6 @@ header #logo svg {
 }
 
 #content { display: block; }
+
+/* IE10 */
+a img { border: 0; }

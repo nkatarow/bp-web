@@ -41,8 +41,9 @@
 		ul {
 			margin-top: $mobile-buffer;
 			list-style-type: none;
-			margin: 0;
-			
+			margin-left: 0;
+			margin-right: 0;
+
 			a {
 				color: $white;
 
