@@ -232,12 +232,16 @@
 			@include clearfix();
 			position: relative;
 
-			img {
+			.img {
 				@include column(4);
 				padding: 5px;
-				// border-radius: 75px;
-				border-radius: 50%;
-				max-width: 120px;
+
+				img {
+					border-radius: 50%;
+					max-width: 120px;
+					overflow: hidden;
+					width: 100%;
+				}
 			}
 
 			.copy {

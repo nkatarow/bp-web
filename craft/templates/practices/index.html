@@ -37,7 +37,9 @@
 							{% for entry in entry.practiceLeaders %}
 								<li>
 									{% set portrait = entry.portrait.first() %}
-									<img src="{{ portrait.url() }}" alt="{{ portrait.title() }}" />
+									<div class="img">
+										<img src="{{ portrait.url() }}" alt="{{ portrait.title() }}" />
+									</div>
 
 									<div class="copy">
 										<p class="subhead water">{{ entry.title }}</p>
