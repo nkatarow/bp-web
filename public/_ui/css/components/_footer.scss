@@ -67,19 +67,19 @@ footer {
 		}
 
 		.copy {
-			@include column(4);
+			@include column(6);
 			@include push(0);
 		}
 
 		.email {
 			@include column(3);
-			@include push(5);
+			@include push(6);
 			padding-top: 7px;
 		}
 
 		.newsletter {
-			@include column(3);
-			@include push(8);
+			@include column(2);
+			@include push(9);
 			padding-top: 7px;
 		}
 
