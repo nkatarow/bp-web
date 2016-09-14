@@ -34,7 +34,7 @@
 						</div>
 
 						<ul class="owl-carousel default-carousel">
-							{% for entry in entry.practiceLeaders %}
+							{% for entry in entry.practiceLeaders.order('RAND()') %}
 								<li>
 									{% set portrait = entry.portrait.first() %}
 									<div class="img">

@@ -13,23 +13,15 @@
 
 		img {
 			@include column(4);
-
 		}
 
 		.name {
 			@include column(8);
 			@include push(4);
-
-			// h1 {
-			// 	position: absolute;
-			// 	top: 50%;
-			// 	transform: translateY(-50%);
-			// }
 		}
 	}
 
 	.leadership-carousel {
-		// padding-top: $space-double;
 
 		h3:before {
 			background-color: $gray;
@@ -51,6 +43,7 @@
 	.practice-intro {
 		.title {
 			img { @include column(2); }
+
 			.name {
 				@include column(10);
 				@include push(2);
@@ -72,10 +65,11 @@
 				@include column(7);
 				@include push(3);
 
-				.head {
+				.subhead {
 					position: relative;
 					top: 0;
 					transform: none;
+					line-height: 1.1em;
 				}
 			}
 		}

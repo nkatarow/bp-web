@@ -37,7 +37,13 @@
 					<div class="overlay">
 						<div class="copy">
 							<p class="subhead">{{ entry.title }}</p>
-							<p class="caps">{{ entry.position }}</p>
+							<p class="caps">
+								{% if entry.postition %}
+									{{ entry.position }}
+								{% else %}
+									&nbsp;
+								{% endif %}
+							</p>
 						</div>
 					</div>
 				</a>
