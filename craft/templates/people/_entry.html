@@ -4,7 +4,9 @@
 	<section class="people-title-block reveal">
 		<h1 class="head water">{{ entry.title }}</h1>
 		<p class="gray">
-			{{ entry.position }} /
+			{% if entry.position != '' %}
+				{{ entry.position }} /
+			{% endif %}
 			{% for location in entry.locations %}
 				<a href="{{ location.url }}" class="water">{{ location.title }}</a>{% if loop.length > 1 and not loop.last  %}, {% endif %}
 			{% endfor %}
@@ -18,7 +20,7 @@
 		<div class="bio reveal">
 			{{ entry.biography }}
 
-			{% if entry.insightsAuthored %}
+			{% if entry.insightsAuthored|length %}
 				<h2>{{ entry.title }}'s Insights:</h2>
 				<ul class="insights-list">
 					{% for entry in entry.insightsAuthored %}
