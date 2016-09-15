@@ -82,6 +82,13 @@
 	}
 }
 
+::selection {
+	background: $neon-green; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+	background: $neon-green; /* Gecko Browsers */
+}
+
 @media screen and (min-width: $bp-large) {
 	.search-results {
 		padding: $desktop-buffer 0;
