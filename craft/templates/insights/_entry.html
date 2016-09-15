@@ -3,7 +3,10 @@
 {% block content %}
 	<div class="title-block reveal">
 		<p class="med gray">
-			<time>{{ entry.postDate | date("M d, Y") }}</time> /
+			{% if entry.hidePostDate == 0 %}
+				<time>{{ entry.postDate | date("M d, Y") }}</time> /
+			{% endif %}
+
 			{% set cat = entry.category.first() %}
 			{{ cat }}
 		</p>
