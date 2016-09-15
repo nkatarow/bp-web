@@ -6,8 +6,12 @@
 
 		{% for entry in block.insight %}
 			{% set cat = entry.category.first() %}
+			{% set single = entry.singleCalloutImage.first() %}
 			{% set thumb = entry.thumbnailImage.first() %}
-			{% if thumb %}
+
+			{% if single %}
+				<img src="/_ui/img/global/dummy.gif" data-original="{{ single.url() }}" alt="{{ single.title() }}" class="lazy" />
+			{% elseif thumb %}
 				<img src="/_ui/img/global/dummy.gif" data-original="{{ thumb.url() }}" alt="{{ thumb.title() }}" class="lazy" />
 			{% else %}
 				{% if cat == "News" %}
@@ -23,6 +27,9 @@
 
 			<div class="copy reveal">
 				<h3 class="head water">{{ entry.title }}</h3>
+				{% if entry.teaserText != '' %}
+					<p>{{ entry.teaserText }}</p>
+				{% endif %}
 				<a href="/insights/{{ entry.slug }}" class="btn">Read More <span class="icon-arrow-right"></span></a>
 			</div>
 		{% endfor %}
