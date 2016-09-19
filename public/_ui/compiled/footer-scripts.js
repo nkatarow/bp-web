@@ -57,6 +57,7 @@ window.BP = {
 			margin: 1,
 
 			// Misc
+			animateOut: 'fadeOut',
 			loop: false,
 			items: 1
 		});
