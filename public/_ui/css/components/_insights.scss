@@ -96,7 +96,7 @@
 	}
 
 	.insight-hero {
-		margin: 0 auto;
+		margin: $mobile-buffer auto 0;
 		max-width: $max-width;
 
 		img { width: 100%; }
@@ -204,6 +204,10 @@
 					cursor: pointer;
 				}
 			}
+		}
+
+		.insight-hero {
+			margin: $desktop-buffer auto 0;
 		}
 	}
 
