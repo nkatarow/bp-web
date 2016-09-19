@@ -116,6 +116,30 @@
 	-webkit-animation-name: fadeOut;
 	animation-name: fadeOut;
 }
+
+.owl-carousel .fadeIn {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+}
+
+@-webkit-keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 @-webkit-keyframes fadeOut {
 	0% {
 		opacity: 1;
@@ -210,6 +234,8 @@
 			left: -6%;
 			width: 112%;
 		}
+
+		li { background-color: $white; }
 	}
 }
 
@@ -230,6 +256,7 @@
 
 		li {
 			@include clearfix();
+			background-color: $white;
 			position: relative;
 
 			.img {

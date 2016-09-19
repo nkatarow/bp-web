@@ -36,15 +36,17 @@
 						<ul class="owl-carousel default-carousel">
 							{% for entry in entry.practiceLeaders.order('RAND()') %}
 								<li>
-									{% set portrait = entry.portrait.first() %}
-									<div class="img">
-										<img src="{{ portrait.url() }}" alt="{{ portrait.title() }}" />
-									</div>
+									<a href="{{ entry.url }}">
+										{% set portrait = entry.portrait.first() %}
+										<div class="img">
+											<img src="{{ portrait.url() }}" alt="{{ portrait.title() }}" />
+										</div>
 
-									<div class="copy">
-										<p class="subhead water">{{ entry.title }}</p>
-										<p class="caps gray">{{ entry.position }}</p>
-									</div>
+										<div class="copy">
+											<p class="subhead water">{{ entry.title }}</p>
+											<p class="caps gray">{{ entry.position }}</p>
+										</div>
+									</a>
 								</li>
 							{% endfor %}
 						</ul>
