@@ -129,7 +129,7 @@
 }
 
 .insightsArticles {
-	.title-block .head { margin-bottom: $space; }
+	.title-block { margin-bottom: $space*3; }
 
 	.share {
 		@include container();
@@ -137,6 +137,8 @@
 		padding: $mobile-buffer 0 0;
 		text-align: center;
 		position: relative;
+		margin: 0 auto;
+		max-width: $max-width;
 
 		.fb_iframe_widget {
 			vertical-align: top;
@@ -220,9 +222,12 @@
 	.insightsArticles {
 		.body-copy .reveal { @include push(3); }
 
-		.title-block .head { margin-bottom: $space-and-half; }
+		.title-block {
+			margin-bottom: $space*4;
+			//.head { margin-bottom: $space-and-half; }
+		}
 
-		.share { padding: $desktop-buffer 0 0; }
+		.share { padding: $space*4 0 0; }
 	}
 
 	.people,
@@ -255,7 +260,7 @@
 		}
 
 		.insight-hero {
-			margin: $desktop-buffer auto 0;
+			margin: $space*4 auto 0;
 		}
 	}
 
