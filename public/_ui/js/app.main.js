@@ -49,6 +49,9 @@ window.BP = {
 			// Speeds
 			navSpeed: 350,
 			dotSpeed: 350,
+			autoplay: true,
+			autoplayTimeout: 5000,
+			autoplayHoverPause: true,
 
 			// Navigation
 			nav: true,
@@ -67,6 +70,9 @@ window.BP = {
 			// Speeds
 			navSpeed: 350,
 			dotSpeed: 350,
+			autoplay: true,
+			autoplayTimeout: 5000,
+			autoplayHoverPause: true,
 
 			// Navigation
 			nav: true,
