@@ -1,5 +1,5 @@
 <section class="image-collage">
-	{% for image in block.image.limit(8).order('RAND()') %}
+	{% for image in block.img.limit(8).order('RAND()') %}
 		<img src="{{ image.url }}" alt="{{ image.title }}" />
 	{% endfor %}
 </section>
