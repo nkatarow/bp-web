@@ -104,16 +104,16 @@ BP.insights = {
 	},
 
 	closeFilter: function() {
-		$('#insights-filter').removeClass('active');
 		$('#header').removeClass('black');
+		$('#insights-filter').removeClass('active');
+		$('body').css('overflow', 'auto');
 		$('#header button').show();
 		$('#header .search-li').show();
 		$('#header .newsletter-li').show();
-		$('html').css('overflow', 'visible');
-		$('body').css('overflow', 'visible');
 
 		setTimeout(function(){
 			$('#insights-filter').css('visibility', 'hidden');
+			$('html').css('overflow', 'visible');
 		}, 250);
 	}
 };
