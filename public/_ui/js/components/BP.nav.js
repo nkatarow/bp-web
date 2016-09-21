@@ -20,8 +20,7 @@ BP.nav = {
         // ELEMENTS
         self.elPrimaryTrigger       = $('<button class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button>');
         self.elPrimaryMenu          = $('#primary');
-        self.elSearchClose			= $('<a href="#" class="search-close"></a>');
-        self.elNewsletterClose		= $('<a href="#" class="newsletter-close"></a>');
+        self.elSearchClose			= $('<a href="#" class="search-close"><span class="icon-arrow-left"></span> Back</a>');
 
         // PROPERTIES
         self.isMobile           = false;
@@ -74,18 +73,11 @@ BP.nav = {
 
 				$('#search-form').click(function(event){
 					if ($(event.target).hasClass('active')){
-						$('header').removeClass('active');
-		        		$('#search-form').removeClass('active');
-						$('#header').removeClass('black');
-						$('body').css('overflow', 'auto');
-						$('.newsletter-btn').removeClass('hidden');
-						$('.search-btn').removeClass('hidden');
-
-						setTimeout(function(){
-							$('#search-form').css('visibility', 'hidden');
-						}, 250);
+						self.searchClose();
 					}
-				})
+				});
+				$('#search-close').click(function(){ self.searchClose(); })
+
 			});
 
         	$('.newsletter-btn').click(function(event){
@@ -105,18 +97,10 @@ BP.nav = {
 
 				$('#mc_embed_signup').click(function(event){
 					if ($(event.target).hasClass('active')){
-						$('header').removeClass('active');
-		        		$('#mc_embed_signup').removeClass('active');
-						$('#header').removeClass('black');
-						$('body').css('overflow', 'auto');
-						$('.newsletter-btn').removeClass('hidden');
-						$('.search-btn').removeClass('hidden');
-
-						setTimeout(function(){
-							$('#mc_embed_signup').css('visibility', 'hidden');
-						}, 250);
+						self.signupClose();
 					}
-				})
+				});
+				$('#newsletter-close').click(function(event){ self.signupClose(); });
 			});
 		}
 
@@ -217,5 +201,29 @@ BP.nav = {
 
         if (evalType === "visible") return ((y < (vpH + st)) && (y > (st - elementHeight)));
         if (evalType === "above") return ((y < (vpH + st)));
-    }
+    },
+	signupClose: function() {
+		$('header').removeClass('active');
+		$('#mc_embed_signup').removeClass('active');
+		$('#header').removeClass('black');
+		$('body').css('overflow', 'auto');
+		$('.newsletter-btn').removeClass('hidden');
+		$('.search-btn').removeClass('hidden');
+
+		setTimeout(function(){
+			$('#mc_embed_signup').css('visibility', 'hidden');
+		}, 250);
+	},
+	searchClose: function() {
+		$('header').removeClass('active');
+		$('#search-form').removeClass('active');
+		$('#header').removeClass('black');
+		$('body').css('overflow', 'auto');
+		$('.newsletter-btn').removeClass('hidden');
+		$('.search-btn').removeClass('hidden');
+
+		setTimeout(function(){
+			$('#search-form').css('visibility', 'hidden');
+		}, 250);
+	}
 };

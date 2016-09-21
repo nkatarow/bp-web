@@ -10,14 +10,14 @@
 $customDbConfig = array(
 
 	'*' => array(
-		'tablePrefix' => 'homegrown_'
+		'tablePrefix' => 'homeg_'
   	),
 
 	'dev' => array(
-		'server' => 'mysql.staging.bridgepartnersconsulting.com',
+		'server' => 'localhost',
 		'database' => 'bridgedbnew',
-		'user' => 'bpone',
-		'password' => 'bc?yJXM++3p*vRwa',
+		'user' => 'root',
+		'password' => 'root',
 		'environmentVariables' => array(
 			'basePath' => '/Users/nick/Sites/bridge-partners/public/',
 			'baseUrl' => 'http://bridge.dev/'

@@ -111,6 +111,21 @@
 		visibility: hidden;
 		width: 100%;
 
+		#search-close,
+		#newsletter-close {
+			color: $neon-green;
+			display: block;
+			font-size: 1.85em;
+			font-weight: 400;
+			padding-top: $space;
+			text-transform: none;
+
+			&:hover,
+			&:focus {
+				color: $white;
+			}
+		}
+
 		&.active { opacity: 1; }
 
 		li {
