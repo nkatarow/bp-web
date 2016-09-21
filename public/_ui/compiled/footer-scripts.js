@@ -52,6 +52,7 @@ window.BP = {
 			autoplay: true,
 			autoplayTimeout: 5000,
 			autoplayHoverPause: true,
+			rewind: true,
 
 			// Navigation
 			nav: true,
@@ -61,7 +62,6 @@ window.BP = {
 
 			// Misc
 			animateOut: 'fadeOut',
-			// animateIn: 'fadeIn',
 			loop: false,
 			items: 1
 		});
@@ -73,6 +73,7 @@ window.BP = {
 			autoplay: true,
 			autoplayTimeout: 5000,
 			autoplayHoverPause: true,
+			rewind: true,
 
 			// Navigation
 			nav: true,
