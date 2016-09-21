@@ -6,7 +6,7 @@
 
 		{% for row in block.listItems %}
 			<div class="block seq">
-				<span class="icon-circle-arrow water"></span>
+				<span class="icon-{{ row.iconType }} water"></span>
 
 				<div class="copy">
 					<h3 class="subhead water">{{ row.subhead|nl2br }}</h3>

@@ -14,10 +14,14 @@ $customDbConfig = array(
   	),
 
 	'dev' => array(
-		'server' => 'localhost',
+		'server' => 'mysql.staging.bridgepartnersconsulting.com',
 		'database' => 'bridgedbnew',
-		'user' => 'root',
-		'password' => 'root',
+		'user' => 'bpone',
+		'password' => 'bc?yJXM++3p*vRwa',
+		// 'server' => 'localhost',
+		// 'database' => 'bridgedbnew',
+		// 'user' => 'root',
+		// 'password' => 'root',
 		'environmentVariables' => array(
 			'basePath' => '/Users/nick/Sites/bridge-partners/public/',
 			'baseUrl' => 'http://bridge.dev/'

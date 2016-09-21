@@ -18,6 +18,12 @@
     @include icon();
 }
 
+.icon-checkmark:before {
+  content: "\e90e";
+}
+.icon-question-mark:before {
+  content: "\e90f";
+}
 .icon-tweet:before {
   content: "\e90d";
 }

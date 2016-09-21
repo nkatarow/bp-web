@@ -64,7 +64,9 @@ blockquote {
 		text-align: center;
 	}
 
-	.icon-circle-arrow { font-size: 3.7em; }
+	.icon-circle-arrow,
+	.icon-checkmark,
+	.icon-question-mark { font-size: 3.7em; }
 
 	.block {
 		@include clearfix();
@@ -72,7 +74,10 @@ blockquote {
 
 		&:last-child { margin-bottom: 0; }
 
-		.img, .icon-circle-arrow { @include column(2); }
+		.img,
+		.icon-circle-arrow,
+		.icon-checkmark,
+		.icon-question-mark { @include column(2); }
 
 		.copy {
 			@include column(10);
@@ -209,7 +214,9 @@ blockquote {
 		padding: $desktop-buffer 0;
 
 		&.large {
-			.icon-circle-arrow {
+			.icon-circle-arrow,
+			.icon-checkmark,
+			.icon-question-mark {
 				@include column(1);
 				font-size: 5.5em;
 			}
@@ -231,7 +238,9 @@ blockquote {
 			.block {
 				@include column(6);
 
-				.icon-circle-arrow {
+				.icon-circle-arrow,
+				.icon-checkmark,
+				.icon-question-mark {
 					@include column(3);
 					font-size: 7em;
 				}
