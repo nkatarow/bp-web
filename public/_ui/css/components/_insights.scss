@@ -128,6 +128,48 @@
 	}
 }
 
+.insightsArticles {
+	.title-block .head { margin-bottom: $space; }
+
+	.share {
+		@include container();
+		border-top: 1px solid $water;
+		padding: $mobile-buffer 0 0;
+		text-align: center;
+		position: relative;
+
+		.fb_iframe_widget {
+			vertical-align: top;
+			margin-right: $space;
+		}
+
+		iframe {
+			margin-bottom: 0;
+		}
+
+		#twitter-widget-0 {
+			margin-right: $space;
+		}
+
+		.IN-widget {
+			vertical-align: top;
+			margin-right: $space;
+		}
+
+		.email-btn {
+			height: 20px;
+			background-color: #0bddbf;
+			border-radius: 3px;
+			color: water;
+			display: inline-block;
+			font-family: Helvetica, Arial, sans-serif;
+			font-weight: bold;
+			vertical-align: top;
+			padding: $space-quarter $space-and-half;
+		}
+	}
+}
+
 
 @media screen and (min-width: $bp-med) {
 	.people,
@@ -175,7 +217,13 @@
 		}
 	}
 
-	.insightsArticles .body-copy .reveal { @include push(3); }
+	.insightsArticles {
+		.body-copy .reveal { @include push(3); }
+
+		.title-block .head { margin-bottom: $space-and-half; }
+
+		.share { padding: $desktop-buffer 0 0; }
+	}
 
 	.people,
 	.insights {

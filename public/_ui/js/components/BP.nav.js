@@ -66,6 +66,7 @@ BP.nav = {
 				$('body').css('overflow', 'hidden');
 				$('.newsletter-btn').addClass('hidden');
 				$('.search-btn').addClass('hidden');
+				// $('#search-form').prepend('<a href="#" class="back">Back</a>');
 
 				setTimeout(function(){
 			        $('#q').focus();
