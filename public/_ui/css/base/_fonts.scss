@@ -19,6 +19,9 @@
 }
 
 .icon-checkmark:before {
+  content: "\e904";
+}
+.icon-circle-arrow:before {
   content: "\e90e";
 }
 .icon-question-mark:before {
@@ -47,9 +50,6 @@
 }
 .icon-chevron-right:before {
   content: "\e903";
-}
-.icon-circle-arrow:before {
-  content: "\e904";
 }
 .icon-glassdoor:before {
   content: "\e905";
