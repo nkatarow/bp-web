@@ -41,7 +41,7 @@ $customDbConfig = array(
 
 	'prod' => array(
 		'server' => 'mysql.bridgepartnersconsulting.com',
-		'database' => 'bridgedbnew',
+		'database' => 'bridgeproduction',
 		'user' => 'bpone',
 		'password' => 'bc?yJXM++3p*vRwa',
 		'environmentVariables' => array(
