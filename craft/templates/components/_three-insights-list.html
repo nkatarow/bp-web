@@ -12,7 +12,7 @@
 				{% set single = entry.singleCalloutImage.first() %}
 				{% set thumb = entry.thumbnailImage.first() %}
 
-				<a href="/insights/{{ entry.slug }}">
+				<a href="/insights/detail/{{ entry.slug }}">
 					{% if single %}
 						<img src="/_ui/img/global/dummy.gif" data-original="{{ single.url() }}" alt="{{ single.title() }}" class="lazy" />
 					{% elseif thumb %}
