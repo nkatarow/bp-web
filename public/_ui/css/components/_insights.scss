@@ -96,7 +96,7 @@
 	}
 
 	.insight-hero {
-		margin: $mobile-buffer auto 0;
+		margin: $space auto 0;
 		max-width: $max-width;
 
 		img { width: 100%; }
@@ -129,46 +129,8 @@
 }
 
 .insightsArticles {
-	.title-block { margin-bottom: $space*3; }
-
-	.share {
-		@include container();
-		border-top: 1px solid $water;
-		padding: $mobile-buffer 0 0;
-		text-align: center;
-		position: relative;
-		margin: 0 auto;
-		max-width: $max-width;
-
-		.fb_iframe_widget {
-			vertical-align: top;
-			margin-right: $space;
-		}
-
-		iframe {
-			margin-bottom: 0;
-		}
-
-		#twitter-widget-0 {
-			margin-right: $space;
-		}
-
-		.IN-widget {
-			vertical-align: top;
-			margin-right: $space;
-		}
-
-		.email-btn {
-			height: 20px;
-			background-color: #0bddbf;
-			border-radius: 3px;
-			color: water;
-			display: inline-block;
-			font-family: Helvetica, Arial, sans-serif;
-			font-weight: bold;
-			vertical-align: top;
-			padding: $space-quarter $space-and-half;
-		}
+	.title-block {
+		.head { margin: 0; }
 	}
 }
 
@@ -223,7 +185,8 @@
 		.body-copy .reveal { @include push(3); }
 
 		.title-block {
-			margin-bottom: $space*4;
+			// margin-bottom: $space*4;
+			padding-bottom: 0;
 			//.head { margin-bottom: $space-and-half; }
 		}
 
@@ -260,7 +223,7 @@
 		}
 
 		.insight-hero {
-			margin: $space*4 auto 0;
+			margin: $space*8 auto 0;
 		}
 	}
 

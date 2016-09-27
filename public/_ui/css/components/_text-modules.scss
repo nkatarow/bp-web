@@ -11,7 +11,7 @@
 .title-block {
 	@include container();
 	text-align: center;
-	padding: $mobile-buffer 0 0;
+	padding: $mobile-buffer 0 $space-double;
 	margin: 0 auto;
 	max-width: 750px;
 
@@ -177,7 +177,7 @@ blockquote {
 	}
 
 	.title-block {
-		padding: $desktop-buffer 0 0;
+		padding: $desktop-buffer 0;
 	}
 
 	.body-copy {
