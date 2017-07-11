@@ -1,21 +1,16 @@
-#Wordpress Boilerplate Theme
-## Beta Version
-
-**Starting point for custom Wordpress theme development.**
+# Bridge Partners Website
+## Front end build process
 
 The primary goals of this build process are a clean, component based organization, mixed with automation for CSS/SASS and JavaScript concatenation and minification/uglification.
 
 ## Author(s) / Inspiration
 Build process, base styles, and JavaScript by [Nick Katarow](http://github.com/nkatarow).
 
-Original [Starkers Theme](https://github.com/viewportindustries/starkers) built by [Viewport Industries, Ltd](http://http://viewportindustries.com/).
-
 SASS Structure and base styles inspired by [Brad Frost](http://bradfrostweb.com/)'s [Pattern Lab](http://demo.patternlab.io/).
 
 ## What it does
 
 **CSS/SASS**
-
 
 
 The CSS directory structure broken into three categories.
@@ -51,7 +46,7 @@ To get the app up and running, you will need to make sure you have the following
 ```
 $
 ```
- 
+
 * [Sass](http://sass-lang.com/) - Assuming you're running ruby, run the following command (if you get an error, try running with sudo):
 
 ```
@@ -99,4 +94,3 @@ The build task should be run when you're ready to generate or update your optimi
 * [Profound Grid](http://www.profoundgrid.com/)
 * [jQuery 1.11.1](http://jquery.com/)
 * [Modernizr](http://www.modernizr.com)
-
